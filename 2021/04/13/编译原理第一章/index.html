@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="有的人身着布衣，却心有锦缎">
+  <meta name="description" content="编译原理第一章 语言的本质一组规则的组合  字母表的定义 词法规则 语法规则 语义规则 语用规则   与编译有关的三种语言和三种程序    源语言 工具语言 目标语言    源程序 编译程序 目标程序    程序设计语言的分类    强制式语言 函数式语言 逻辑式语言 对象式语言    冯·诺依曼模型 数学函数（函数运算） 数理逻辑、谓词演算 抽象数据类型    冯·诺依曼体系结构  构成基础存储">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理第一章">
 <meta property="og:url" content="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="有的人身着布衣，却心有锦缎">
+<meta property="og:description" content="编译原理第一章 语言的本质一组规则的组合  字母表的定义 词法规则 语法规则 语义规则 语用规则   与编译有关的三种语言和三种程序    源语言 工具语言 目标语言    源程序 编译程序 目标程序    程序设计语言的分类    强制式语言 函数式语言 逻辑式语言 对象式语言    冯·诺依曼模型 数学函数（函数运算） 数理逻辑、谓词演算 抽象数据类型    冯·诺依曼体系结构  构成基础存储">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-04-13T14:40:43.000Z">
-<meta property="article:modified_time" content="2021-04-13T14:53:57.839Z">
+<meta property="article:published_time" content="2021-04-13T14:57:58.000Z">
+<meta property="article:modified_time" content="2021-04-13T14:59:38.482Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="计算机">
@@ -177,7 +177,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-04-13 22:40:43 / Modified: 22:53:57" itemprop="dateCreated datePublished" datetime="2021-04-13T22:40:43+08:00">2021-04-13</time>
+              <time title="Created: 2021-04-13 22:57:58 / Modified: 22:59:38" itemprop="dateCreated datePublished" datetime="2021-04-13T22:57:58+08:00">2021-04-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -200,7 +200,150 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h3 id="编译原理第一章"><a href="#编译原理第一章" class="headerlink" title="编译原理第一章"></a>编译原理第一章</h3><ol>
+<li><p>语言的本质<br>一组规则的组合</p>
+<ol>
+<li>字母表的定义</li>
+<li>词法规则</li>
+<li>语法规则</li>
+<li>语义规则</li>
+<li>语用规则</li>
+</ol>
+</li>
+<li><p>与编译有关的三种语言和三种程序</p>
+<table>
+<thead>
+<tr>
+<th>源语言</th>
+<th>工具语言</th>
+<th>目标语言</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>源程序</td>
+<td>编译程序</td>
+<td>目标程序</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>程序设计语言的分类</p>
+<table>
+<thead>
+<tr>
+<th>强制式语言</th>
+<th>函数式语言</th>
+<th>逻辑式语言</th>
+<th>对象式语言</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冯·诺依曼模型</td>
+<td>数学函数（函数运算）</td>
+<td>数理逻辑、谓词演算</td>
+<td>抽象数据类型</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>冯·诺依曼体系结构</p>
+<ol>
+<li>构成基础<br>存储器、控制器、处理器、ip</li>
+<li>特点<ul>
+<li>数据、指令以二进制形式存储</li>
+<li>存储程序的工作方式</li>
+<li>程序顺序执行，可强制修改执行顺序</li>
+<li>存储器内容可以被修改</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>变量的4个属性</p>
+<ol>
+<li><p>作用域</p>
+<blockquote>
+<ul>
+<li>静态绑定：依据变量定义的位置</li>
+<li>动态绑定：依据过程的调用关系</li>
+</ul>
+</blockquote>
+<ul>
+<li>全局变量</li>
+<li>局部变量</li>
+<li>非局部变量</li>
+</ul>
+</li>
+<li><p>生存期</p>
+<blockquote>
+<ul>
+<li>全局变量静态分配</li>
+<li>局部变量运行前静态分配，运行时动态分配</li>
+<li>非局部变量可静态分配可动态分配</li>
+<li>匿名变量是通过指针访问，是动态分配</li>
+</ul>
+</blockquote>
+</li>
+<li><p>值</p>
+<blockquote>
+<ul>
+<li>二进制编码</li>
+<li>按类型解释</li>
+<li>变量与值的绑定是动态的</li>
+<li>常量的值不能修改</li>
+<li>数据对象表示存储区和它保存的值</li>
+</ul>
+</blockquote>
+</li>
+<li><p>类型</p>
+<blockquote>
+<p>静态绑定语言是面向编译的语言<br>动态绑定语言是面向解释的语言</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>虚拟机<br>M1是实际的机器<br>机器语言是汇编语言的M2=M1+汇编程序<br>机器语言是高级语言的M3=M2+编译程序</p>
+</li>
+<li><p>程序单元</p>
+<ol>
+<li><p>定义：程序执行过程中被独立调用单元，包括子程序、分程序、过程等</p>
+</li>
+<li><p>表示：</p>
+<blockquote>
+<ul>
+<li><p>编译时：单元的源程序</p>
+</li>
+<li><p>运行时：一个代码段和一个活动记录组成，称为单元实例</p>
+</li>
+<li><blockquote>
+<p>活动记录：执行单元需要的信息和局部变量等数据存储区</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>实例：</p>
+<blockquote>
+<ul>
+<li>非局部变量：一个程序单元可以引用未被本单元说明而被其它单元说明的变量</li>
+<li>全局变量：一个程序中各个程序单元都可以引用的变量</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>C程序运行时的存储空间</p>
+<ol>
+<li><p>程序代码区：存储程序代码（编译后形成的二进制机器指令序列）</p>
+</li>
+<li><p>数据静态存储区：存储程序的<strong>常量数据、全局数据、static数据</strong></p>
+</li>
+<li><p>数据动态存储区：</p>
+<blockquote>
+<p>栈：存储返回地址、CPU现场、临时变量、<strong>形参、局部变量</strong><br>堆：存储动态内存申请数据</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
+
     </div>
 
     
@@ -217,13 +360,6 @@
 
 
         
-    <div class="post-nav">
-      <div class="post-nav-item"></div>
-      <div class="post-nav-item">
-    <a href="/2021/04/13/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
       </footer>
     
   </article>
@@ -281,6 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">编译原理第一章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -294,16 +431,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
