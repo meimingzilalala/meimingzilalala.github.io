@@ -149,6 +149,893 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/hexo-github-aliyun%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/hexo-github-aliyun%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">hexo+github/aliyun搭建静态博客</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-13 23:13:00 / Modified: 23:14:59" itemprop="dateCreated datePublished" datetime="2021-04-13T23:13:00+08:00">2021-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="下载nodejs和cnpm"><a href="#下载nodejs和cnpm" class="headerlink" title="下载nodejs和cnpm"></a>下载nodejs和cnpm</h2><p>直接在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">nodejs官网</a>进行下载并安装<br><code>node -v</code>命令查看node的版本<br><code>npm -v</code>命令查看npm的版本<br>然后利用npm安装淘宝的cnpm，下载速度快一些<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>命令安装淘宝的cnpm包管理器<br><code>cnpm -v</code>命令查看cnpm的版本</p>
+<hr>
+<h2 id="下载hexo并创建本地的静态博客"><a href="#下载hexo并创建本地的静态博客" class="headerlink" title="下载hexo并创建本地的静态博客"></a>下载hexo并创建本地的静态博客</h2><p><code>cnpm install -g hexo-cli</code>安装hexo<br><code>hexo -v</code>查看hexo版本<br>然后创建一个你存博客的目录并进入到该目录，你可能会用到<code>mkdir blog</code>,<code>cd blog</code><br><code>hexo init</code>在当前目录下生成博客的框架<br>你可以使用<code>hexo s</code>开启博客，进入<code>http://localhost:4000/</code>查看本地博客内容<br><code>hexo n &quot;文章名&quot;</code>创建新的文章<br>然后找到<code>\source\_post</code>目录下编辑文章即可，使用markdown语法</p>
+<hr>
+<h2 id="部署到GitHub上"><a href="#部署到GitHub上" class="headerlink" title="部署到GitHub上"></a>部署到GitHub上</h2><p>首先在你的GitHub上新建一个仓库，命名为<code>YourGithubName.github.io</code><br>然后<code>cnpm install --save hexo-deployer-git</code>在blog目录下安装git部署插件<br>下面配置_config.yml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line"> 		<span class="built_in">type</span>: git</span><br><span class="line">		repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line"> 		branch: master</span><br></pre></td></tr></table></figure>
+
+<p>最后运行以下三条命令：<br><code>hexo clean</code>清理<br><code>hexo g</code>生成<br><code>hexo d</code>部署<br>以上三条命令基本是每次修改博客后都要运行的<br>最后在<code>https://YourGithubName.github.io</code>下就可以查看啦！</p>
+<hr>
+<h2 id="主题的更换"><a href="#主题的更换" class="headerlink" title="主题的更换"></a>主题的更换</h2><p>更改主题一般分两步：<br>1、<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>利用git将别人仓库里的主题克隆到自己的blog下的themes文件夹里<br>2、修改blog目录下的 _config.yml 文件中的  theme改为theme: yilia<br><strong>注意：这里的GitHub地址是示例，虽然这个大佬写的也挺好看的；themes下的文件夹名要和theme冒号后面的名称一样</strong><br>更改完成，运行上面的三条命令就可以看到变化啦（比较慢，多等一会，用本地查看会快一些）</p>
+<hr>
+<h2 id="一些个性化的定制"><a href="#一些个性化的定制" class="headerlink" title="一些个性化的定制"></a>一些个性化的定制</h2><h3 id="看板娘的添加"><a href="#看板娘的添加" class="headerlink" title="看板娘的添加"></a>看板娘的添加</h3><p>明天再更</p>
+<h3 id="网址小图标的添加"><a href="#网址小图标的添加" class="headerlink" title="网址小图标的添加"></a>网址小图标的添加</h3><p>内容</p>
+<h3 id="主题里一些内容的简单定制"><a href="#主题里一些内容的简单定制" class="headerlink" title="主题里一些内容的简单定制"></a>主题里一些内容的简单定制</h3><p>内容</p>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">b站大佬视频讲解</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E9%9B%B6%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E9%9B%B6%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第零章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-13 23:08:32" itemprop="dateCreated datePublished" datetime="2021-04-13T23:08:32+08:00">2021-04-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AB%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AB%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第八章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-13 23:08:24" itemprop="dateCreated datePublished" datetime="2021-04-13T23:08:24+08:00">2021-04-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%83%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%83%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第七章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-13 23:08:18" itemprop="dateCreated datePublished" datetime="2021-04-13T23:08:18+08:00">2021-04-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第六章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-13 23:08:11" itemprop="dateCreated datePublished" datetime="2021-04-13T23:08:11+08:00">2021-04-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第五章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-13 23:08:06" itemprop="dateCreated datePublished" datetime="2021-04-13T23:08:06+08:00">2021-04-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第四章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-13 23:08:00 / Modified: 23:11:25" itemprop="dateCreated datePublished" datetime="2021-04-13T23:08:00+08:00">2021-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">编译原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="编译原理第四章——程序语言的设计"><a href="#编译原理第四章——程序语言的设计" class="headerlink" title="编译原理第四章——程序语言的设计"></a>编译原理第四章——程序语言的设计</h3><h4 id="（程序设计）语言的定义"><a href="#（程序设计）语言的定义" class="headerlink" title="（程序设计）语言的定义"></a>（程序设计）语言的定义</h4><p>语言=语法（规则）+语义（规则）</p>
+<p>语法：构造程序及其成分（单词、语法单位）的规则集合</p>
+<p>语义：定义语言的单词符号和语法单位的作用和意义的规则组合</p>
+<ul>
+<li><p>可以从生成（文法）和识别（语法图）的角度描述语法</p>
+<h5 id="文法描述语法规则：生成角度"><a href="#文法描述语法规则：生成角度" class="headerlink" title="文法描述语法规则：生成角度"></a>文法描述语法规则：生成角度</h5><blockquote>
+<p>  &lt;标识符&gt;→&lt;字母&gt;<br>  &lt;标识符&gt;→&lt;标识符&gt;&lt;字母&gt;<br>  &lt;标识符&gt;→&lt;标识符&gt;&lt;数字&gt;<br>  &lt;字母&gt;→A|…|Z|a|…|z<br>  &lt;数字&gt;→0|…|9</p>
+</blockquote>
+<blockquote>
+<p>&lt;表达式&gt;→&lt;标识符&gt;<br>&lt;表达式&gt;→(&lt;表达式&gt;)<br>&lt;表达式&gt;→&lt;表达式&gt;&lt;运算符&gt;&lt;表达式&gt;<br>&lt;运算符&gt;→+|-|*|/</p>
+<p><strong>注意：这里没有考虑运算符的优先级</strong></p>
+</blockquote>
+<h5 id="语法图描述语法规则：识别角度"><a href="#语法图描述语法规则：识别角度" class="headerlink" title="语法图描述语法规则：识别角度"></a>语法图描述语法规则：识别角度</h5><blockquote>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153851229.png" alt="image-20210413153851229"></p>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153918317.png" alt="image-20210413153918317"></p>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153937838.png" alt="image-20210413153937838"></p>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413154819595.png" alt="image-20210413154819595"></p>
+<h6 id="识别原则："><a href="#识别原则：" class="headerlink" title="识别原则："></a>识别原则：</h6><ul>
+<li>终结符框:标识的终结符与被识别的终结符刚好符合</li>
+<li>非终结符框:由该非终结符的语法图识别</li>
+<li>分支:若遇到分支，则任选一分支识别；</li>
+<li>回溯:若一个分支识别不成功，则选另一分支识别</li>
+<li>若一个终结符序列是合法的：<br>那么,必须从语法图的入口边通过语法图而到达出口边，<br>且在通过的过程中,恰恰能识别该终结符序列。</li>
+<li>语言：语法图能识别的所有终结符序列的集合。称为语言。</li>
+</ul>
+<h6 id="语法图的构造"><a href="#语法图的构造" class="headerlink" title="语法图的构造"></a>语法图的构造</h6><p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413155020391.png" alt="image-20210413155020391"></p>
+</blockquote>
+<h5 id="高级语言语法规则描述方法"><a href="#高级语言语法规则描述方法" class="headerlink" title="高级语言语法规则描述方法"></a>高级语言语法规则描述方法</h5><p>FORTRAN采用自然语言描述语法；<br>ALGOL 60首次用BNF对语法进行形式描述,为语言定义做出了重要贡献；<br>Pascal首次采用语法图来定义语言，给出了较为直观的语法结构。</p>
+<h5 id="语法描述方法等价"><a href="#语法描述方法等价" class="headerlink" title="语法描述方法等价"></a>语法描述方法等价</h5><p>   文法和语法图是语言语法的等价表示<br>   文法从产生的观点来定义语言的语法，通用性好。<br>   语法图以识别的观点定义语言的语法，更直观和清晰。</p>
+<h5 id="语法的作用"><a href="#语法的作用" class="headerlink" title="语法的作用"></a>语法的作用</h5><p>①表达语言设计者的意图和设计目标；<br>②指导语言的使用者编写正确的程序；（先使用语义规则后使用语法规则）<br>③指导语言的实现者识别所有语法单位。（先使用语法规则后使用语义规则）</p>
+</li>
+<li><p>本章语义使用自然语言描述、下篇语义以操作语义学的方法描述</p>
+</li>
+</ul>
+<h4 id="文法"><a href="#文法" class="headerlink" title="文法"></a>文法</h4><p>定义：文法是描述语言语法结构的形式规则</p>
+<p>优点：通用、准确、易于理解、描述能力强</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第三章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-13 23:07:55 / Modified: 23:10:35" itemprop="dateCreated datePublished" datetime="2021-04-13T23:07:55+08:00">2021-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">编译原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="编译原理第三章-控制结构"><a href="#编译原理第三章-控制结构" class="headerlink" title="编译原理第三章-控制结构"></a>编译原理第三章-控制结构</h3><p>定义：规定程序语句和程序单元的执行流程</p>
+<p>分类：语句级控制结构、单元级控制结构</p>
+<h4 id="语句级控制结构"><a href="#语句级控制结构" class="headerlink" title="语句级控制结构"></a>语句级控制结构</h4><p>定义：用来构造语句执行流程的机制</p>
+<p>分类：顺序、选择（分支）、重复（循环）</p>
+<ol>
+<li><p>顺序</p>
+<blockquote>
+<p>语句结束标记 ；</p>
+<p>复合语句：begin……end、{……}</p>
+</blockquote>
+</li>
+<li><p>选择</p>
+<blockquote>
+<p>单选if then</p>
+<p>二选一if then else</p>
+<p>多选一 嵌套if then else</p>
+</blockquote>
+</li>
+<li><p>重复</p>
+<blockquote>
+<p>计数器制导</p>
+<p>条件制导</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="单元级控制结构"><a href="#单元级控制结构" class="headerlink" title="单元级控制结构"></a>单元级控制结构</h4><p>定义：规定程序单元之间控制流程的机制</p>
+<h5 id="显式调用从属单元"><a href="#显式调用从属单元" class="headerlink" title="显式调用从属单元"></a>显式调用从属单元</h5><blockquote>
+<p> eg：</p>
+<p> FORTRAN语言的子程序和函数</p>
+<p> PASCAL语言的函数和过程</p>
+<p> C语言的函数</p>
+</blockquote>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413150345535.png" alt="image-20210413150345535"></p>
+<h5 id="隐式调用单元——异常处理"><a href="#隐式调用单元——异常处理" class="headerlink" title="隐式调用单元——异常处理"></a>隐式调用单元——异常处理</h5><p>异常定义：导致程序正常执行中止的事件</p>
+<p>异常处理的主要问题：</p>
+<blockquote>
+<ol>
+<li>异常如何说明，它的作用域是什么？</li>
+<li>异常如何发生？（如何捕获异常）</li>
+<li>发生异常时，流程如何转移？</li>
+<li>发生异常时，如何绑定相应的异常处理程序？</li>
+<li>处理异常之后，控制流程转向何处？</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>问题（5）的解决方法：</p>
+<ol>
+<li><p>允许控制返回发生异常事件的执行点</p>
+<p>这种情况下，异常处理程序可对执行的程序进行“修补”，终止相应的异常事件，以便程序继续正常地执行。</p>
+<p>解决了程序继续执行的问题，但并未真正消除发生异常的因素。</p>
+</li>
+<li><p>由异常处理程序进行控制的转移</p>
+<p>意味着引起异常的单元不能恢复执行；从实现的观点来看，这意味着删除异常单元的活动记录。</p>
+</li>
+</ol>
+</blockquote>
+<p>C++语言的异常处理：</p>
+<blockquote>
+<p>设置陷阱 try</p>
+<p>抛出异常 throw</p>
+<p>捕获异常 catch</p>
+<p>C++的异常处理语句的格式如下：<br>try  {  … }<br>catch (异常类型1) { 异常1处理程序 }<br>catch (异常类型2) {异常2处理程序}<br>  ……<br>catch (异常类型n) {异常n处理程序} </p>
+</blockquote>
+<p>协同程序间的控制转移关系：</p>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151632600.png" alt="image-20210413151632600"></p>
+<h4 id="并发单元"><a href="#并发单元" class="headerlink" title="并发单元"></a>并发单元</h4><p>eg：“生产者-消费者”问题</p>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151822744.png" alt="image-20210413151822744"></p>
+<h5 id="并行与并发的区别"><a href="#并行与并发的区别" class="headerlink" title="并行与并发的区别"></a>并行与并发的区别</h5><blockquote>
+<p>并行”是指无论从微观还是宏观，二者都是一起执行的，就好像两个人各拿一把铁锨在挖坑，一小时后，每人一个大坑。<br>而“并发”在微观上不是同时执行的，只是把时间分成若干段，使多个进程快速交替的执行，从宏观外来看，好像是这些进程都在执行，这就好像两个人用同一把铁锨，轮流挖坑，一小时后，两个人各挖一个小一点的坑，要想挖两个大一点得坑，一定会用两个小时。<br>从以上本质不难看出，“并发”执行，在多个进程存在资源冲突时，并没有从根本提高执行效率。</p>
+</blockquote>
+<h5 id="同步问题"><a href="#同步问题" class="headerlink" title="同步问题"></a>同步问题</h5><blockquote>
+<p>正确访问存储区</p>
+<ul>
+<li>不会向已满的缓冲区写数据</li>
+<li>不会向空缓冲区读数据</li>
+</ul>
+</blockquote>
+<h5 id="动作的“不可分”"><a href="#动作的“不可分”" class="headerlink" title="动作的“不可分”"></a>动作的“不可分”</h5><blockquote>
+<p>append是生产者向缓冲区存数的操作</p>
+<p>remove是消费者从缓冲区取数的操作</p>
+<p>设t表示所存项目总数</p>
+<p>这两个操作都要修改t的值,相应执行操作(1)t:=t+1和(2)t:=t-1来实现。</p>
+<p>假定(1)和(2)是这样实现的:<br> 读t到一个专用寄存器;<br> 更新专用寄存器的值;<br> 将专用寄存器的值写到t;</p>
+<p>则：</p>
+<p>执行(1)时不能执行(2),反之亦然。<br>即,(1)和(2)必须以互斥的方式执行,(1)或(2)是不可分的操作。   </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="汪道之">
+      <meta itemprop="description" content="有的人身着布衣，却心有锦缎">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江湖">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="post-title-link" itemprop="url">编译原理第二章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-13 23:01:50 / Modified: 23:07:22" itemprop="dateCreated datePublished" datetime="2021-04-13T23:01:50+08:00">2021-04-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">编译原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="编译原理第二章"><a href="#编译原理第二章" class="headerlink" title="编译原理第二章"></a>编译原理第二章</h3><ol>
+<li><p>数据类型的分类</p>
+<ol>
+<li><p>内部类型</p>
+<blockquote>
+<p>优点：</p>
+<ol>
+<li>基本表示的不可见性</li>
+<li>编译时能检查变量使用的正确性</li>
+<li>编译时可以确定无二义的操作</li>
+<li>精度控制</li>
+</ol>
+</blockquote>
+</li>
+<li><p>用户定义类型</p>
+<blockquote>
+<ol>
+<li>有限映像：<br>定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）<br>eg：array[1..50] of char 中整数1至50到字符集的有限映像</li>
+<li>序列：<br>定义：任意多个数据项组成，数据项称为序列的成分，且<strong>类型相同</strong></li>
+<li>判定或：<br>定义：可以选择不同成员的构造机制<br>eg：PASCAL的变体记录、C的联合<br>eg：<br>变体记录定义如下：</li>
+</ol>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> dept=(house,sports,drugs,food,liquor);</span><br><span class="line">month=<span class="number">1</span>..<span class="number">12</span>;</span><br><span class="line">item=<span class="keyword">record</span></span><br><span class="line">    price:real;</span><br><span class="line">    <span class="keyword">case</span> available:boolean <span class="keyword">of</span></span><br><span class="line">        true:(amount:integer;  </span><br><span class="line">            where:dept);</span><br><span class="line">        false:(month_expected:month)</span><br><span class="line"> <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+
+<p>实现代码如下：</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i1,i2:item:</span><br><span class="line">i1.price:=<span class="number">5.24</span>;i1.available:=true;</span><br><span class="line">i1.amount:=<span class="number">29</span>;i1.where:=liquor;</span><br><span class="line">i2.price:=<span class="number">324.99</span>;i2.available:=false;</span><br><span class="line">i2.month_expect:=<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+<p>则空间分配情况如下：</p>
+<center>i1</center>
+
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>price</td>
+<td>5.24</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>29</td>
+</tr>
+<tr>
+<td>where</td>
+<td>liquor</td>
+</tr>
+</tbody></table>
+<center>i2</center>
+
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>price</td>
+<td>324.99</td>
+</tr>
+<tr>
+<td>available</td>
+<td>false</td>
+</tr>
+<tr>
+<td>month_expected</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ol start="4">
+<li>幂集<br>定义：类型T的元素的所有子集的集合，T为基类型</li>
+</ol>
+</blockquote>
+</li>
+<li><p>抽象数据类型</p>
+</li>
+</ol>
+</li>
+<li><p>C语言的数据类型<br>$$<br>数据类型\left{</p>
+<pre><code>\begin&#123;aligned&#125;
+&amp;基本类型\left\&#123;
+    \begin&#123;aligned&#125;
+    &amp;整型int\\
+    &amp;字符型char\\
+    &amp;实型（浮点型）\left\&#123;
+        \begin&#123;aligned&#125;
+        &amp;单精度实型float\\
+        &amp;双精度实型double
+        \end&#123;aligned&#125;
+        \right .
+    \end&#123;aligned&#125;
+\right.\\
+&amp;构造类型\left\&#123;
+    \begin&#123;aligned&#125;
+    &amp;数组类型\\
+    &amp;结构类型struct\\
+    &amp;联合类型union\\
+    &amp;枚举类型enum
+    \end&#123;aligned&#125;
+\right.\\
+&amp;指针类型\\
+&amp;空类型(无值类型)void
+\end&#123;aligned&#125;
+</code></pre>
+<p>\right.<br>$$</p>
+<ol>
+<li><p>非结构类型：<br>1.内部类型<br>整型：int、short、long、unsigned<br>浮点型：float、double<br>字符型：char（有限字符集的元素）</p>
+<ol start="2">
+<li>用户定义的非结构类型<br>枚举：enum</li>
+</ol>
+</li>
+<li><p>结构类型</p>
+<ol>
+<li>数组</li>
+<li>结构struct</li>
+<li>联合union（C的联合是不安全的）</li>
+<li>文件FILE</li>
+</ol>
+</li>
+<li><p>指针</p>
+</li>
+<li><p>空类型void</p>
+</li>
+</ol>
+<blockquote>
+<p>不允许定义空类型变量，可以定义空类型指针变量</p>
+</blockquote>
+</li>
+<li><p>类型检查<br>定义：对数据的操作和对应的类型是否匹配的一致性检查<br>eg：非法运算、赋值运算、形参实参类型是否匹配</p>
+<ol>
+<li>静态检查和动态检查</li>
+</ol>
+<blockquote>
+<p>静态检查使程序更有效<br>动态检查是编程更方便，但是影响了可靠性且降低了执行效率</p>
+</blockquote>
+<ol start="2">
+<li>语言分类</li>
+</ol>
+<blockquote>
+<p>无类型语言：没有数据类型<br>eg：函数式语言（FP）、泛函程序设计语言（FFP）<br>弱类型语言：类型检查全部或部分在运行时完成<br>eg：PASCAL<br>强类型语言：类型检查都在编译时完成<br>eg：C、ADA</p>
+</blockquote>
+</li>
+<li><p>实现模型<br>在程序中，数据由常量或变量表示<br>在实现模型中，数据由描述符（描述数据对象的属性）和数据对象（存储区及其内容）表示</p>
+<blockquote>
+<ol>
+<li>内部类型和用户定义的非结构类型：描述符一般由类型描述和指针组成<br><strong>多个变量的描述符形成变量名表</strong><br>eg：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051"></p>
+<ol start="2">
+<li>结构类型</li>
+</ol>
+<ul>
+<li>笛卡尔积<br>各成分按顺序存储，每个成分占整数个存储单元<br>描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br>eg：</li>
+</ul>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373"></p>
+<ul>
+<li>有限映像<br>为每一成分分配整数个可编址的存储单元<br>描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br>eg：</li>
+</ul>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254"></p>
+<ul>
+<li>序列<br>可变长串的表示：静态描述符+动态描述符+堆</li>
+</ul>
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371"></p>
+<ul>
+<li>判定或<br>pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
+</ul>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987"></p>
+<ul>
+<li><p>指针</p>
+<p>表示与内部类型相同只是其值为地址</p>
+<p>指针指向的匿名数据对象分配在堆上</p>
+</li>
+<li><p><strong>编译时所有的描述符保存在一张表中以便编译时使用，甚至有些描述符要保存到运行阶段（数组），并且存储在描述符中的属性可能随运行而变化。</strong></p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="">
     <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/13/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%80%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -421,16 +1308,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
