@@ -20,25 +20,25 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="编译原理第二章 数据类型的分类  内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制    用户定义类型   有限映像：定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）eg：array[1..50] of char 中整数1至50到字符集的有限映像 序列：定义：任意多个数据项组成，数据项称为序列的成分，且类型相同">
+  <meta name="description" content="编译原理第二章   数据类型的分类   内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制     用户定义类型   有限映像： 定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射） eg：array[1…50] of char 中整数1至50到字符集的有限映像 序列： 定义：任意多个数据项组成，数据项称为序列的成">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理第二章">
 <meta property="og:url" content="http://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="编译原理第二章 数据类型的分类  内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制    用户定义类型   有限映像：定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）eg：array[1..50] of char 中整数1至50到字符集的有限映像 序列：定义：任意多个数据项组成，数据项称为序列的成分，且类型相同">
+<meta property="og:description" content="编译原理第二章   数据类型的分类   内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制     用户定义类型   有限映像： 定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射） eg：array[1…50] of char 中整数1至50到字符集的有限映像 序列： 定义：任意多个数据项组成，数据项称为序列的成">
 <meta property="og:locale">
-<meta property="og:image" content="http://wsw8.online/images/编译原理第二章/image-20210411152405051.png">
-<meta property="og:image" content="http://wsw8.online/images/编译原理第二章/image-20210411155756373.png">
-<meta property="og:image" content="http://wsw8.online/images/编译原理第二章/image-20210411160449254.png">
-<meta property="og:image" content="http://wsw8.online/images/编译原理第二章/image-20210411161113371.png">
-<meta property="og:image" content="http://wsw8.online/images/编译原理第二章/image-20210411161638987.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png">
 <meta property="article:published_time" content="2021-04-14T10:49:14.000Z">
 <meta property="article:modified_time" content="2021-04-14T10:50:37.090Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="课程">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://wsw8.online/images/编译原理第二章/image-20210411152405051.png">
+<meta name="twitter:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png">
 
 <link rel="canonical" href="http://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
 
@@ -206,10 +206,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="编译原理第二章"><a href="#编译原理第二章" class="headerlink" title="编译原理第二章"></a>编译原理第二章</h3><ol>
-<li><p>数据类型的分类</p>
+        <h3 id="编译原理第二章"><a class="markdownIt-Anchor" href="#编译原理第二章"></a> 编译原理第二章</h3>
 <ol>
-<li><p>内部类型</p>
+<li>
+<p>数据类型的分类</p>
+<ol>
+<li>
+<p>内部类型</p>
 <blockquote>
 <p>优点：</p>
 <ol>
@@ -220,128 +223,224 @@
 </ol>
 </blockquote>
 </li>
-<li><p>用户定义类型</p>
+<li>
+<p>用户定义类型</p>
 <blockquote>
 <ol>
-<li>有限映像：<br>定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）<br>eg：array[1..50] of char 中整数1至50到字符集的有限映像</li>
-<li>序列：<br>定义：任意多个数据项组成，数据项称为序列的成分，且<strong>类型相同</strong></li>
-<li>判定或：<br>定义：可以选择不同成员的构造机制<br>eg：PASCAL的变体记录、C的联合<br>eg：<br>变体记录定义如下：</li>
+<li>有限映像：<br />
+定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）<br />
+eg：array[1…50] of char 中整数1至50到字符集的有限映像</li>
+<li>序列：<br />
+定义：任意多个数据项组成，数据项称为序列的成分，且<strong>类型相同</strong></li>
+<li>判定或：<br />
+定义：可以选择不同成员的构造机制<br />
+eg：PASCAL的变体记录、C的联合<br />
+eg：<br />
+变体记录定义如下：</li>
 </ol>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> dept=(house,sports,drugs,food,liquor);</span><br><span class="line">month=<span class="number">1</span>..<span class="number">12</span>;</span><br><span class="line">item=<span class="keyword">record</span></span><br><span class="line">    price:real;</span><br><span class="line">    <span class="keyword">case</span> available:boolean <span class="keyword">of</span></span><br><span class="line">        true:(amount:integer;  </span><br><span class="line">            where:dept);</span><br><span class="line">        false:(month_expected:month)</span><br><span class="line"> <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
 <p>实现代码如下：</p>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i1,i2:item:</span><br><span class="line">i1.price:=<span class="number">5.24</span>;i1.available:=true;</span><br><span class="line">i1.amount:=<span class="number">29</span>;i1.where:=liquor;</span><br><span class="line">i2.price:=<span class="number">324.99</span>;i2.available:=false;</span><br><span class="line">i2.month_expect:=<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
 <p>则空间分配情况如下：</p>
 <center>i1</center>
-
-<p>| 变量名    | 值     |<br>| ————- | ——— |<br>| price     | 5.24   |<br>| available | true   |<br>| amount    | 29     |<br>| where     | liquor |</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td>5.24</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>29</td>
+</tr>
+<tr>
+<td>where</td>
+<td>liquor</td>
+</tr>
+</tbody>
+</table>
 <center>i2</center>
-
-<p>| 变量名         | 值     |<br>| ——————— | ——— |<br>| price          | 324.99 |<br>| available      | false  |<br>| month_expected | 8      |<br>|                |        |</p>
-<ol>
-<li>幂集<br>定义：类型T的元素的所有子集的集合，T为基类型</li>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td>324.99</td>
+</tr>
+<tr>
+<td>available</td>
+<td>false</td>
+</tr>
+<tr>
+<td>month_expected</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>幂集<br />
+定义：类型T的元素的所有子集的集合，T为基类型</li>
 </ol>
 </blockquote>
 </li>
-<li><p>抽象数据类型</p>
+<li>
+<p>抽象数据类型</p>
 </li>
 </ol>
 </li>
-<li><p>C语言的数据类型</p>
-<script type="math/tex; mode=display">
-数据类型\left\{
+<li>
+<p>C语言的数据类型</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">数</mi><mi mathvariant="normal">据</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mrow><mo fence="true">{</mo><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">基</mi><mi mathvariant="normal">本</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mrow><mo fence="true">{</mo><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">整</mi><mi mathvariant="normal">型</mi><mi>i</mi><mi>n</mi><mi>t</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">字</mi><mi mathvariant="normal">符</mi><mi mathvariant="normal">型</mi><mi>c</mi><mi>h</mi><mi>a</mi><mi>r</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">实</mi><mi mathvariant="normal">型</mi><mi mathvariant="normal">（</mi><mi mathvariant="normal">浮</mi><mi mathvariant="normal">点</mi><mi mathvariant="normal">型</mi><mi mathvariant="normal">）</mi><mrow><mo fence="true">{</mo><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">单</mi><mi mathvariant="normal">精</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">实</mi><mi mathvariant="normal">型</mi><mi>f</mi><mi>l</mi><mi>o</mi><mi>a</mi><mi>t</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">双</mi><mi mathvariant="normal">精</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">实</mi><mi mathvariant="normal">型</mi><mi>d</mi><mi>o</mi><mi>u</mi><mi>b</mi><mi>l</mi><mi>e</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">构</mi><mi mathvariant="normal">造</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mrow><mo fence="true">{</mo><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">数</mi><mi mathvariant="normal">组</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">结</mi><mi mathvariant="normal">构</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>u</mi><mi>c</mi><mi>t</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">联</mi><mi mathvariant="normal">合</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mi>u</mi><mi>n</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">枚</mi><mi mathvariant="normal">举</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mi>e</mi><mi>n</mi><mi>u</mi><mi>m</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">指</mi><mi mathvariant="normal">针</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mi mathvariant="normal">空</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mo stretchy="false">(</mo><mi mathvariant="normal">无</mi><mi mathvariant="normal">值</mi><mi mathvariant="normal">类</mi><mi mathvariant="normal">型</mi><mo stretchy="false">)</mo><mi>v</mi><mi>o</mi><mi>i</mi><mi>d</mi></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">数据类型\left\{
     \begin{aligned}
-    &基本类型\left\{
+    &amp;基本类型\left\{
         \begin{aligned}
-        &整型int\\
-        &字符型char\\
-        &实型（浮点型）\left\{
+        &amp;整型int\\
+        &amp;字符型char\\
+        &amp;实型（浮点型）\left\{
             \begin{aligned}
-            &单精度实型float\\
-            &双精度实型double
+            &amp;单精度实型float\\
+            &amp;双精度实型double
             \end{aligned}
             \right .
         \end{aligned}
     \right.\\
-    &构造类型\left\{
+    &amp;构造类型\left\{
         \begin{aligned}
-        &数组类型\\
-        &结构类型struct\\
-        &联合类型union\\
-        &枚举类型enum
+        &amp;数组类型\\
+        &amp;结构类型struct\\
+        &amp;联合类型union\\
+        &amp;枚举类型enum
         \end{aligned}
     \right.\\
-    &指针类型\\
-    &空类型(无值类型)void
+    &amp;指针类型\\
+    &amp;空类型(无值类型)void
     \end{aligned}
-\right.</script><ol>
-<li><p>非结构类型：<br>1.内部类型<br>整型：int、short、long、unsigned<br>浮点型：float、double<br>字符型：char（有限字符集的元素）</p>
+\right.
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:15.900070000000001em;vertical-align:-7.7000350000000015em;"></span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">据</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:8.050019999999995em;"><span style="top:3.5000099999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:3.50001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:3.2000100000000002em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:2.9000100000000004em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:2.6000100000000006em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:2.3000100000000008em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:2.000010000000001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:1.7000100000000011em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:1.4000100000000013em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:1.1000100000000015em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:0.8000100000000017em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:0.5000100000000018em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:0.20001000000000202em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.0999899999999978em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.3999899999999976em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.6999899999999974em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-0.9999899999999973em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.2999899999999973em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.5999899999999974em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.8999899999999974em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-2.1999899999999974em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.1500099999999978em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.300009999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.6000099999999975em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.900009999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.200009999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.500009999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.800009999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-6.1000099999999975em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-6.400009999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-6.700009999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.000009999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.300009999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.600009999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-7.900009999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-8.200009999999995em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-8.500009999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-8.800009999999995em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-9.100009999999996em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-9.400009999999995em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-9.700009999999995em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-10.000009999999994em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-10.300019999999995em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:7.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:8.200035em;"><span style="top:-10.200035em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"></span></span><span style="top:-3.749999999999999em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"></span></span><span style="top:0.1400200000000007em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"></span></span><span style="top:1.6400200000000007em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:7.7000350000000015em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:8.200035em;"><span style="top:-10.200035em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">基</span><span class="mord cjk_fallback">本</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.2500199999999997em;"><span style="top:-1.2999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-1.2999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.5999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.8999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-2.1999899999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.15001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.30001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.60001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.90001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.20001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.500019999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.75002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.4000150000000007em;"><span style="top:-6.310015000000001em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"></span></span><span style="top:-4.810015em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"></span></span><span style="top:-2.4000149999999993em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.9000150000000007em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.4000150000000007em;"><span style="top:-6.310015000000001em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">整</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span></span><span style="top:-4.810015em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">字</span><span class="mord cjk_fallback">符</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-2.4000149999999993em;"><span class="pstrut" style="height:3.75em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">实</span><span class="mord cjk_fallback">型</span><span class="mord cjk_fallback">（</span><span class="mord cjk_fallback">浮</span><span class="mord cjk_fallback">点</span><span class="mord cjk_fallback">型</span><span class="mord cjk_fallback">）</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">{</span></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.75em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-2.25em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7500000000000002em;"><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">单</span><span class="mord cjk_fallback">精</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">实</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span></span></span><span style="top:-2.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">双</span><span class="mord cjk_fallback">精</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">实</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2500000000000002em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.9000150000000007em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.749999999999999em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">构</span><span class="mord cjk_fallback">造</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.2500199999999997em;"><span style="top:-1.2999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎩</span></span></span><span style="top:-1.2999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.5999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-1.8999899999999998em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-2.1999899999999997em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-3.15001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎨</span></span></span><span style="top:-4.30001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.60001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-4.90001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.20001em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎪</span></span></span><span style="top:-5.500019999999999em;"><span class="pstrut" style="height:3.15em;"></span><span class="delimsizinginner delim-size4"><span>⎧</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.75002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.25em;"><span style="top:-5.25em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-3.75em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-2.249999999999999em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span><span style="top:-0.7499999999999996em;"><span class="pstrut" style="height:2.84em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.7500000000000004em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.25em;"><span style="top:-5.41em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">组</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span></span></span><span style="top:-3.91em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">结</span><span class="mord cjk_fallback">构</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">u</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span></span></span><span style="top:-2.4099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">联</span><span class="mord cjk_fallback">合</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">i</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span></span></span><span style="top:-0.9099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">枚</span><span class="mord cjk_fallback">举</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.7500000000000004em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:0.1400200000000007em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">指</span><span class="mord cjk_fallback">针</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span></span></span><span style="top:1.6400200000000007em;"><span class="pstrut" style="height:5.400015000000001em;"></span><span class="mord"><span class="mord"></span><span class="mord cjk_fallback">空</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mopen">(</span><span class="mord cjk_fallback">无</span><span class="mord cjk_fallback">值</span><span class="mord cjk_fallback">类</span><span class="mord cjk_fallback">型</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">o</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:7.7000350000000015em;"><span></span></span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 <ol>
-<li>用户定义的非结构类型<br>枚举：enum</li>
+<li>
+<p>非结构类型：<br />
+1.内部类型<br />
+整型：int、short、long、unsigned<br />
+浮点型：float、double<br />
+字符型：char（有限字符集的元素）</p>
+<ol start="2">
+<li>用户定义的非结构类型<br />
+枚举：enum</li>
 </ol>
 </li>
-<li>结构类型<ol>
+<li>
+<p>结构类型</p>
+<ol>
 <li>数组</li>
 <li>结构struct</li>
 <li>联合union（C的联合是不安全的）</li>
 <li>文件FILE</li>
 </ol>
 </li>
-<li>指针</li>
-<li>空类型void</li>
+<li>
+<p>指针</p>
+</li>
+<li>
+<p>空类型void</p>
+</li>
 </ol>
 <blockquote>
 <p>不允许定义空类型变量，可以定义空类型指针变量</p>
 </blockquote>
 </li>
-<li><p>类型检查<br>定义：对数据的操作和对应的类型是否匹配的一致性检查<br>eg：非法运算、赋值运算、形参实参类型是否匹配</p>
+<li>
+<p>类型检查<br />
+定义：对数据的操作和对应的类型是否匹配的一致性检查<br />
+eg：非法运算、赋值运算、形参实参类型是否匹配</p>
 <ol>
 <li>静态检查和动态检查</li>
 </ol>
 <blockquote>
-<p>静态检查使程序更有效<br>动态检查是编程更方便，但是影响了可靠性且降低了执行效率</p>
+<p>静态检查使程序更有效<br />
+动态检查是编程更方便，但是影响了可靠性且降低了执行效率</p>
 </blockquote>
-<ol>
+<ol start="2">
 <li>语言分类</li>
 </ol>
 <blockquote>
-<p>无类型语言：没有数据类型<br>eg：函数式语言（FP）、泛函程序设计语言（FFP）<br>弱类型语言：类型检查全部或部分在运行时完成<br>eg：PASCAL<br>强类型语言：类型检查都在编译时完成<br>eg：C、ADA</p>
+<p>无类型语言：没有数据类型<br />
+eg：函数式语言（FP）、泛函程序设计语言（FFP）<br />
+弱类型语言：类型检查全部或部分在运行时完成<br />
+eg：PASCAL<br />
+强类型语言：类型检查都在编译时完成<br />
+eg：C、ADA</p>
 </blockquote>
 </li>
-<li><p>实现模型<br>在程序中，数据由常量或变量表示<br>在实现模型中，数据由描述符（描述数据对象的属性）和数据对象（存储区及其内容）表示</p>
+<li>
+<p>实现模型<br />
+在程序中，数据由常量或变量表示<br />
+在实现模型中，数据由描述符（描述数据对象的属性）和数据对象（存储区及其内容）表示</p>
 <blockquote>
 <ol>
-<li>内部类型和用户定义的非结构类型：描述符一般由类型描述和指针组成<br><strong>多个变量的描述符形成变量名表</strong><br>eg：</li>
+<li>内部类型和用户定义的非结构类型：描述符一般由类型描述和指针组成<br />
+<strong>多个变量的描述符形成变量名表</strong><br />
+eg：</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/编译原理第二章/image-20210411152405051.png" alt="image-20210411152405051"></p>
-<ol>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p>
+<ol start="2">
 <li>结构类型</li>
 </ol>
 <ul>
-<li>笛卡尔积<br>各成分按顺序存储，每个成分占整数个存储单元<br>描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br>eg：</li>
+<li>笛卡尔积<br />
+各成分按顺序存储，每个成分占整数个存储单元<br />
+描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br />
+eg：</li>
 </ul>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/编译原理第二章/image-20210411155756373.png" alt="image-20210411155756373"></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p>
 <ul>
-<li>有限映像<br>为每一成分分配整数个可编址的存储单元<br>描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br>eg：</li>
+<li>有限映像<br />
+为每一成分分配整数个可编址的存储单元<br />
+描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br />
+eg：</li>
 </ul>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/编译原理第二章/image-20210411160449254.png" alt="image-20210411160449254"></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p>
 <ul>
-<li>序列<br>可变长串的表示：静态描述符+动态描述符+堆</li>
+<li>序列<br />
+可变长串的表示：静态描述符+动态描述符+堆</li>
 </ul>
-<p><img src="/images/编译原理第二章/image-20210411161113371.png" alt="image-20210411161113371"></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371" /></p>
 <ul>
-<li>判定或<br>pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
+<li>判定或<br />
+pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
 </ul>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/编译原理第二章/image-20210411161638987.png" alt="image-20210411161638987"></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p>
 <ul>
-<li><p>指针</p>
+<li>
+<p>指针</p>
 <p>表示与内部类型相同只是其值为地址</p>
 <p>指针指向的匿名数据对象分配在堆上</p>
 </li>
-<li><p><strong>编译时所有的描述符保存在一张表中以便编译时使用，甚至有些描述符要保存到运行阶段（数组），并且存储在描述符中的属性可能随运行而变化。</strong></p>
+<li>
+<p><strong>编译时所有的描述符保存在一张表中以便编译时使用，甚至有些描述符要保存到运行阶段（数组），并且存储在描述符中的属性可能随运行而变化。</strong></p>
 </li>
 </ul>
 </blockquote>
@@ -431,7 +530,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text">编译原理第二章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text"> 编译原理第二章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="下载nodejs和cnpm直接在nodejs官网进行下载并安装node -v命令查看node的版本npm -v命令查看npm的版本然后利用npm安装淘宝的cnpm，下载速度快一些npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org命令安装淘宝的cnpm包管理器cnpm -v命令查看cnpm的版本  下载hexo并创建本地的静态博">
+  <meta name="description" content="下载nodejs和cnpm 直接在nodejs官网进行下载并安装 node -v命令查看node的版本 npm -v命令查看npm的版本 然后利用npm安装淘宝的cnpm，下载速度快一些 npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org命令安装淘宝的cnpm包管理器 cnpm -v命令查看cnpm的版本   下载hexo并">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+github&#x2F;aliyun搭建静态博客">
 <meta property="og:url" content="http://wsw8.online/2021/04/14/hexo-github-aliyun%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="下载nodejs和cnpm直接在nodejs官网进行下载并安装node -v命令查看node的版本npm -v命令查看npm的版本然后利用npm安装淘宝的cnpm，下载速度快一些npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org命令安装淘宝的cnpm包管理器cnpm -v命令查看cnpm的版本  下载hexo并创建本地的静态博">
+<meta property="og:description" content="下载nodejs和cnpm 直接在nodejs官网进行下载并安装 node -v命令查看node的版本 npm -v命令查看npm的版本 然后利用npm安装淘宝的cnpm，下载速度快一些 npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org命令安装淘宝的cnpm包管理器 cnpm -v命令查看cnpm的版本   下载hexo并">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-14T10:45:23.000Z">
 <meta property="article:modified_time" content="2021-04-14T10:47:07.918Z">
@@ -200,21 +200,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="下载nodejs和cnpm"><a href="#下载nodejs和cnpm" class="headerlink" title="下载nodejs和cnpm"></a>下载nodejs和cnpm</h2><p>直接在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">nodejs官网</a>进行下载并安装<br><code>node -v</code>命令查看node的版本<br><code>npm -v</code>命令查看npm的版本<br>然后利用npm安装淘宝的cnpm，下载速度快一些<br><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>命令安装淘宝的cnpm包管理器<br><code>cnpm -v</code>命令查看cnpm的版本</p>
-<hr>
-<h2 id="下载hexo并创建本地的静态博客"><a href="#下载hexo并创建本地的静态博客" class="headerlink" title="下载hexo并创建本地的静态博客"></a>下载hexo并创建本地的静态博客</h2><p><code>cnpm install -g hexo-cli</code>安装hexo<br><code>hexo -v</code>查看hexo版本<br>然后创建一个你存博客的目录并进入到该目录，你可能会用到<code>mkdir blog</code>,<code>cd blog</code><br><code>hexo init</code>在当前目录下生成博客的框架<br>你可以使用<code>hexo s</code>开启博客，进入<code>http://localhost:4000/</code>查看本地博客内容<br><code>hexo n &quot;文章名&quot;</code>创建新的文章<br>然后找到<code>\source\_post</code>目录下编辑文章即可，使用markdown语法</p>
-<hr>
-<h2 id="部署到GitHub上"><a href="#部署到GitHub上" class="headerlink" title="部署到GitHub上"></a>部署到GitHub上</h2><p>首先在你的GitHub上新建一个仓库，命名为<code>YourGithubName.github.io</code><br>然后<code>cnpm install --save hexo-deployer-git</code>在blog目录下安装git部署插件<br>下面配置_config.yml</p>
+        <h2 id="下载nodejs和cnpm"><a class="markdownIt-Anchor" href="#下载nodejs和cnpm"></a> 下载nodejs和cnpm</h2>
+<p>直接在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">nodejs官网</a>进行下载并安装<br />
+<code>node -v</code>命令查看node的版本<br />
+<code>npm -v</code>命令查看npm的版本<br />
+然后利用npm安装淘宝的cnpm，下载速度快一些<br />
+<code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>命令安装淘宝的cnpm包管理器<br />
+<code>cnpm -v</code>命令查看cnpm的版本</p>
+<hr />
+<h2 id="下载hexo并创建本地的静态博客"><a class="markdownIt-Anchor" href="#下载hexo并创建本地的静态博客"></a> 下载hexo并创建本地的静态博客</h2>
+<p><code>cnpm install -g hexo-cli</code>安装hexo<br />
+<code>hexo -v</code>查看hexo版本<br />
+然后创建一个你存博客的目录并进入到该目录，你可能会用到<code>mkdir blog</code>,<code>cd blog</code><br />
+<code>hexo init</code>在当前目录下生成博客的框架<br />
+你可以使用<code>hexo s</code>开启博客，进入<code>http://localhost:4000/</code>查看本地博客内容<br />
+<code>hexo n &quot;文章名&quot;</code>创建新的文章<br />
+然后找到<code>\source\_post</code>目录下编辑文章即可，使用markdown语法</p>
+<hr />
+<h2 id="部署到github上"><a class="markdownIt-Anchor" href="#部署到github上"></a> 部署到GitHub上</h2>
+<p>首先在你的GitHub上新建一个仓库，命名为<code>YourGithubName.github.io</code><br />
+然后<code>cnpm install --save hexo-deployer-git</code>在blog目录下安装git部署插件<br />
+下面配置_config.yml</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line"> 		<span class="built_in">type</span>: git</span><br><span class="line">		repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line"> 		branch: master</span><br></pre></td></tr></table></figure>
-<p>最后运行以下三条命令：<br><code>hexo clean</code>清理<br><code>hexo g</code>生成<br><code>hexo d</code>部署<br>以上三条命令基本是每次修改博客后都要运行的<br>最后在<code>https://YourGithubName.github.io</code>下就可以查看啦！</p>
-<hr>
-<h2 id="主题的更换"><a href="#主题的更换" class="headerlink" title="主题的更换"></a>主题的更换</h2><p>更改主题一般分两步：<br>1、<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>利用git将别人仓库里的主题克隆到自己的blog下的themes文件夹里<br>2、修改blog目录下的 _config.yml 文件中的  theme改为theme: yilia<br><strong>注意：这里的GitHub地址是示例，虽然这个大佬写的也挺好看的；themes下的文件夹名要和theme冒号后面的名称一样</strong><br>更改完成，运行上面的三条命令就可以看到变化啦（比较慢，多等一会，用本地查看会快一些）</p>
-<hr>
-<h2 id="一些个性化的定制"><a href="#一些个性化的定制" class="headerlink" title="一些个性化的定制"></a>一些个性化的定制</h2><h3 id="看板娘的添加"><a href="#看板娘的添加" class="headerlink" title="看板娘的添加"></a>看板娘的添加</h3><p>明天再更</p>
-<h3 id="网址小图标的添加"><a href="#网址小图标的添加" class="headerlink" title="网址小图标的添加"></a>网址小图标的添加</h3><p>内容</p>
-<h3 id="主题里一些内容的简单定制"><a href="#主题里一些内容的简单定制" class="headerlink" title="主题里一些内容的简单定制"></a>主题里一些内容的简单定制</h3><p>内容</p>
-<hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>1、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">b站大佬视频讲解</a></p>
+<p>最后运行以下三条命令：<br />
+<code>hexo clean</code>清理<br />
+<code>hexo g</code>生成<br />
+<code>hexo d</code>部署<br />
+以上三条命令基本是每次修改博客后都要运行的<br />
+最后在<code>https://YourGithubName.github.io</code>下就可以查看啦！</p>
+<hr />
+<h2 id="主题的更换"><a class="markdownIt-Anchor" href="#主题的更换"></a> 主题的更换</h2>
+<p>更改主题一般分两步：<br />
+1、<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>利用git将别人仓库里的主题克隆到自己的blog下的themes文件夹里<br />
+2、修改blog目录下的 _config.yml 文件中的  theme改为theme: yilia<br />
+<strong>注意：这里的GitHub地址是示例，虽然这个大佬写的也挺好看的；themes下的文件夹名要和theme冒号后面的名称一样</strong><br />
+更改完成，运行上面的三条命令就可以看到变化啦（比较慢，多等一会，用本地查看会快一些）</p>
+<hr />
+<h2 id="一些个性化的定制"><a class="markdownIt-Anchor" href="#一些个性化的定制"></a> 一些个性化的定制</h2>
+<h3 id="看板娘的添加"><a class="markdownIt-Anchor" href="#看板娘的添加"></a> 看板娘的添加</h3>
+<p>明天再更</p>
+<h3 id="网址小图标的添加"><a class="markdownIt-Anchor" href="#网址小图标的添加"></a> 网址小图标的添加</h3>
+<p>内容</p>
+<h3 id="主题里一些内容的简单定制"><a class="markdownIt-Anchor" href="#主题里一些内容的简单定制"></a> 主题里一些内容的简单定制</h3>
+<p>内容</p>
+<hr />
+<h2 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h2>
+<p>1、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty">b站大佬视频讲解</a></p>
 
     </div>
 
@@ -296,7 +327,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDnodejs%E5%92%8Ccnpm"><span class="nav-number">1.</span> <span class="nav-text">下载nodejs和cnpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDhexo%E5%B9%B6%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text">下载hexo并创建本地的静态博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0GitHub%E4%B8%8A"><span class="nav-number">3.</span> <span class="nav-text">部署到GitHub上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84%E6%9B%B4%E6%8D%A2"><span class="nav-number">4.</span> <span class="nav-text">主题的更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E4%B8%AA%E6%80%A7%E5%8C%96%E7%9A%84%E5%AE%9A%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">一些个性化的定制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E6%9D%BF%E5%A8%98%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="nav-number">5.1.</span> <span class="nav-text">看板娘的添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%9D%80%E5%B0%8F%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="nav-number">5.2.</span> <span class="nav-text">网址小图标的添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%87%8C%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9A%E5%88%B6"><span class="nav-number">5.3.</span> <span class="nav-text">主题里一些内容的简单定制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDnodejs%E5%92%8Ccnpm"><span class="nav-number">1.</span> <span class="nav-text"> 下载nodejs和cnpm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDhexo%E5%B9%B6%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text"> 下载hexo并创建本地的静态博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A"><span class="nav-number">3.</span> <span class="nav-text"> 部署到GitHub上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84%E6%9B%B4%E6%8D%A2"><span class="nav-number">4.</span> <span class="nav-text"> 主题的更换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E4%B8%AA%E6%80%A7%E5%8C%96%E7%9A%84%E5%AE%9A%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text"> 一些个性化的定制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E6%9D%BF%E5%A8%98%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="nav-number">5.1.</span> <span class="nav-text"> 看板娘的添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E5%9D%80%E5%B0%8F%E5%9B%BE%E6%A0%87%E7%9A%84%E6%B7%BB%E5%8A%A0"><span class="nav-number">5.2.</span> <span class="nav-text"> 网址小图标的添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%87%8C%E4%B8%80%E4%BA%9B%E5%86%85%E5%AE%B9%E7%9A%84%E7%AE%80%E5%8D%95%E5%AE%9A%E5%88%B6"><span class="nav-number">5.3.</span> <span class="nav-text"> 主题里一些内容的简单定制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">6.</span> <span class="nav-text"> 参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
