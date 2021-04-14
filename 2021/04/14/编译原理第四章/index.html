@@ -27,18 +27,18 @@
 <meta property="og:site_name" content="江湖">
 <meta property="og:description" content="编译原理第四章——程序语言的设计（程序设计）语言的定义语言&#x3D;语法（规则）+语义（规则） 语法：构造程序及其成分（单词、语法单位）的规则集合 语义：定义语言的单词符号和语法单位的作用和意义的规则组合  可以从生成（文法）和识别（语法图）的角度描述语法 文法描述语法规则：生成角度   &lt;标识符&gt;→&lt;字母&gt;  &lt;标识符&gt;→&lt;标识符&gt;&lt;字母&gt;">
 <meta property="og:locale">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153851229.png">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153918317.png">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153937838.png">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413154819595.png">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413155020391.png">
+<meta property="og:image" content="http://wsw8.online/images/编译原理第四章/image-20210413153851229.png">
+<meta property="og:image" content="http://wsw8.online/images/编译原理第四章/image-20210413153918317.png">
+<meta property="og:image" content="http://wsw8.online/images/编译原理第四章/image-20210413153937838.png">
+<meta property="og:image" content="http://wsw8.online/images/编译原理第四章/image-20210413154819595.png">
+<meta property="og:image" content="http://wsw8.online/images/编译原理第四章/image-20210413155020391.png">
 <meta property="article:published_time" content="2021-04-14T10:56:02.000Z">
 <meta property="article:modified_time" content="2021-04-14T10:56:38.236Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="课程">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153851229.png">
+<meta name="twitter:image" content="http://wsw8.online/images/编译原理第四章/image-20210413153851229.png">
 
 <link rel="canonical" href="http://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
 
@@ -213,16 +213,14 @@
 <li><p>可以从生成（文法）和识别（语法图）的角度描述语法</p>
 <h5 id="文法描述语法规则：生成角度"><a href="#文法描述语法规则：生成角度" class="headerlink" title="文法描述语法规则：生成角度"></a>文法描述语法规则：生成角度</h5><blockquote>
 <p>  &lt;标识符&gt;→&lt;字母&gt;<br>  &lt;标识符&gt;→&lt;标识符&gt;&lt;字母&gt;<br>  &lt;标识符&gt;→&lt;标识符&gt;&lt;数字&gt;<br>  &lt;字母&gt;→A|…|Z|a|…|z<br>  &lt;数字&gt;→0|…|9</p>
-</blockquote>
-<blockquote>
 <p>&lt;表达式&gt;→&lt;标识符&gt;<br>&lt;表达式&gt;→(&lt;表达式&gt;)<br>&lt;表达式&gt;→&lt;表达式&gt;&lt;运算符&gt;&lt;表达式&gt;<br>&lt;运算符&gt;→+|-|*|/</p>
 <p><strong>注意：这里没有考虑运算符的优先级</strong></p>
 </blockquote>
 <h5 id="语法图描述语法规则：识别角度"><a href="#语法图描述语法规则：识别角度" class="headerlink" title="语法图描述语法规则：识别角度"></a>语法图描述语法规则：识别角度</h5><blockquote>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153851229.png" alt="image-20210413153851229"></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153918317.png" alt="image-20210413153918317"></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153937838.png" alt="image-20210413153937838"></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413154819595.png" alt="image-20210413154819595"></p>
+<p><img src="/images/编译原理第四章/image-20210413153851229.png" alt="image-20210413153851229"></p>
+<p><img src="/images/编译原理第四章/image-20210413153918317.png" alt="image-20210413153918317"></p>
+<p><img src="/images/编译原理第四章/image-20210413153937838.png" alt="image-20210413153937838"></p>
+<p><img src="/images/编译原理第四章/image-20210413154819595.png" alt="image-20210413154819595"></p>
 <h6 id="识别原则："><a href="#识别原则：" class="headerlink" title="识别原则："></a>识别原则：</h6><ul>
 <li>终结符框:标识的终结符与被识别的终结符刚好符合</li>
 <li>非终结符框:由该非终结符的语法图识别</li>
@@ -231,7 +229,7 @@
 <li>若一个终结符序列是合法的：<br>那么,必须从语法图的入口边通过语法图而到达出口边，<br>且在通过的过程中,恰恰能识别该终结符序列。</li>
 <li>语言：语法图能识别的所有终结符序列的集合。称为语言。</li>
 </ul>
-<h6 id="语法图的构造"><a href="#语法图的构造" class="headerlink" title="语法图的构造"></a>语法图的构造</h6><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413155020391.png" alt="image-20210413155020391"></p>
+<h6 id="语法图的构造"><a href="#语法图的构造" class="headerlink" title="语法图的构造"></a>语法图的构造</h6><p><img src="/images/编译原理第四章/image-20210413155020391.png" alt="image-20210413155020391"></p>
 </blockquote>
 <h5 id="高级语言语法规则描述方法"><a href="#高级语言语法规则描述方法" class="headerlink" title="高级语言语法规则描述方法"></a>高级语言语法规则描述方法</h5><p>FORTRAN采用自然语言描述语法；<br>ALGOL 60首次用BNF对语法进行形式描述,为语言定义做出了重要贡献；<br>Pascal首次采用语法图来定义语言，给出了较为直观的语法结构。</p>
 <h5 id="语法描述方法等价"><a href="#语法描述方法等价" class="headerlink" title="语法描述方法等价"></a>语法描述方法等价</h5><p>   文法和语法图是语言语法的等价表示<br>   文法从产生的观点来定义语言的语法，通用性好。<br>   语法图以识别的观点定义语言的语法，更直观和清晰。</p>
