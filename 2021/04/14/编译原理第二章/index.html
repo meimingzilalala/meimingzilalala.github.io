@@ -244,21 +244,9 @@ eg：PASCAL的变体记录、C的联合<br />
 eg：<br />
 变体记录定义如下：</li>
 </ol>
-<pre><code class="hljs pascal"><span class="hljs-keyword">type</span> dept=(house,sports,drugs,food,liquor);
-month=<span class="hljs-number">1</span>..<span class="hljs-number">12</span>;
-item=<span class="hljs-keyword">record</span>
-    price:real;
-    <span class="hljs-keyword">case</span> available:boolean <span class="hljs-keyword">of</span>
-        true:(amount:integer;  
-            where:dept);
-        false:(month_expected:month)
- <span class="hljs-keyword">end</span>;</code></pre>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> dept=(house,sports,drugs,food,liquor);</span><br><span class="line">month=<span class="number">1</span>..<span class="number">12</span>;</span><br><span class="line">item=<span class="keyword">record</span></span><br><span class="line">    price:real;</span><br><span class="line">    <span class="keyword">case</span> available:boolean <span class="keyword">of</span></span><br><span class="line">        true:(amount:integer;  </span><br><span class="line">            where:dept);</span><br><span class="line">        false:(month_expected:month)</span><br><span class="line"> <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
 <p>实现代码如下：</p>
-<pre><code class="hljs pascal"><span class="hljs-keyword">var</span>  i1,i2:item:
-i1.price:=<span class="hljs-number">5.24</span>;i1.available:=true;
-i1.amount:=<span class="hljs-number">29</span>;i1.where:=liquor;
-i2.price:=<span class="hljs-number">324.99</span>;i2.available:=false;
-i2.month_expect:=<span class="hljs-number">8</span>;</code></pre>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i1,i2:item:</span><br><span class="line">i1.price:=<span class="number">5.24</span>;i1.available:=true;</span><br><span class="line">i1.amount:=<span class="number">29</span>;i1.where:=liquor;</span><br><span class="line">i2.price:=<span class="number">324.99</span>;i2.available:=false;</span><br><span class="line">i2.month_expect:=<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
 <p>则空间分配情况如下：</p>
 <center>i1</center>
 <table>
@@ -382,7 +370,7 @@ eg：C、ADA</p>
 <strong>多个变量的描述符形成变量名表</strong><br />
 eg：</li>
 </ol>
-<pre><code class="hljs c"><span class="hljs-keyword">int</span> numb;</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p>
 <ol start="2">
 <li>结构类型</li>
@@ -393,10 +381,7 @@ eg：</li>
 描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br />
 eg：</li>
 </ul>
-<pre><code class="hljs pascal"><span class="hljs-keyword">type</span> t=recode a:real;
-              b:integer;
-       <span class="hljs-keyword">end</span>;
-<span class="hljs-keyword">var</span> x:t;</code></pre>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p>
 <ul>
 <li>有限映像<br />
@@ -404,7 +389,7 @@ eg：</li>
 描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br />
 eg：</li>
 </ul>
-<pre><code class="hljs pascal"><span class="hljs-keyword">type</span> a=<span class="hljs-keyword">array</span>[<span class="hljs-number">1</span>..<span class="hljs-number">10</span>] <span class="hljs-keyword">of</span> real;</code></pre>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p>
 <ul>
 <li>序列<br />
@@ -415,12 +400,7 @@ eg：</li>
 <li>判定或<br />
 pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
 </ul>
-<pre><code class="hljs pascal"><span class="hljs-keyword">type</span> v=<span class="hljs-keyword">record</span> a:integer;
-              <span class="hljs-keyword">case</span> b:boolean <span class="hljs-keyword">of</span>
-                   true:(c:integer);
-                   false:(d:integer;
-                          e:real)
-       <span class="hljs-keyword">end</span>;</code></pre>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p>
 <ul>
 <li>

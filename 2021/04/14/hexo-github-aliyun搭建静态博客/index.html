@@ -222,12 +222,7 @@
 <p>首先在你的GitHub上新建一个仓库，命名为<code>YourGithubName.github.io</code><br />
 然后<code>cnpm install --save hexo-deployer-git</code>在blog目录下安装git部署插件<br />
 下面配置_config.yml</p>
-<pre><code class="hljs bash"><span class="hljs-comment"># Deployment</span>
-<span class="hljs-comment">## Docs: https://hexo.io/docs/deployment.html</span>
-deploy:
- 		<span class="hljs-built_in">type</span>: git
-    repo: https://github.com/YourGithubName/YourGithubName.github.io.git
- 		branch: master</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line"> 		<span class="built_in">type</span>: git</span><br><span class="line">		repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line"> 		branch: master</span><br></pre></td></tr></table></figure>
 <p>最后运行以下三条命令：<br />
 <code>hexo clean</code>清理<br />
 <code>hexo g</code>生成<br />
