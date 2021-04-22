@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
       "top": y - 28,
       "left": x - a[a_idx].length * 8,
       "position": "absolute",
-      "color": "#ff7a45"
+      "color": "#000000"
     });
     $("body").append($i);
     $i.animate({
