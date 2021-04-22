@@ -20,25 +20,25 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="编译原理第三章-控制结构 定义：规定程序语句和程序单元的执行流程 分类：语句级控制结构、单元级控制结构  语句级控制结构 定义：用来构造语句执行流程的机制 分类：顺序、选择（分支）、重复（循环）">
+  <meta name="description" content="病毒概述  你能学到什么？  代码解密 文件系统和硬盘数据结构 DOS下的病毒技术：文件型病毒，引导型病毒，中断型病毒 Windows下的病毒：PE病毒，导入表，导出表，病毒的入口点模糊技术   先决课程  汇编语言 计算机组成原理   1.1 病毒定义 计算机病毒：病毒特征+程序代码  1.2 病毒的本质与特征 病毒的固有本质属性：人为的特制程序 程序性和客观性决定了病毒的可防治性和可清除性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理第三章">
-<meta property="og:url" content="http://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
+<meta property="og:title" content="病毒_概述">
+<meta property="og:url" content="http://wsw8.online/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="编译原理第三章-控制结构 定义：规定程序语句和程序单元的执行流程 分类：语句级控制结构、单元级控制结构  语句级控制结构 定义：用来构造语句执行流程的机制 分类：顺序、选择（分支）、重复（循环）">
+<meta property="og:description" content="病毒概述  你能学到什么？  代码解密 文件系统和硬盘数据结构 DOS下的病毒技术：文件型病毒，引导型病毒，中断型病毒 Windows下的病毒：PE病毒，导入表，导出表，病毒的入口点模糊技术   先决课程  汇编语言 计算机组成原理   1.1 病毒定义 计算机病毒：病毒特征+程序代码  1.2 病毒的本质与特征 病毒的固有本质属性：人为的特制程序 程序性和客观性决定了病毒的可防治性和可清除性">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413150345535.png">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151632600.png">
-<meta property="og:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151822744.png">
-<meta property="article:published_time" content="2021-04-14T10:51:58.000Z">
-<meta property="article:modified_time" content="2021-04-14T11:53:34.249Z">
+<meta property="og:image" content="http://wsw8.online/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205247089.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205355394.png">
+<meta property="og:image" content="http://wsw8.online/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205811795.png">
+<meta property="article:published_time" content="2021-04-22T11:36:05.000Z">
+<meta property="article:modified_time" content="2021-04-22T13:07:32.512Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="课程">
-<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="病毒">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413150345535.png">
+<meta name="twitter:image" content="http://wsw8.online/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205247089.png">
 
-<link rel="canonical" href="http://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/">
+<link rel="canonical" href="http://wsw8.online/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/">
 
 
 <script id="page-configurations">
@@ -51,7 +51,7 @@
   };
 </script>
 
-  <title>编译原理第三章 | 江湖</title>
+  <title>病毒_概述 | 江湖</title>
   
 
 
@@ -157,7 +157,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://wsw8.online/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -170,7 +170,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          编译原理第三章
+          病毒_概述
         </h1>
 
         <div class="post-meta">
@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-14 18:51:58 / 修改时间：19:53:34" itemprop="dateCreated datePublished" datetime="2021-04-14T18:51:58+08:00">2021-04-14</time>
+              <time title="创建时间：2021-04-22 19:36:05 / 修改时间：21:07:32" itemprop="dateCreated datePublished" datetime="2021-04-22T19:36:05+08:00">2021-04-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -189,12 +189,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">编译原理</span></a>
+                  <a href="/categories/%E7%97%85%E6%AF%92/" itemprop="url" rel="index"><span itemprop="name">病毒</span></a>
                 </span>
             </span>
 
           
-            <span id="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="post-meta-item leancloud_visitors" data-flag-title="编译原理第三章" title="阅读次数">
+            <span id="/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/" class="post-meta-item leancloud_visitors" data-flag-title="病毒_概述" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -209,8 +209,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -225,118 +225,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="编译原理第三章-控制结构"><a class="markdownIt-Anchor" href="#编译原理第三章-控制结构"></a> 编译原理第三章-控制结构</h3>
-<p>定义：规定程序语句和程序单元的执行流程</p>
-<p>分类：语句级控制结构、单元级控制结构</p>
-<h4 id="语句级控制结构"><a class="markdownIt-Anchor" href="#语句级控制结构"></a> 语句级控制结构</h4>
-<p>定义：用来构造语句执行流程的机制</p>
-<p>分类：顺序、选择（分支）、重复（循环）</p>
-<span id="more"></span>
+        <h3 id="病毒概述"><a class="markdownIt-Anchor" href="#病毒概述"></a> 病毒概述</h3>
+<h4 id="你能学到什么"><a class="markdownIt-Anchor" href="#你能学到什么"></a> 你能学到什么？</h4>
+<ol>
+<li>代码解密</li>
+<li>文件系统和硬盘数据结构</li>
+<li>DOS下的病毒技术：文件型病毒，引导型病毒，中断型病毒</li>
+<li>Windows下的病毒：PE病毒，导入表，导出表，病毒的入口点模糊技术</li>
+</ol>
+<h4 id="先决课程"><a class="markdownIt-Anchor" href="#先决课程"></a> 先决课程</h4>
+<ol>
+<li>汇编语言</li>
+<li>计算机组成原理</li>
+</ol>
+<h4 id="11-病毒定义"><a class="markdownIt-Anchor" href="#11-病毒定义"></a> 1.1 病毒定义</h4>
+<p>计算机病毒：病毒特征+程序代码</p>
+<h4 id="12-病毒的本质与特征"><a class="markdownIt-Anchor" href="#12-病毒的本质与特征"></a> 1.2 病毒的本质与特征</h4>
+<p><strong>病毒的固有本质属性：人为的特制程序</strong><br />
+程序性和客观性决定了病毒的可防治性和可清除性<br />
+人为性和主观性导致了病毒各异多变</p>
+<h5 id="基本特征传染性"><a class="markdownIt-Anchor" href="#基本特征传染性"></a> 基本特征：传染性</h5>
+<p>传染性是指计算机病毒把自身复制到其他程序的能力<br />
+即将自身的代码<strong>强行</strong>传染到<strong>一切符合其传染条件</strong>的程序之上<br />
+是否具有传染性是判别一个程序是否为计算机病毒的<strong>首要条件</strong></p>
+<h5 id="基本特征隐蔽性"><a class="markdownIt-Anchor" href="#基本特征隐蔽性"></a> 基本特征：隐蔽性</h5>
+<p>传染过程的隐蔽性<br />
+病毒存在的隐蔽性</p>
+<h5 id="基本特征可触发性"><a class="markdownIt-Anchor" href="#基本特征可触发性"></a> 基本特征：可触发性</h5>
+<p>可触发性是指因某个事件或数值的出现，触发病毒实施感染或攻击破坏<br />
+即隐藏又保持破坏力</p>
+<h5 id="其他基本特征"><a class="markdownIt-Anchor" href="#其他基本特征"></a> 其他基本特征</h5>
+<ol>
+<li>欺骗性</li>
+<li>非授权性</li>
+<li>寄生性</li>
+<li>衍生性</li>
+<li>持久性</li>
+<li>破坏性</li>
+<li>针对性</li>
+<li>不可预见性</li>
+</ol>
+<h4 id="13-病毒的分类"><a class="markdownIt-Anchor" href="#13-病毒的分类"></a> 1.3 病毒的分类</h4>
 <ol>
 <li>
-<p>顺序</p>
-<blockquote>
-<p>语句结束标记 ；</p>
-<p>复合语句：begin……end、{……}</p>
-</blockquote>
+<p>根据病毒表现行为分类</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205247089.png" alt="image-20210422205247089" /></p>
 </li>
 <li>
-<p>选择</p>
-<blockquote>
-<p>单选if then</p>
-<p>二选一if then else</p>
-<p>多选一 嵌套if then else</p>
-</blockquote>
-</li>
-<li>
-<p>重复</p>
-<blockquote>
-<p>计数器制导</p>
-<p>条件制导</p>
-</blockquote>
+<p>根据病毒的内部机理分类<br />
+<img src="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205355394.png" alt="image-20210422205355394" /></p>
 </li>
 </ol>
-<h4 id="单元级控制结构"><a class="markdownIt-Anchor" href="#单元级控制结构"></a> 单元级控制结构</h4>
-<p>定义：规定程序单元之间控制流程的机制</p>
-<h5 id="显式调用从属单元"><a class="markdownIt-Anchor" href="#显式调用从属单元"></a> 显式调用从属单元</h5>
-<blockquote>
-<p>eg：</p>
-<p>FORTRAN语言的子程序和函数</p>
-<p>PASCAL语言的函数和过程</p>
-<p>C语言的函数</p>
-</blockquote>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413150345535.png" alt="image-20210413150345535" /></p>
-<h5 id="隐式调用单元异常处理"><a class="markdownIt-Anchor" href="#隐式调用单元异常处理"></a> 隐式调用单元——异常处理</h5>
-<p>异常定义：导致程序正常执行中止的事件</p>
-<p>异常处理的主要问题：</p>
-<blockquote>
-<ol>
-<li>异常如何说明，它的作用域是什么？</li>
-<li>异常如何发生？（如何捕获异常）</li>
-<li>发生异常时，流程如何转移？</li>
-<li>发生异常时，如何绑定相应的异常处理程序？</li>
-<li>处理异常之后，控制流程转向何处？</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>问题（5）的解决方法：</p>
-<ol>
-<li>
-<p>允许控制返回发生异常事件的执行点</p>
-<p>这种情况下，异常处理程序可对执行的程序进行“修补”，终止相应的异常事件，以便程序继续正常地执行。</p>
-<p>解决了程序继续执行的问题，但并未真正消除发生异常的因素。</p>
-</li>
-<li>
-<p>由异常处理程序进行控制的转移</p>
-<p>意味着引起异常的单元不能恢复执行；从实现的观点来看，这意味着删除异常单元的活动记录。</p>
-</li>
-</ol>
-</blockquote>
-<p>C++语言的异常处理：</p>
-<blockquote>
-<p>设置陷阱 try</p>
-<p>抛出异常 throw</p>
-<p>捕获异常 catch</p>
-<p>C++的异常处理语句的格式如下：<br />
-try  {  … }<br />
-catch (异常类型1) { 异常1处理程序 }<br />
-catch (异常类型2) {异常2处理程序}<br />
-……<br />
-catch (异常类型n) {异常n处理程序}</p>
-</blockquote>
-<p>协同程序间的控制转移关系：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151632600.png" alt="image-20210413151632600" /></p>
-<h4 id="并发单元"><a class="markdownIt-Anchor" href="#并发单元"></a> 并发单元</h4>
-<p>eg：“生产者-消费者”问题</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151822744.png" alt="image-20210413151822744" /></p>
-<h5 id="并行与并发的区别"><a class="markdownIt-Anchor" href="#并行与并发的区别"></a> 并行与并发的区别</h5>
-<blockquote>
-<p>并行”是指无论从微观还是宏观，二者都是一起执行的，就好像两个人各拿一把铁锨在挖坑，一小时后，每人一个大坑。<br />
-而“并发”在微观上不是同时执行的，只是把时间分成若干段，使多个进程快速交替的执行，从宏观外来看，好像是这些进程都在执行，这就好像两个人用同一把铁锨，轮流挖坑，一小时后，两个人各挖一个小一点的坑，要想挖两个大一点得坑，一定会用两个小时。<br />
-从以上本质不难看出，“并发”执行，在多个进程存在资源冲突时，并没有从根本提高执行效率。</p>
-</blockquote>
-<h5 id="同步问题"><a class="markdownIt-Anchor" href="#同步问题"></a> 同步问题</h5>
-<blockquote>
-<p>正确访问存储区</p>
-<ul>
-<li>不会向已满的缓冲区写数据</li>
-<li>不会向空缓冲区读数据</li>
-</ul>
-</blockquote>
-<h5 id="动作的不可分"><a class="markdownIt-Anchor" href="#动作的不可分"></a> 动作的“不可分”</h5>
-<blockquote>
-<p>append是生产者向缓冲区存数的操作</p>
-<p>remove是消费者从缓冲区取数的操作</p>
-<p>设t表示所存项目总数</p>
-<p>这两个操作都要修改t的值,相应执行操作(1)t:=t+1和(2)t:=t-1来实现。</p>
-<p>假定(1)和(2)是这样实现的:<br />
-读t到一个专用寄存器;<br />
-更新专用寄存器的值;<br />
-将专用寄存器的值写到t;</p>
-<p>则：</p>
-<p>执行(1)时不能执行(2),反之亦然。<br />
-即,(1)和(2)必须以互斥的方式执行,(1)或(2)是不可分的操作。</p>
-</blockquote>
+<h4 id="14-恶意程序-蠕虫-木马"><a class="markdownIt-Anchor" href="#14-恶意程序-蠕虫-木马"></a> 1.4 恶意程序 蠕虫 木马</h4>
+<p>恶意程序：未经授权便干扰或破坏计算机系统/网络的程序或代码，早期恶意代码的主要形式是计算机病毒<br />
+蠕虫：独立的可执行程序，不需要寄生在宿主程序中，通过网络分发自己的副本<br />
+病毒和蠕虫的区别：<br />
+<img src="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205811795.png" alt="image-20210422205811795" /><br />
+特洛伊木马：在远程计算机之间建立连接，使得远程计算机能通过网络控制本地计算机的非法程序</p>
+<h4 id="病毒的命名规则"><a class="markdownIt-Anchor" href="#病毒的命名规则"></a> 病毒的命名规则</h4>
 
     </div>
 
@@ -347,7 +293,7 @@ catch (异常类型n) {异常n处理程序}</p>
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
+              <a href="/tags/%E7%97%85%E6%AF%92/" rel="tag"># 病毒</a>
           </div>
 
         
@@ -356,13 +302,10 @@ catch (异常类型n) {异常n处理程序}</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" rel="prev" title="编译原理第二章">
-      <i class="fa fa-chevron-left"></i> 编译原理第二章
+    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/" rel="prev" title="编译原理第四章">
+      <i class="fa fa-chevron-left"></i> 编译原理第四章
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/" rel="next" title="编译原理第四章前导">
-      编译原理第四章前导 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -422,7 +365,7 @@ catch (异常类型n) {异常n处理程序}</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text"> 编译原理第三章-控制结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E5%8F%A5%E7%BA%A7%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text"> 语句级控制结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E5%85%83%E7%BA%A7%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text"> 单元级控制结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%98%BE%E5%BC%8F%E8%B0%83%E7%94%A8%E4%BB%8E%E5%B1%9E%E5%8D%95%E5%85%83"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 显式调用从属单元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%90%E5%BC%8F%E8%B0%83%E7%94%A8%E5%8D%95%E5%85%83%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 隐式调用单元——异常处理</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E5%8D%95%E5%85%83"><span class="nav-number">1.3.</span> <span class="nav-text"> 并发单元</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%B9%B6%E5%8F%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 并行与并发的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 同步问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8A%A8%E4%BD%9C%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%88%86"><span class="nav-number">1.3.3.</span> <span class="nav-text"> 动作的“不可分”</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%97%85%E6%AF%92%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text"> 病毒概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%A0%E8%83%BD%E5%AD%A6%E5%88%B0%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text"> 你能学到什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%88%E5%86%B3%E8%AF%BE%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text"> 先决课程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-%E7%97%85%E6%AF%92%E5%AE%9A%E4%B9%89"><span class="nav-number">1.3.</span> <span class="nav-text"> 1.1 病毒定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-%E7%97%85%E6%AF%92%E7%9A%84%E6%9C%AC%E8%B4%A8%E4%B8%8E%E7%89%B9%E5%BE%81"><span class="nav-number">1.4.</span> <span class="nav-text"> 1.2 病毒的本质与特征</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%E4%BC%A0%E6%9F%93%E6%80%A7"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 基本特征：传染性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%E9%9A%90%E8%94%BD%E6%80%A7"><span class="nav-number">1.4.2.</span> <span class="nav-text"> 基本特征：隐蔽性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81%E5%8F%AF%E8%A7%A6%E5%8F%91%E6%80%A7"><span class="nav-number">1.4.3.</span> <span class="nav-text"> 基本特征：可触发性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-number">1.4.4.</span> <span class="nav-text"> 其他基本特征</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-%E7%97%85%E6%AF%92%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.5.</span> <span class="nav-text"> 1.3 病毒的分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-%E6%81%B6%E6%84%8F%E7%A8%8B%E5%BA%8F-%E8%A0%95%E8%99%AB-%E6%9C%A8%E9%A9%AC"><span class="nav-number">1.6.</span> <span class="nav-text"> 1.4 恶意程序 蠕虫 木马</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%97%85%E6%AF%92%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-number">1.7.</span> <span class="nav-text"> 病毒的命名规则</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
