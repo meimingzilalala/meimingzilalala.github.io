@@ -1241,7 +1241,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff182d;
+  background: #ff91e0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2642,6 +2642,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: 50% 50%;
+}
+/* 侧边栏，圆角后，仍然会有四角。这样就会去除 */
+.sidebar {
+  background: transparent;
+}
+.back-to-top.back-to-top-on {
+  background: transparent;
 }
 .content-wrap {
   opacity: 0.9;
