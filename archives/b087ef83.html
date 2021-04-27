@@ -21,28 +21,24 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="编译原理第二章   数据类型的分类   内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制">
+  <meta name="description" content="病毒基础-代码初始  1. 代码初识 我们需要掌握的工具  vc反汇编调试 文本编辑工具UltraEdit（UE） ollydebug调试（od） 静态反汇编工具ida 汇编代码撰写工具nasm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理第二章">
-<meta property="og:url" content="https://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:title" content="病毒-基础-代码初始">
+<meta property="og:url" content="https://wsw8.online/archives/b087ef83.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="编译原理第二章   数据类型的分类   内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制">
+<meta property="og:description" content="病毒基础-代码初始  1. 代码初识 我们需要掌握的工具  vc反汇编调试 文本编辑工具UltraEdit（UE） ollydebug调试（od） 静态反汇编工具ida 汇编代码撰写工具nasm">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png">
-<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png">
-<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png">
-<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png">
-<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png">
-<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png">
-<meta property="article:published_time" content="2021-04-14T10:49:14.000Z">
-<meta property="article:modified_time" content="2021-04-14T11:54:27.777Z">
+<meta property="og:image" content="https://wsw8.online/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png">
+<meta property="og:image" content="https://wsw8.online/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160536816.png">
+<meta property="article:published_time" content="2021-04-25T06:46:11.000Z">
+<meta property="article:modified_time" content="2021-04-25T08:23:46.774Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="课程">
-<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="病毒">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png">
+<meta name="twitter:image" content="https://wsw8.online/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png">
 
-<link rel="canonical" href="https://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+<link rel="canonical" href="https://wsw8.online/archives/b087ef83.html">
 
 
 <script id="page-configurations">
@@ -55,7 +51,7 @@
   };
 </script>
 
-  <title>编译原理第二章 | 江湖</title>
+  <title>病毒-基础-代码初始 | 江湖</title>
   
 
 
@@ -166,7 +162,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="https://wsw8.online/archives/b087ef83.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -179,7 +175,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          编译原理第二章
+          病毒-基础-代码初始
         </h1>
 
         <div class="post-meta">
@@ -190,7 +186,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-14 18:49:14 / 修改时间：19:54:27" itemprop="dateCreated datePublished" datetime="2021-04-14T18:49:14+08:00">2021-04-14</time>
+              <time title="创建时间：2021-04-25 14:46:11 / 修改时间：16:23:46" itemprop="dateCreated datePublished" datetime="2021-04-25T14:46:11+08:00">2021-04-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,12 +194,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">编译原理</span></a>
+                  <a href="/categories/%E7%97%85%E6%AF%92/" itemprop="url" rel="index"><span itemprop="name">病毒</span></a>
                 </span>
             </span>
 
           
-            <span id="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="post-meta-item leancloud_visitors" data-flag-title="编译原理第二章" title="阅读次数">
+            <span id="/archives/b087ef83.html" class="post-meta-item leancloud_visitors" data-flag-title="病毒-基础-代码初始" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -218,8 +214,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" itemprop="commentCount"></span>
+    <a title="valine" href="/archives/b087ef83.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/b087ef83.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -229,7 +225,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>305</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -248,214 +244,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="编译原理第二章"><a class="markdownIt-Anchor" href="#编译原理第二章"></a> 编译原理第二章</h3>
+        <h3 id="病毒基础-代码初始"><a class="markdownIt-Anchor" href="#病毒基础-代码初始"></a> 病毒基础-代码初始</h3>
+<h4 id="1-代码初识"><a class="markdownIt-Anchor" href="#1-代码初识"></a> 1. 代码初识</h4>
+<p>我们需要掌握的工具</p>
 <ol>
-<li>
-<p>数据类型的分类</p>
-<ol>
-<li>
-<p>内部类型</p>
-<blockquote>
-<p>优点：</p>
-<ol>
-<li>基本表示的不可见性</li>
-<li>编译时能检查变量使用的正确性</li>
-<li>编译时可以确定无二义的操作</li>
-<li>精度控制</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-</li>
+<li>vc反汇编调试</li>
+<li>文本编辑工具UltraEdit（UE）</li>
+<li>ollydebug调试（od）</li>
+<li>静态反汇编工具ida</li>
+<li>汇编代码撰写工具nasm</li>
 </ol>
 <span id="more"></span>
-<ol start="2">
-<li>
-<p>用户定义类型</p>
-<blockquote>
-<ol>
-<li>有限映像：<br />
-定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）<br />
-eg：array[1…50] of char 中整数1至50到字符集的有限映像</li>
-<li>序列：<br />
-定义：任意多个数据项组成，数据项称为序列的成分，且<strong>类型相同</strong></li>
-<li>判定或：<br />
-定义：可以选择不同成员的构造机制<br />
-eg：PASCAL的变体记录、C的联合<br />
-eg：<br />
-变体记录定义如下：</li>
-</ol>
-<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> dept=(house,sports,drugs,food,liquor);</span><br><span class="line">month=<span class="number">1</span>..<span class="number">12</span>;</span><br><span class="line">item=<span class="keyword">record</span></span><br><span class="line">    price:real;</span><br><span class="line">    <span class="keyword">case</span> available:boolean <span class="keyword">of</span></span><br><span class="line">        true:(amount:integer;  </span><br><span class="line">            where:dept);</span><br><span class="line">        false:(month_expected:month)</span><br><span class="line"> <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
-<p>实现代码如下：</p>
-<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i1,i2:item:</span><br><span class="line">i1.price:=<span class="number">5.24</span>;i1.available:=true;</span><br><span class="line">i1.amount:=<span class="number">29</span>;i1.where:=liquor;</span><br><span class="line">i2.price:=<span class="number">324.99</span>;i2.available:=false;</span><br><span class="line">i2.month_expect:=<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
-<p>则空间分配情况如下：</p>
-<center>i1</center>
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>price</td>
-<td>5.24</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-</tr>
-<tr>
-<td>amount</td>
-<td>29</td>
-</tr>
-<tr>
-<td>where</td>
-<td>liquor</td>
-</tr>
-</tbody>
-</table>
-<center>i2</center>
-<table>
-<thead>
-<tr>
-<th>变量名</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>price</td>
-<td>324.99</td>
-</tr>
-<tr>
-<td>available</td>
-<td>false</td>
-</tr>
-<tr>
-<td>month_expected</td>
-<td>8</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ol start="4">
-<li>幂集<br />
-定义：类型T的元素的所有子集的集合，T为基类型</li>
-</ol>
-</blockquote>
-</li>
-<li>
-<p>抽象数据类型</p>
-</li>
-<li>
-<p>C语言的数据类型</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png" alt="image-20210414193241257" /></p>
-<ol>
-<li>非结构类型：<br />
-1.内部类型<br />
-整型：int、short、long、unsigned<br />
-浮点型：float、double<br />
-字符型：char（有限字符集的元素）</li>
-<li>用户定义的非结构类型<br />
-枚举：enum</li>
-<li>结构类型
-<ol>
-<li>数组</li>
-<li>结构struct</li>
-<li>联合union（C的联合是不安全的）</li>
-<li>文件FILE</li>
-</ol>
-</li>
-<li>指针</li>
-<li>空类型void</li>
-</ol>
-<blockquote>
-<p>不允许定义空类型变量，可以定义空类型指针变量</p>
-</blockquote>
-</li>
-<li>
-<p>类型检查<br />
-定义：对数据的操作和对应的类型是否匹配的一致性检查<br />
-eg：非法运算、赋值运算、形参实参类型是否匹配</p>
-<ol>
-<li>静态检查和动态检查</li>
-</ol>
-<blockquote>
-<p>静态检查使程序更有效<br />
-动态检查是编程更方便，但是影响了可靠性且降低了执行效率</p>
-</blockquote>
-<ol start="2">
-<li>语言分类</li>
-</ol>
-<blockquote>
-<p>无类型语言：没有数据类型<br />
-eg：函数式语言（FP）、泛函程序设计语言（FFP）<br />
-弱类型语言：类型检查全部或部分在运行时完成<br />
-eg：PASCAL<br />
-强类型语言：类型检查都在编译时完成<br />
-eg：C、ADA</p>
-</blockquote>
-</li>
-<li>
-<p>实现模型<br />
-在程序中，数据由常量或变量表示<br />
-在实现模型中，数据由描述符（描述数据对象的属性）和数据对象（存储区及其内容）表示</p>
-<blockquote>
-<ol>
-<li>内部类型和用户定义的非结构类型：描述符一般由类型描述和指针组成<br />
-<strong>多个变量的描述符形成变量名表</strong><br />
-eg：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p>
-<ol start="2">
-<li>结构类型</li>
-</ol>
-<ul>
-<li>笛卡尔积<br />
-各成分按顺序存储，每个成分占整数个存储单元<br />
-描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br />
-eg：</li>
-</ul>
-<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p>
-<ul>
-<li>有限映像<br />
-为每一成分分配整数个可编址的存储单元<br />
-描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br />
-eg：</li>
-</ul>
-<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p>
-<ul>
-<li>序列<br />
-可变长串的表示：静态描述符+动态描述符+堆</li>
-</ul>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371" /></p>
-<ul>
-<li>判定或<br />
-pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
-</ul>
-<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p>
-<ul>
-<li>
-<p>指针</p>
-<p>表示与内部类型相同只是其值为地址</p>
-<p>指针指向的匿名数据对象分配在堆上</p>
-</li>
-<li>
-<p><strong>编译时所有的描述符保存在一张表中以便编译时使用，甚至有些描述符要保存到运行阶段（数组），并且存储在描述符中的属性可能随运行而变化。</strong></p>
-</li>
-</ul>
-</blockquote>
-</li>
-</ol>
+<h4 id="2-大端机和小端机"><a class="markdownIt-Anchor" href="#2-大端机和小端机"></a> 2. 大端机和小端机</h4>
+<p>小端机：高位地址存放高位数据、低位地址存放低位数据。例如Intel的X86系列CPU<br />
+小端机：高位地址存放低位数据、低位地址存放高位数据。例如PowerPC、Sun的SPARC、Motorola 6800</p>
+<h4 id="3-jmp指令解析"><a class="markdownIt-Anchor" href="#3-jmp指令解析"></a> 3. JMP指令解析</h4>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png" alt="image-20210425160344966" /></p>
+<p>Jmp 无条件跳转指令，有以下四种用法：</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160536816.png" alt="image-20210425160536816" /></p>
+<p>注意：在上述PPT中使用了Jmp offset的方式，其中地址2的地址是地址1的地址加上5个字节</p>
+<p><strong>使用反汇编修改内存和使用工具修改硬盘文件步骤一样，工具不同，本质相同</strong></p>
 
     </div>
 
@@ -466,7 +274,7 @@ pascal的变体记录：描述符、数据对象、case表、若干变体描述�
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
-              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
+              <a href="/tags/%E7%97%85%E6%AF%92/" rel="tag"># 病毒</a>
           </div>
 
         
@@ -475,12 +283,12 @@ pascal的变体记录：描述符、数据对象、case表、若干变体描述�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%80%E7%AB%A0/" rel="prev" title="编译原理第一章">
-      <i class="fa fa-chevron-left"></i> 编译原理第一章
+    <a href="/archives/c513bfe.html" rel="prev" title="病毒_概述">
+      <i class="fa fa-chevron-left"></i> 病毒_概述
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" rel="next" title="编译原理第三章">
-      编译原理第三章 <i class="fa fa-chevron-right"></i>
+    <a href="/archives/c3d31f32.html" rel="next" title="病毒-基础-文件系统">
+      病毒-基础-文件系统 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -541,7 +349,7 @@ pascal的变体记录：描述符、数据对象、case表、若干变体描述�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text"> 编译原理第二章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%97%85%E6%AF%92%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text"> 病毒基础-代码初始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BB%A3%E7%A0%81%E5%88%9D%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text"> 1. 代码初识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%A4%A7%E7%AB%AF%E6%9C%BA%E5%92%8C%E5%B0%8F%E7%AB%AF%E6%9C%BA"><span class="nav-number">1.2.</span> <span class="nav-text"> 2. 大端机和小端机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-jmp%E6%8C%87%E4%BB%A4%E8%A7%A3%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text"> 3. JMP指令解析</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

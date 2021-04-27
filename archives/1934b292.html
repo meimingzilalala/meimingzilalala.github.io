@@ -21,21 +21,28 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="编译原理第零章——形式语言与自动机  基础知识 字母表有非空性、有穷性、单一性  Σ代表字母表 ε代表空串 {ε}代表仅含有空串的集合 Φ代表空集 αβ代表两个字符串α与β的连接（并置） αn 代表α的n次连接，其中α0 &#x3D;ε，αn &#x3D;αn-1 α  其中n&gt;0 AB代表集合A与B的连接，A&#x3D;{a1,a2,a3,…,an}，B&#x3D;{b1,b2,b3,…,bm}">
+  <meta name="description" content="编译原理第二章   数据类型的分类   内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理第四章前导">
-<meta property="og:url" content="https://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/index.html">
+<meta property="og:title" content="编译原理第二章">
+<meta property="og:url" content="https://wsw8.online/archives/1934b292.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="编译原理第零章——形式语言与自动机  基础知识 字母表有非空性、有穷性、单一性  Σ代表字母表 ε代表空串 {ε}代表仅含有空串的集合 Φ代表空集 αβ代表两个字符串α与β的连接（并置） αn 代表α的n次连接，其中α0 &#x3D;ε，αn &#x3D;αn-1 α  其中n&gt;0 AB代表集合A与B的连接，A&#x3D;{a1,a2,a3,…,an}，B&#x3D;{b1,b2,b3,…,bm}">
+<meta property="og:description" content="编译原理第二章   数据类型的分类   内部类型  优点：  基本表示的不可见性 编译时能检查变量使用的正确性 编译时可以确定无二义的操作 精度控制">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-14T10:54:34.000Z">
-<meta property="article:modified_time" content="2021-04-15T03:47:21.808Z">
+<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png">
+<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png">
+<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png">
+<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png">
+<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png">
+<meta property="og:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png">
+<meta property="article:published_time" content="2021-04-14T10:49:14.000Z">
+<meta property="article:modified_time" content="2021-04-14T11:54:27.777Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="课程">
 <meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wsw8.online/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png">
 
-<link rel="canonical" href="https://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/">
+<link rel="canonical" href="https://wsw8.online/archives/1934b292.html">
 
 
 <script id="page-configurations">
@@ -48,7 +55,7 @@
   };
 </script>
 
-  <title>编译原理第四章前导 | 江湖</title>
+  <title>编译原理第二章 | 江湖</title>
   
 
 
@@ -159,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wsw8.online/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/">
+    <link itemprop="mainEntityOfPage" href="https://wsw8.online/archives/1934b292.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -172,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          编译原理第四章前导
+          编译原理第二章
         </h1>
 
         <div class="post-meta">
@@ -181,16 +188,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-04-14 18:54:34" itemprop="dateCreated datePublished" datetime="2021-04-14T18:54:34+08:00">2021-04-14</time>
+              <time title="创建时间：2021-04-14 18:49:14 / 修改时间：19:54:27" itemprop="dateCreated datePublished" datetime="2021-04-14T18:49:14+08:00">2021-04-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-15 11:47:21" itemprop="dateModified" datetime="2021-04-15T11:47:21+08:00">2021-04-15</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -202,7 +203,7 @@
             </span>
 
           
-            <span id="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/" class="post-meta-item leancloud_visitors" data-flag-title="编译原理第四章前导" title="阅读次数">
+            <span id="/archives/1934b292.html" class="post-meta-item leancloud_visitors" data-flag-title="编译原理第二章" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -217,8 +218,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%89%8D%E5%AF%BC/" itemprop="commentCount"></span>
+    <a title="valine" href="/archives/1934b292.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/1934b292.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -228,14 +229,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -247,202 +248,214 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="编译原理第零章形式语言与自动机"><a class="markdownIt-Anchor" href="#编译原理第零章形式语言与自动机"></a> 编译原理第零章——形式语言与自动机</h3>
-<h4 id="基础知识"><a class="markdownIt-Anchor" href="#基础知识"></a> 基础知识</h4>
-<p>字母表有非空性、有穷性、单一性</p>
+        <h3 id="编译原理第二章"><a class="markdownIt-Anchor" href="#编译原理第二章"></a> 编译原理第二章</h3>
+<ol>
+<li>
+<p>数据类型的分类</p>
+<ol>
+<li>
+<p>内部类型</p>
 <blockquote>
-<p>Σ代表字母表<br />
-ε代表空串<br />
-{ε}代表仅含有空串的集合<br />
-Φ代表空集<br />
-αβ代表两个字符串α与β的连接（并置）<br />
-α<sup>n</sup> 代表α的n次连接，其中α<sup>0</sup> =ε，α<sup>n</sup> =α<sup>n-1</sup> α  其中n&gt;0<br />
-AB代表集合A与B的连接，A={a1,a2,a3,…,an}，B={b1,b2,b3,…,bm}</p>
+<p>优点：</p>
+<ol>
+<li>基本表示的不可见性</li>
+<li>编译时能检查变量使用的正确性</li>
+<li>编译时可以确定无二义的操作</li>
+<li>精度控制</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</li>
+</ol>
 <span id="more"></span>
+<ol start="2">
+<li>
+<p>用户定义类型</p>
 <blockquote>
-<p>则AB=<br />
-{ a1b1，a1b2，a1b3，…，a1bm，<br />
-a2b1，a2b2，a2b3，…，a2bm，<br />
-a3b1，a3b2，a3b3，…，a3bm，<br />
-…<br />
-anb1，anb2，anb3，…，anbm }</p>
-<p>注意：AФ=ФA=Ф，A{ε}={ε}A=A</p>
+<ol>
+<li>有限映像：<br />
+定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）<br />
+eg：array[1…50] of char 中整数1至50到字符集的有限映像</li>
+<li>序列：<br />
+定义：任意多个数据项组成，数据项称为序列的成分，且<strong>类型相同</strong></li>
+<li>判定或：<br />
+定义：可以选择不同成员的构造机制<br />
+eg：PASCAL的变体记录、C的联合<br />
+eg：<br />
+变体记录定义如下：</li>
+</ol>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> dept=(house,sports,drugs,food,liquor);</span><br><span class="line">month=<span class="number">1</span>..<span class="number">12</span>;</span><br><span class="line">item=<span class="keyword">record</span></span><br><span class="line">    price:real;</span><br><span class="line">    <span class="keyword">case</span> available:boolean <span class="keyword">of</span></span><br><span class="line">        true:(amount:integer;  </span><br><span class="line">            where:dept);</span><br><span class="line">        false:(month_expected:month)</span><br><span class="line"> <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+<p>实现代码如下：</p>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i1,i2:item:</span><br><span class="line">i1.price:=<span class="number">5.24</span>;i1.available:=true;</span><br><span class="line">i1.amount:=<span class="number">29</span>;i1.where:=liquor;</span><br><span class="line">i2.price:=<span class="number">324.99</span>;i2.available:=false;</span><br><span class="line">i2.month_expect:=<span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+<p>则空间分配情况如下：</p>
+<center>i1</center>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td>5.24</td>
+</tr>
+<tr>
+<td>available</td>
+<td>true</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>29</td>
+</tr>
+<tr>
+<td>where</td>
+<td>liquor</td>
+</tr>
+</tbody>
+</table>
+<center>i2</center>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>price</td>
+<td>324.99</td>
+</tr>
+<tr>
+<td>available</td>
+<td>false</td>
+</tr>
+<tr>
+<td>month_expected</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>幂集<br />
+定义：类型T的元素的所有子集的集合，T为基类型</li>
+</ol>
 </blockquote>
-<p>A<sup>n</sup> 代表集合A的n次连接（n次幂），A<sup>0</sup> = {ε}，A<sup>n</sup> = A<sup>n-1</sup>A    n ≥ 1<br />
-A<sup>*</sup> 代表A上所有字符串的集合，称作集合A的克林闭包<br />
-A<sup>*</sup> = A<sup>0</sup> ∪ A<sup>1</sup> ∪ A<sup>2</sup> ∪  …∪ A<sup>n</sup><br />
-A<sup>+</sup> 称为A的正闭包<br />
-A<sup>+</sup>=A<sup>1</sup>∪A<sup>2</sup>∪A<sup>3</sup>∪…∪A<sup>n</sup></p>
-</blockquote>
-<p>定义：</p>
-<p>给定字母表∑，则∑*的任意子集L称为字母表∑上的一个语言。</p>
-<p>设∑是一个字母表，∀L ⊆ ∑*, ∀x ∈ L, x称为L的一个句子。</p>
+</li>
+<li>
+<p>抽象数据类型</p>
+</li>
+<li>
+<p>C语言的数据类型</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png" alt="image-20210414193241257" /></p>
+<ol>
+<li>非结构类型：<br />
+1.内部类型<br />
+整型：int、short、long、unsigned<br />
+浮点型：float、double<br />
+字符型：char（有限字符集的元素）</li>
+<li>用户定义的非结构类型<br />
+枚举：enum</li>
+<li>结构类型
+<ol>
+<li>数组</li>
+<li>结构struct</li>
+<li>联合union（C的联合是不安全的）</li>
+<li>文件FILE</li>
+</ol>
+</li>
+<li>指针</li>
+<li>空类型void</li>
+</ol>
 <blockquote>
-<p>eg：Σ＝{0，1}，请给出语言的形式表示</p>
-<ol>
-<li>所有以0开头，以1结尾的串的语言。</li>
-<li>所有以11开头，11结尾的串的语言。</li>
-<li>所有长度为偶数的串的语言。</li>
-<li>所有长度为奇数的串的语言。</li>
-<li>所有包含子串01011的串的语言。</li>
-<li>所有的第10个字符是0的串的语言。</li>
-</ol>
-<p>answer：</p>
-<ol>
-<li>{0} {0,1}<sup>*</sup> {1}</li>
-<li>{11} {0,1}<sup>*</sup> {11} ∪ {11,111}</li>
-<li>{00,01,10,11}<sup>*</sup></li>
-<li>{00,01,10,11}<sup>*</sup> {0,1}</li>
-<li>{0,1}<sup>*</sup> {011011} {0,1}<sup>*</sup></li>
-<li>{0,1}<sup>9</sup> {0} {0,1}<sup>*</sup></li>
-</ol>
+<p>不允许定义空类型变量，可以定义空类型指针变量</p>
 </blockquote>
-<h4 id="形式语言与自动机理论简介"><a class="markdownIt-Anchor" href="#形式语言与自动机理论简介"></a> 形式语言与自动机理论简介</h4>
-<h5 id="初步认识"><a class="markdownIt-Anchor" href="#初步认识"></a> 初步认识</h5>
-<p>语言的定义可以从两个方面进行：</p>
+</li>
+<li>
+<p>类型检查<br />
+定义：对数据的操作和对应的类型是否匹配的一致性检查<br />
+eg：非法运算、赋值运算、形参实参类型是否匹配</p>
 <ol>
-<li>从产生语言的角度</li>
-<li>从接收（识别）语言的角度</li>
+<li>静态检查和动态检查</li>
+</ol>
+<blockquote>
+<p>静态检查使程序更有效<br />
+动态检查是编程更方便，但是影响了可靠性且降低了执行效率</p>
+</blockquote>
+<ol start="2">
+<li>语言分类</li>
+</ol>
+<blockquote>
+<p>无类型语言：没有数据类型<br />
+eg：函数式语言（FP）、泛函程序设计语言（FFP）<br />
+弱类型语言：类型检查全部或部分在运行时完成<br />
+eg：PASCAL<br />
+强类型语言：类型检查都在编译时完成<br />
+eg：C、ADA</p>
+</blockquote>
+</li>
+<li>
+<p>实现模型<br />
+在程序中，数据由常量或变量表示<br />
+在实现模型中，数据由描述符（描述数据对象的属性）和数据对象（存储区及其内容）表示</p>
+<blockquote>
+<ol>
+<li>内部类型和用户定义的非结构类型：描述符一般由类型描述和指针组成<br />
+<strong>多个变量的描述符形成变量名表</strong><br />
+eg：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p>
+<ol start="2">
+<li>结构类型</li>
 </ol>
 <ul>
+<li>笛卡尔积<br />
+各成分按顺序存储，每个成分占整数个存储单元<br />
+描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br />
+eg：</li>
+</ul>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p>
+<ul>
+<li>有限映像<br />
+为每一成分分配整数个可编址的存储单元<br />
+描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br />
+eg：</li>
+</ul>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p>
+<ul>
+<li>序列<br />
+可变长串的表示：静态描述符+动态描述符+堆</li>
+</ul>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371" /></p>
+<ul>
+<li>判定或<br />
+pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
+</ul>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p>
+<ul>
 <li>
-<p>产生语言</p>
-<p>根据语言中的基本句子和其他句子的形成规则，得到（产生）该语言所包含的所有句子</p>
-<p>属于<strong>形式语言</strong>所研究的问题</p>
+<p>指针</p>
+<p>表示与内部类型相同只是其值为地址</p>
+<p>指针指向的匿名数据对象分配在堆上</p>
 </li>
 <li>
-<p>接收语言</p>
-<p>使用自动机模型来接收字符串，接收的所有字符串，也形成一个语言</p>
-<p>属于<strong>自动机</strong>所研究的问题</p>
+<p><strong>编译时所有的描述符保存在一张表中以便编译时使用，甚至有些描述符要保存到运行阶段（数组），并且存储在描述符中的属性可能随运行而变化。</strong></p>
 </li>
 </ul>
-<h5 id="统一的理论"><a class="markdownIt-Anchor" href="#统一的理论"></a> 统一的理论</h5>
-<p>形式语言与自动机作为统一的理论，实际上包括3个方面的内容：</p>
-<ol>
-<li>形式语言理论（产生语言）</li>
-<li>自动机理论（接收语言）</li>
-<li>形式语言与自动机的等价性理论</li>
-</ol>
-<h5 id="括号匹配串的语言"><a class="markdownIt-Anchor" href="#括号匹配串的语言"></a> 括号匹配串的语言</h5>
-<p><strong>自然语言描述：</strong></p>
-<blockquote>
-<ol>
-<li>
-<p>（）是该语言的最基本的句子</p>
-</li>
-<li>
-<p>若S是句子，则（S）是句子</p>
-</li>
-<li>
-<p>若S是句子，则SS是句子</p>
+</blockquote>
 </li>
 </ol>
-</blockquote>
-<p>根据以上形成规则，我们可以：</p>
-<ol>
-<li>产生该语言的任意的句子</li>
-<li>判断某个串是否是该语言的句子——<strong>语法分析</strong></li>
-</ol>
-<p><strong>巴克斯-诺尔范式（BNF）描述：</strong></p>
-<blockquote>
-<ol>
-<li>
-<p>&lt;括号匹配串&gt;::=()</p>
-</li>
-<li>
-<p>&lt;括号匹配串&gt;::=(&lt;括号匹配串&gt;)</p>
-</li>
-<li>
-<p>&lt;括号匹配串&gt;::=&lt;括号匹配串&gt;&lt;括号匹配串&gt;</p>
-</li>
-</ol>
-</blockquote>
-<p><strong>Chomsky描述：</strong></p>
-<blockquote>
-<ol>
-<li>
-<p>S-&gt;()</p>
-</li>
-<li>
-<p>S-&gt;(S)</p>
-</li>
-<li>
-<p>S-&gt;SS</p>
-</li>
-</ol>
-<p><strong>注：为方便起见，箭头打成-&gt;</strong></p>
-</blockquote>
-<p>术语：</p>
-<blockquote>
-<ol>
-<li>S称为非终结符，是在推导中可以被替代的符号。</li>
-<li>（）称为终结符，是在推导中不可以被替代的符号</li>
-<li>-&gt;是产生式系统的元符号</li>
-</ol>
-</blockquote>
-<p>结论：</p>
-<p>一个语言，可以使用不同的产生式组合来产生。</p>
-<p>注意：</p>
-<p>D-&gt;0|1|2|3|4|5|6|7|8|9<strong>不能</strong>简写为D-&gt;0|…|9</p>
-<p>eg：算术表达式的形成规则</p>
-<blockquote>
-<p>E-&gt;E+T|E-T|T<br />
-T-&gt;T*F|T/F|F<br />
-F-&gt;(E)|I<br />
-I-&gt;L|IL|ID<br />
-L-&gt;a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z<br />
-D-&gt;0|1|2|3|4|5|6|7|8|9</p>
-</blockquote>
-<p>注意：其中E代表表达式，T代表项，F代表因子，先因子再乘除最后加减</p>
-<p>注：这是算术表达式，不包含关系表达式的定义（&lt;、&lt;=、&gt;、&gt;=、&lt; &gt;、=），并且标识符没有考虑下划线和大写字母</p>
-<h4 id="文法"><a class="markdownIt-Anchor" href="#文法"></a> 文法</h4>
-<p>定义：</p>
-<blockquote>
-<p>文法G是一个四元式，G=（V<sub>T</sub> ，V<sub>N</sub> ，S ，P ）</p>
-<p>V<sub>T</sub> 是有限字符的集合，元素称为字母或者<strong>终结符</strong></p>
-<p>V<sub>N</sub> 是有限字符的集合，元素称为变量或<strong>非终结符</strong></p>
-<p>S∈V，称为文法的开始符号</p>
-<p>P是产生式α-&gt;β的集合</p>
-<blockquote>
-<p>α∈(V<sub>T</sub> U V<sub>N</sub> )<sup>+</sup> ，至少包含一个非终结符</p>
-<p>β∈(V<sub>T</sub> U V<sub>N</sub> )<sup>*</sup></p>
-<p>α-&gt;ε，称为空串产生式或者ε产生式</p>
-</blockquote>
-</blockquote>
-<h5 id="推导派生"><a class="markdownIt-Anchor" href="#推导派生"></a> 推导（派生）</h5>
-<p>定义：文法G，α和β是集合(V<sub>T</sub> ∪V<sub>N</sub> )上的串，α= pvr ，β=pur(p和r可能同时为ε)，而v→u是的一个产生式，则称α直接推导出β，记为α=&gt;β ，即pvr =&gt;pur。</p>
-<p>术语：</p>
-<blockquote>
-<p>y=&gt;<sup>+</sup> z 多步推导<br />
-y=&gt;<sup>*</sup> z 任意步推导（多了y=z的情况）</p>
-<p>S=&gt;<sup>*</sup> ω 则ω是文法的一个句型<br />
-进一步若ω∈V<sub>T</sub> <sup>*</sup> ，ω称为句子</p>
-<p>L(G) ={ω|S=&gt;<sup>+</sup> ω，且ω∈V<sub>T</sub>*} ，则L（G）称为文法G产生的语言</p>
-<blockquote>
-<p>一个语言<strong>可以</strong>由多个不同的文法产生<br />
-一个文法<strong>只能</strong>产生一个语言</p>
-</blockquote>
-</blockquote>
-<p>eg：</p>
-<blockquote>
-<p>产生语言L（G）= { a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> |n&gt;0} 文法</p>
-<blockquote>
-<p>解一：</p>
-<p>S→aSBC        ①<br />
-S→aBC          ②<br />
-CB→BC         ③<br />
-aB→ab          ④<br />
-bB→bb          ⑤<br />
-bC→bc          ⑥<br />
-cC→cc           ⑦</p>
-<p>解二：</p>
-<p>S→abc|aSBc<br />
-cB→Bc<br />
-aB→ab<br />
-bB→bb</p>
-<p><strong>类似思想还可以写出很多文法</strong></p>
-</blockquote>
-</blockquote>
 
     </div>
 
@@ -462,12 +475,12 @@ bB→bb</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" rel="prev" title="编译原理第三章">
-      <i class="fa fa-chevron-left"></i> 编译原理第三章
+    <a href="/archives/29225e4a.html" rel="prev" title="编译原理第一章">
+      <i class="fa fa-chevron-left"></i> 编译原理第一章
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/14/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/" rel="next" title="编译原理第四章">
-      编译原理第四章 <i class="fa fa-chevron-right"></i>
+    <a href="/archives/542a11c0.html" rel="next" title="编译原理第三章">
+      编译原理第三章 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -528,7 +541,7 @@ bB→bb</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E9%9B%B6%E7%AB%A0%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text"> 编译原理第零章——形式语言与自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text"> 基础知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%90%86%E8%AE%BA%E7%AE%80%E4%BB%8B"><span class="nav-number">1.2.</span> <span class="nav-text"> 形式语言与自动机理论简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 初步认识</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%9F%E4%B8%80%E7%9A%84%E7%90%86%E8%AE%BA"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 统一的理论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%E4%B8%B2%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 括号匹配串的语言</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text"> 文法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E6%B4%BE%E7%94%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 推导（派生）</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="nav-number">1.</span> <span class="nav-text"> 编译原理第二章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

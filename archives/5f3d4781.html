@@ -21,24 +21,21 @@
     var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="病毒基础-代码初始  1. 代码初识 我们需要掌握的工具  vc反汇编调试 文本编辑工具UltraEdit（UE） ollydebug调试（od） 静态反汇编工具ida 汇编代码撰写工具nasm">
+  <meta name="description" content="编译原理第零章——形式语言与自动机  基础知识 字母表有非空性、有穷性、单一性  Σ代表字母表 ε代表空串 {ε}代表仅含有空串的集合 Φ代表空集 αβ代表两个字符串α与β的连接（并置） αn 代表α的n次连接，其中α0 &#x3D;ε，αn &#x3D;αn-1 α  其中n&gt;0 AB代表集合A与B的连接，A&#x3D;{a1,a2,a3,…,an}，B&#x3D;{b1,b2,b3,…,bm}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="病毒-基础-代码初始">
-<meta property="og:url" content="https://wsw8.online/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/index.html">
+<meta property="og:title" content="编译原理第四章前导">
+<meta property="og:url" content="https://wsw8.online/archives/5f3d4781.html">
 <meta property="og:site_name" content="江湖">
-<meta property="og:description" content="病毒基础-代码初始  1. 代码初识 我们需要掌握的工具  vc反汇编调试 文本编辑工具UltraEdit（UE） ollydebug调试（od） 静态反汇编工具ida 汇编代码撰写工具nasm">
+<meta property="og:description" content="编译原理第零章——形式语言与自动机  基础知识 字母表有非空性、有穷性、单一性  Σ代表字母表 ε代表空串 {ε}代表仅含有空串的集合 Φ代表空集 αβ代表两个字符串α与β的连接（并置） αn 代表α的n次连接，其中α0 &#x3D;ε，αn &#x3D;αn-1 α  其中n&gt;0 AB代表集合A与B的连接，A&#x3D;{a1,a2,a3,…,an}，B&#x3D;{b1,b2,b3,…,bm}">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wsw8.online/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png">
-<meta property="og:image" content="https://wsw8.online/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160536816.png">
-<meta property="article:published_time" content="2021-04-25T06:46:11.000Z">
-<meta property="article:modified_time" content="2021-04-25T08:23:46.774Z">
+<meta property="article:published_time" content="2021-04-14T10:54:34.000Z">
+<meta property="article:modified_time" content="2021-04-15T03:47:21.808Z">
 <meta property="article:author" content="汪道之">
 <meta property="article:tag" content="课程">
-<meta property="article:tag" content="病毒">
+<meta property="article:tag" content="计算机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wsw8.online/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png">
 
-<link rel="canonical" href="https://wsw8.online/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/">
+<link rel="canonical" href="https://wsw8.online/archives/5f3d4781.html">
 
 
 <script id="page-configurations">
@@ -51,7 +48,7 @@
   };
 </script>
 
-  <title>病毒-基础-代码初始 | 江湖</title>
+  <title>编译原理第四章前导 | 江湖</title>
   
 
 
@@ -162,7 +159,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wsw8.online/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/">
+    <link itemprop="mainEntityOfPage" href="https://wsw8.online/archives/5f3d4781.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -175,7 +172,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          病毒-基础-代码初始
+          编译原理第四章前导
         </h1>
 
         <div class="post-meta">
@@ -184,22 +181,28 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-04-25 14:46:11 / 修改时间：16:23:46" itemprop="dateCreated datePublished" datetime="2021-04-25T14:46:11+08:00">2021-04-25</time>
+              <time title="创建时间：2021-04-14 18:54:34" itemprop="dateCreated datePublished" datetime="2021-04-14T18:54:34+08:00">2021-04-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-15 11:47:21" itemprop="dateModified" datetime="2021-04-15T11:47:21+08:00">2021-04-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%97%85%E6%AF%92/" itemprop="url" rel="index"><span itemprop="name">病毒</span></a>
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">编译原理</span></a>
                 </span>
             </span>
 
           
-            <span id="/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/" class="post-meta-item leancloud_visitors" data-flag-title="病毒-基础-代码初始" title="阅读次数">
+            <span id="/archives/5f3d4781.html" class="post-meta-item leancloud_visitors" data-flag-title="编译原理第四章前导" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -214,8 +217,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/" itemprop="commentCount"></span>
+    <a title="valine" href="/archives/5f3d4781.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/archives/5f3d4781.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -225,14 +228,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>305</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -244,26 +247,202 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="病毒基础-代码初始"><a class="markdownIt-Anchor" href="#病毒基础-代码初始"></a> 病毒基础-代码初始</h3>
-<h4 id="1-代码初识"><a class="markdownIt-Anchor" href="#1-代码初识"></a> 1. 代码初识</h4>
-<p>我们需要掌握的工具</p>
-<ol>
-<li>vc反汇编调试</li>
-<li>文本编辑工具UltraEdit（UE）</li>
-<li>ollydebug调试（od）</li>
-<li>静态反汇编工具ida</li>
-<li>汇编代码撰写工具nasm</li>
-</ol>
+        <h3 id="编译原理第零章形式语言与自动机"><a class="markdownIt-Anchor" href="#编译原理第零章形式语言与自动机"></a> 编译原理第零章——形式语言与自动机</h3>
+<h4 id="基础知识"><a class="markdownIt-Anchor" href="#基础知识"></a> 基础知识</h4>
+<p>字母表有非空性、有穷性、单一性</p>
+<blockquote>
+<p>Σ代表字母表<br />
+ε代表空串<br />
+{ε}代表仅含有空串的集合<br />
+Φ代表空集<br />
+αβ代表两个字符串α与β的连接（并置）<br />
+α<sup>n</sup> 代表α的n次连接，其中α<sup>0</sup> =ε，α<sup>n</sup> =α<sup>n-1</sup> α  其中n&gt;0<br />
+AB代表集合A与B的连接，A={a1,a2,a3,…,an}，B={b1,b2,b3,…,bm}</p>
 <span id="more"></span>
-<h4 id="2-大端机和小端机"><a class="markdownIt-Anchor" href="#2-大端机和小端机"></a> 2. 大端机和小端机</h4>
-<p>小端机：高位地址存放高位数据、低位地址存放低位数据。例如Intel的X86系列CPU<br />
-小端机：高位地址存放低位数据、低位地址存放高位数据。例如PowerPC、Sun的SPARC、Motorola 6800</p>
-<h4 id="3-jmp指令解析"><a class="markdownIt-Anchor" href="#3-jmp指令解析"></a> 3. JMP指令解析</h4>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png" alt="image-20210425160344966" /></p>
-<p>Jmp 无条件跳转指令，有以下四种用法：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160536816.png" alt="image-20210425160536816" /></p>
-<p>注意：在上述PPT中使用了Jmp offset的方式，其中地址2的地址是地址1的地址加上5个字节</p>
-<p><strong>使用反汇编修改内存和使用工具修改硬盘文件步骤一样，工具不同，本质相同</strong></p>
+<blockquote>
+<p>则AB=<br />
+{ a1b1，a1b2，a1b3，…，a1bm，<br />
+a2b1，a2b2，a2b3，…，a2bm，<br />
+a3b1，a3b2，a3b3，…，a3bm，<br />
+…<br />
+anb1，anb2，anb3，…，anbm }</p>
+<p>注意：AФ=ФA=Ф，A{ε}={ε}A=A</p>
+</blockquote>
+<p>A<sup>n</sup> 代表集合A的n次连接（n次幂），A<sup>0</sup> = {ε}，A<sup>n</sup> = A<sup>n-1</sup>A    n ≥ 1<br />
+A<sup>*</sup> 代表A上所有字符串的集合，称作集合A的克林闭包<br />
+A<sup>*</sup> = A<sup>0</sup> ∪ A<sup>1</sup> ∪ A<sup>2</sup> ∪  …∪ A<sup>n</sup><br />
+A<sup>+</sup> 称为A的正闭包<br />
+A<sup>+</sup>=A<sup>1</sup>∪A<sup>2</sup>∪A<sup>3</sup>∪…∪A<sup>n</sup></p>
+</blockquote>
+<p>定义：</p>
+<p>给定字母表∑，则∑*的任意子集L称为字母表∑上的一个语言。</p>
+<p>设∑是一个字母表，∀L ⊆ ∑*, ∀x ∈ L, x称为L的一个句子。</p>
+<blockquote>
+<p>eg：Σ＝{0，1}，请给出语言的形式表示</p>
+<ol>
+<li>所有以0开头，以1结尾的串的语言。</li>
+<li>所有以11开头，11结尾的串的语言。</li>
+<li>所有长度为偶数的串的语言。</li>
+<li>所有长度为奇数的串的语言。</li>
+<li>所有包含子串01011的串的语言。</li>
+<li>所有的第10个字符是0的串的语言。</li>
+</ol>
+<p>answer：</p>
+<ol>
+<li>{0} {0,1}<sup>*</sup> {1}</li>
+<li>{11} {0,1}<sup>*</sup> {11} ∪ {11,111}</li>
+<li>{00,01,10,11}<sup>*</sup></li>
+<li>{00,01,10,11}<sup>*</sup> {0,1}</li>
+<li>{0,1}<sup>*</sup> {011011} {0,1}<sup>*</sup></li>
+<li>{0,1}<sup>9</sup> {0} {0,1}<sup>*</sup></li>
+</ol>
+</blockquote>
+<h4 id="形式语言与自动机理论简介"><a class="markdownIt-Anchor" href="#形式语言与自动机理论简介"></a> 形式语言与自动机理论简介</h4>
+<h5 id="初步认识"><a class="markdownIt-Anchor" href="#初步认识"></a> 初步认识</h5>
+<p>语言的定义可以从两个方面进行：</p>
+<ol>
+<li>从产生语言的角度</li>
+<li>从接收（识别）语言的角度</li>
+</ol>
+<ul>
+<li>
+<p>产生语言</p>
+<p>根据语言中的基本句子和其他句子的形成规则，得到（产生）该语言所包含的所有句子</p>
+<p>属于<strong>形式语言</strong>所研究的问题</p>
+</li>
+<li>
+<p>接收语言</p>
+<p>使用自动机模型来接收字符串，接收的所有字符串，也形成一个语言</p>
+<p>属于<strong>自动机</strong>所研究的问题</p>
+</li>
+</ul>
+<h5 id="统一的理论"><a class="markdownIt-Anchor" href="#统一的理论"></a> 统一的理论</h5>
+<p>形式语言与自动机作为统一的理论，实际上包括3个方面的内容：</p>
+<ol>
+<li>形式语言理论（产生语言）</li>
+<li>自动机理论（接收语言）</li>
+<li>形式语言与自动机的等价性理论</li>
+</ol>
+<h5 id="括号匹配串的语言"><a class="markdownIt-Anchor" href="#括号匹配串的语言"></a> 括号匹配串的语言</h5>
+<p><strong>自然语言描述：</strong></p>
+<blockquote>
+<ol>
+<li>
+<p>（）是该语言的最基本的句子</p>
+</li>
+<li>
+<p>若S是句子，则（S）是句子</p>
+</li>
+<li>
+<p>若S是句子，则SS是句子</p>
+</li>
+</ol>
+</blockquote>
+<p>根据以上形成规则，我们可以：</p>
+<ol>
+<li>产生该语言的任意的句子</li>
+<li>判断某个串是否是该语言的句子——<strong>语法分析</strong></li>
+</ol>
+<p><strong>巴克斯-诺尔范式（BNF）描述：</strong></p>
+<blockquote>
+<ol>
+<li>
+<p>&lt;括号匹配串&gt;::=()</p>
+</li>
+<li>
+<p>&lt;括号匹配串&gt;::=(&lt;括号匹配串&gt;)</p>
+</li>
+<li>
+<p>&lt;括号匹配串&gt;::=&lt;括号匹配串&gt;&lt;括号匹配串&gt;</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>Chomsky描述：</strong></p>
+<blockquote>
+<ol>
+<li>
+<p>S-&gt;()</p>
+</li>
+<li>
+<p>S-&gt;(S)</p>
+</li>
+<li>
+<p>S-&gt;SS</p>
+</li>
+</ol>
+<p><strong>注：为方便起见，箭头打成-&gt;</strong></p>
+</blockquote>
+<p>术语：</p>
+<blockquote>
+<ol>
+<li>S称为非终结符，是在推导中可以被替代的符号。</li>
+<li>（）称为终结符，是在推导中不可以被替代的符号</li>
+<li>-&gt;是产生式系统的元符号</li>
+</ol>
+</blockquote>
+<p>结论：</p>
+<p>一个语言，可以使用不同的产生式组合来产生。</p>
+<p>注意：</p>
+<p>D-&gt;0|1|2|3|4|5|6|7|8|9<strong>不能</strong>简写为D-&gt;0|…|9</p>
+<p>eg：算术表达式的形成规则</p>
+<blockquote>
+<p>E-&gt;E+T|E-T|T<br />
+T-&gt;T*F|T/F|F<br />
+F-&gt;(E)|I<br />
+I-&gt;L|IL|ID<br />
+L-&gt;a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z<br />
+D-&gt;0|1|2|3|4|5|6|7|8|9</p>
+</blockquote>
+<p>注意：其中E代表表达式，T代表项，F代表因子，先因子再乘除最后加减</p>
+<p>注：这是算术表达式，不包含关系表达式的定义（&lt;、&lt;=、&gt;、&gt;=、&lt; &gt;、=），并且标识符没有考虑下划线和大写字母</p>
+<h4 id="文法"><a class="markdownIt-Anchor" href="#文法"></a> 文法</h4>
+<p>定义：</p>
+<blockquote>
+<p>文法G是一个四元式，G=（V<sub>T</sub> ，V<sub>N</sub> ，S ，P ）</p>
+<p>V<sub>T</sub> 是有限字符的集合，元素称为字母或者<strong>终结符</strong></p>
+<p>V<sub>N</sub> 是有限字符的集合，元素称为变量或<strong>非终结符</strong></p>
+<p>S∈V，称为文法的开始符号</p>
+<p>P是产生式α-&gt;β的集合</p>
+<blockquote>
+<p>α∈(V<sub>T</sub> U V<sub>N</sub> )<sup>+</sup> ，至少包含一个非终结符</p>
+<p>β∈(V<sub>T</sub> U V<sub>N</sub> )<sup>*</sup></p>
+<p>α-&gt;ε，称为空串产生式或者ε产生式</p>
+</blockquote>
+</blockquote>
+<h5 id="推导派生"><a class="markdownIt-Anchor" href="#推导派生"></a> 推导（派生）</h5>
+<p>定义：文法G，α和β是集合(V<sub>T</sub> ∪V<sub>N</sub> )上的串，α= pvr ，β=pur(p和r可能同时为ε)，而v→u是的一个产生式，则称α直接推导出β，记为α=&gt;β ，即pvr =&gt;pur。</p>
+<p>术语：</p>
+<blockquote>
+<p>y=&gt;<sup>+</sup> z 多步推导<br />
+y=&gt;<sup>*</sup> z 任意步推导（多了y=z的情况）</p>
+<p>S=&gt;<sup>*</sup> ω 则ω是文法的一个句型<br />
+进一步若ω∈V<sub>T</sub> <sup>*</sup> ，ω称为句子</p>
+<p>L(G) ={ω|S=&gt;<sup>+</sup> ω，且ω∈V<sub>T</sub>*} ，则L（G）称为文法G产生的语言</p>
+<blockquote>
+<p>一个语言<strong>可以</strong>由多个不同的文法产生<br />
+一个文法<strong>只能</strong>产生一个语言</p>
+</blockquote>
+</blockquote>
+<p>eg：</p>
+<blockquote>
+<p>产生语言L（G）= { a<sup>n</sup> b<sup>n</sup> c<sup>n</sup> |n&gt;0} 文法</p>
+<blockquote>
+<p>解一：</p>
+<p>S→aSBC        ①<br />
+S→aBC          ②<br />
+CB→BC         ③<br />
+aB→ab          ④<br />
+bB→bb          ⑤<br />
+bC→bc          ⑥<br />
+cC→cc           ⑦</p>
+<p>解二：</p>
+<p>S→abc|aSBc<br />
+cB→Bc<br />
+aB→ab<br />
+bB→bb</p>
+<p><strong>类似思想还可以写出很多文法</strong></p>
+</blockquote>
+</blockquote>
 
     </div>
 
@@ -274,7 +453,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
-              <a href="/tags/%E7%97%85%E6%AF%92/" rel="tag"># 病毒</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
           </div>
 
         
@@ -283,12 +462,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/22/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/" rel="prev" title="病毒_概述">
-      <i class="fa fa-chevron-left"></i> 病毒_概述
+    <a href="/archives/542a11c0.html" rel="prev" title="编译原理第三章">
+      <i class="fa fa-chevron-left"></i> 编译原理第三章
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/25/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="next" title="病毒-基础-文件系统">
-      病毒-基础-文件系统 <i class="fa fa-chevron-right"></i>
+    <a href="/archives/e30708a5.html" rel="next" title="编译原理第四章">
+      编译原理第四章 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -349,7 +528,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%97%85%E6%AF%92%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B"><span class="nav-number">1.</span> <span class="nav-text"> 病毒基础-代码初始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BB%A3%E7%A0%81%E5%88%9D%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text"> 1. 代码初识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%A4%A7%E7%AB%AF%E6%9C%BA%E5%92%8C%E5%B0%8F%E7%AB%AF%E6%9C%BA"><span class="nav-number">1.2.</span> <span class="nav-text"> 2. 大端机和小端机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-jmp%E6%8C%87%E4%BB%A4%E8%A7%A3%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text"> 3. JMP指令解析</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E9%9B%B6%E7%AB%A0%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA"><span class="nav-number">1.</span> <span class="nav-text"> 编译原理第零章——形式语言与自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.1.</span> <span class="nav-text"> 基础知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80%E4%B8%8E%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%90%86%E8%AE%BA%E7%AE%80%E4%BB%8B"><span class="nav-number">1.2.</span> <span class="nav-text"> 形式语言与自动机理论简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 初步认识</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%9F%E4%B8%80%E7%9A%84%E7%90%86%E8%AE%BA"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 统一的理论</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D%E4%B8%B2%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 括号匹配串的语言</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text"> 文法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E6%B4%BE%E7%94%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 推导（派生）</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
