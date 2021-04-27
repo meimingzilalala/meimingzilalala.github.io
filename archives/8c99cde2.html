@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"wsw8.online","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="编译原理第五章-编译概述  1. 不同语言程序之间的翻译  1.1 翻译 定义：语法单位之间等价的变换 就是将一种语言编写的程序转换成等价的另一种语言编写的程序  1.2 特殊的翻译：汇编、编译 汇编：将汇编语言程序翻译为机器语言的程序 编译：将高级语言程序翻译为低级语言的程序">
@@ -84,6 +84,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="江湖" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -112,6 +113,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -136,11 +138,38 @@
     <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>友情链接</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -339,7 +368,7 @@
   <div class="popular-posts-header">推荐文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/archives/29225e4a.html" rel="bookmark">编译原理第一章</a></div>
+      <div class="popular-posts-title"><a href="/archives/542a11c0.html" rel="bookmark">编译原理第三章</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/archives/1934b292.html" rel="bookmark">编译原理第二章</a></div>
@@ -348,10 +377,10 @@
       <div class="popular-posts-title"><a href="/archives/e30708a5.html" rel="bookmark">编译原理第四章</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/archives/5f3d4781.html" rel="bookmark">编译原理第四章前导</a></div>
+      <div class="popular-posts-title"><a href="/archives/29225e4a.html" rel="bookmark">编译原理第一章</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/archives/542a11c0.html" rel="bookmark">编译原理第三章</a></div>
+      <div class="popular-posts-title"><a href="/archives/5f3d4781.html" rel="bookmark">编译原理第四章前导</a></div>
     </li>
   </ul>
 
@@ -805,6 +834,10 @@ if(canvas.getContext){
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
