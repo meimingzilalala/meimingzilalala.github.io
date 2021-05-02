@@ -3,7 +3,8 @@
   <entry>
     <title>hexo+github/aliyun搭建静态博客</title>
     <url>/archives/15b1edd7.html</url>
-    <content><![CDATA[<h2 id="下载nodejs和cnpm"><a class="markdownIt-Anchor" href="#下载nodejs和cnpm"></a> 下载nodejs和cnpm</h2>
+    <content><![CDATA[<p><strong>写在前面：本来是用windows搭建的博客，但奈何Linux太香了，加上之前装过wsl，所以打算用Linux再搭建一下。</strong></p>
+<h2 id="下载nodejs和cnpm"><a class="markdownIt-Anchor" href="#下载nodejs和cnpm"></a> 下载nodejs和cnpm</h2>
 <p>直接在<a href="https://nodejs.org/zh-cn/">nodejs官网</a>进行下载并安装<br />
 <code>node -v</code>命令查看node的版本<br />
 <code>npm -v</code>命令查看npm的版本<br />
@@ -57,6 +58,325 @@
       <tags>
         <tag>自学</tag>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统结构第一章_量化设计与分析基础</title>
+    <url>/archives/6f1a4250.html</url>
+    <content><![CDATA[<h1 id="系统结构第一章-量化设计与分析基础"><a class="markdownIt-Anchor" href="#系统结构第一章-量化设计与分析基础"></a> 系统结构第一章-量化设计与分析基础</h1>
+<h2 id="1-计算机的分类"><a class="markdownIt-Anchor" href="#1-计算机的分类"></a> 1. 计算机的分类</h2>
+<h3 id="11-flynns分类"><a class="markdownIt-Anchor" href="#11-flynns分类"></a> 1.1 Flynn’s分类</h3>
+<p>定义：基于指令流和数据流数量的计算机结构分类</p>
+<ol>
+<li>
+<p>SISD</p>
+<p>串行计算机、确定执行<br />
+在任一时钟周期只有单个指令流在CPU执行<br />
+在任一时钟周期只有单个数据流用作输入</p>
+</li>
+<li>
+<p>SIMD</p>
+<p>数据级并行、适用于处理高度规整操作的问题，如图像处理、同步和确定执行<br />
+在任一时钟周期，所有处理单元执行相同的指令<br />
+每个处理单元能对不同数据元素进行操作</p>
+</li>
+<li>
+<p>MISD</p>
+<p>少有<br />
+单个数据流进入多个处理单元<br />
+每个处理单元用单个数据流对数据进行独立操作</p>
+</li>
+<li>
+<p>MIMD</p>
+<p>线程级或任务级并行、可同步或异步、可确定或非确定<br />
+每个处理器可以执行不同的指令流<br />
+每个处理器可以对不同数据流进行操作</p>
+</li>
+</ol>
+<h3 id="12-市场分类"><a class="markdownIt-Anchor" href="#12-市场分类"></a> 1.2 市场分类</h3>
+<ol>
+<li>个人移动设备</li>
+<li>桌面计算机</li>
+<li>服务器</li>
+<li>集群/仓库级计算机</li>
+<li>嵌入式计算机</li>
+</ol>
+<h2 id="2-系统结构定义和任务"><a class="markdownIt-Anchor" href="#2-系统结构定义和任务"></a> 2. 系统结构定义和任务</h2>
+<h3 id="21-定义"><a class="markdownIt-Anchor" href="#21-定义"></a> 2.1 定义</h3>
+<p>传统定义：由程序员（机器语言）看见的（计算）系统属性，即概念性结构和功能行为，以区分数据流动和控制逻辑设计的组成及物理实现</p>
+<p>现代定义：在满足功能、性能和价格目标的条件下，设计、选择和互连硬件部件构成计算机</p>
+<p>区分：</p>
+<ol>
+<li><strong>经典的计算机系统结构</strong>是机器语言程序员所看到的传统机器级所具有的属性。它确定计算机系统的软、硬件界面。</li>
+<li><strong>计算机组成</strong>指的是计算机系统结构的逻辑实现，包括五大功能部件组成以及逻辑设计等。它着眼于机器级内各事件的排序方式与控制方式，各部件的功能以及各部件的联系。</li>
+<li><strong>计算机实现</strong>指的是计算机组成的物理实现，包括处理机、主存等部件的物理结构，器件的集成度和速度功耗，模块、插件、底板的划分与连接，信号传输，电源、冷却及整机装配技术等。它着眼于器件技术和微组装技术，其中器件技术在实现技术中占主导作用。</li>
+</ol>
+<p>例题：</p>
+<ol>
+<li>主存容量与编址方式(按位、按字节、按字访问等)的确定属于<u>计算机系统结构</u></li>
+<li>为达到所定性能价格比，主存速度应多快，在逻辑结构上需采用什么措施(如多体交叉存储等)属于<u>计算机组成</u></li>
+<li>主存系统的物理实现，如存储器器件的选定、逻辑电路的设计、微组装技术的选定属于<u>计算机实现</u></li>
+</ol>
+<p>影响：</p>
+<ol>
+<li>相同的计算机系统结构的计算机可以有不同的计算机组成</li>
+<li>相同的计算机组成可以有不同的计算机实现</li>
+</ol>
+<p>系列机：</p>
+<p>​	是指由一个制造商生产的具有相同的系统结构，但具有不同组成和实现的一系列不同型号的计算机</p>
+<p>软件兼容性：</p>
+<p>​	同一个软件可以不加修改地运行于系统结构相同的各档机器上，而且运行结果一样，差别只是运行时间不同</p>
+<p>向后兼容：</p>
+<p>​	在某一时间生产的机器上运行的目标软件能够直接运行于更晚生产的机器上</p>
+<p>向上兼容：</p>
+<p>​	在低档机器上运行的目标软件能够直接运行于高档机器上</p>
+<p>指令集系统结构ISA的7个重要特征：</p>
+<ol>
+<li>ISA的类型：现代通用寄存器结构、早期累加器结构</li>
+<li>存储器访问：字节访问等</li>
+<li>寻址方式</li>
+<li>操作数类型和大小：8位字符、32位整型数</li>
+<li>操作类型：数据传输，算术/逻辑</li>
+<li>控制流指令：转移，子程序调用/返回</li>
+<li>ISA编码：固定长度，可变长度</li>
+</ol>
+<h3 id="22-任务"><a class="markdownIt-Anchor" href="#22-任务"></a> 2.2 任务</h3>
+<ol>
+<li>
+<p>考虑</p>
+<p>摩尔定律：集成在一个计算机芯片上的元件数量每两年翻一番<br />
+经验法则：成本减少速度与密度增加速度成比例<br />
+性能趋势：带宽改进优于时延<br />
+经验法则：带宽增加速度与时延平方改进速度成比例</p>
+</li>
+<li>
+<p>依据</p>
+</li>
+<li>
+<p>量化原则</p>
+</li>
+</ol>
+<h2 id="3-性能"><a class="markdownIt-Anchor" href="#3-性能"></a> 3. 性能</h2>
+<p>SPEC率：一个测试程序在参考计算机上执行时间与被测计算机上执行时间的比值，越大说明被测计算机性能越高</p>
+<p>Amdahl定律：采用更快执行方式后所带来的系统性能提高，与这种执行方式的使用频率或占总执行时间的比例有关</p>
+<p>改进比例Fe：可改进部分执行时间与改进前整个任务的执行时间的比值</p>
+<p>改进加速比Se：改进前改进部分的执行时间与改进后改进部分的执行时间的比值</p>
+<p>改进后整个系统的加速比Sn=1/((1-Fe)+Fe/Se)</p>
+<p>CPU<sub>time</sub> =指令数量*CPI*时钟周期</p>
+]]></content>
+      <categories>
+        <category>系统结构</category>
+      </categories>
+      <tags>
+        <tag>课程</tag>
+        <tag>系统结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编译原理第六章</title>
+    <url>/archives/e997863b.html</url>
+    <content><![CDATA[<h1 id="编译原理第六章-词法分析"><a class="markdownIt-Anchor" href="#编译原理第六章-词法分析"></a> 编译原理第六章-词法分析</h1>
+<p>词法分析：编译程序对源程序进行分析和目标程序合成，最终生成目标程序</p>
+<p>预处理子程序（预处理器）功能：</p>
+<ol>
+<li>删除编辑用字符，如制表符、换页符等</li>
+<li>删除注释</li>
+<li>合并多个空白字符为单个空白字符</li>
+<li>组合多个独立文件中的源程序</li>
+<li>展开宏定义</li>
+<li>条件编译的选择等</li>
+</ol>
+<blockquote>
+<p>其中，2、3等也可以在词法分析的同时进行</p>
+</blockquote>
+<h2 id="1-词法分析概述"><a class="markdownIt-Anchor" href="#1-词法分析概述"></a> 1. 词法分析概述</h2>
+<p>扫描源程序的字符串，按照词法规则，识别出单词符号作为输出；对识别过程发现的词法错误（非法的字符、不正确的常量、程序括号等）进行处理</p>
+<p>词法分析器只执行一次：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084145085.png" alt="image-20210429084145085" /></p>
+<p>词法分析器执行多次：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084219353.png" alt="image-20210429084219353" /></p>
+<h2 id="2-词法分析器的输出形式"><a class="markdownIt-Anchor" href="#2-词法分析器的输出形式"></a> 2. 词法分析器的输出形式</h2>
+<h3 id="21-单词的种类"><a class="markdownIt-Anchor" href="#21-单词的种类"></a> 2.1 单词的种类</h3>
+<ol>
+<li>标识符：用来命名程序中的实体，如类型、变量、函数、过程、标号等</li>
+<li>基本字（关键字）：如if、while等</li>
+<li>常量：各种类型的常量</li>
+<li>运算符：如+、-、*、/等</li>
+<li>（分）界符：如；、{、}等</li>
+</ol>
+<p>eg：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084743808.png" alt="image-20210429084743808" /></p>
+<blockquote>
+<p>留意最后的换行符‘\n’也是界符</p>
+</blockquote>
+<h3 id="22-单词的输出形式"><a class="markdownIt-Anchor" href="#22-单词的输出形式"></a> 2.2 单词的输出形式</h3>
+<p>使用二元式表示：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084945101.png" alt="image-20210429084945101" /></p>
+<h2 id="3-单词类别的划分"><a class="markdownIt-Anchor" href="#3-单词类别的划分"></a> 3. 单词类别的划分</h2>
+<h3 id="31-单词的编码随类别不同而不同"><a class="markdownIt-Anchor" href="#31-单词的编码随类别不同而不同"></a> 3.1 单词的编码随类别不同而不同</h3>
+<ol>
+<li><strong>基本字、运算符、界符</strong>的数目是确定的，每个单词与它的类别码为一一对应的关系，即<strong>一字一码</strong>，故而它们的第二元可以空缺</li>
+<li><strong>标识符</strong>通归一类</li>
+<li><strong>常量</strong>可按整型、实型、字符型、布尔型等分类</li>
+</ol>
+<p>eg：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429085538808.png" alt="image-20210429085538808" /></p>
+<blockquote>
+<p>通常用常数在常量表（标识符在符号表）中的位置（编号）作为它们的属性值</p>
+</blockquote>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429085737912.png" alt="image-20210429085737912" /></p>
+<h3 id="32-单词的识别方法"><a class="markdownIt-Anchor" href="#32-单词的识别方法"></a> 3.2 单词的识别方法</h3>
+<ol>
+<li>
+<p>标识符和关键字的识别</p>
+<blockquote>
+<p>需要<strong>超前搜索</strong>（多读一个字符以确认上一个结束）</p>
+<p>读到 非 字母数字停止</p>
+</blockquote>
+</li>
+<li>
+<p>常数的识别</p>
+<blockquote>
+<p>部分常量需要超前搜索</p>
+</blockquote>
+</li>
+<li>
+<p>运算符的识别</p>
+<blockquote>
+<p>1个或多个符号构成</p>
+<p>需要超前搜索</p>
+</blockquote>
+</li>
+<li>
+<p>界符的识别</p>
+<blockquote>
+<p>不需要超前搜索</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="4-状态转换图"><a class="markdownIt-Anchor" href="#4-状态转换图"></a> 4. 状态转换图</h2>
+<p>状态转换图是设计词法分析器的有效工具</p>
+<p>状态图特点：</p>
+<ol>
+<li>有限的有向图</li>
+<li>有向边上标记字符</li>
+<li>唯一初态</li>
+<li>若干终态（至少一个）</li>
+</ol>
+<p>图示：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429090825221.png" alt="image-20210429090825221" /></p>
+<p>eg：</p>
+<p>识别标识符和数字串的状态转换图：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091210263.png" alt="image-20210429091210263" /></p>
+<p>它的流程图：</p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091340527.png" alt="image-20210429091340527" /></p>
+<h2 id="5-词法分析器的设计"><a class="markdownIt-Anchor" href="#5-词法分析器的设计"></a> 5. 词法分析器的设计</h2>
+<h3 id="51-单词符号"><a class="markdownIt-Anchor" href="#51-单词符号"></a> 5.1 单词符号</h3>
+<p>标识符：begin、end、integer、if、then、else、function、read、write</p>
+<p>无符号整型常量</p>
+<p>运算符：-、*、&lt;、&lt;=、&lt;&gt;、=、&gt;、&gt;=、:=</p>
+<p>分界符：；、（、）、</p>
+<h3 id="52-状态转换图"><a class="markdownIt-Anchor" href="#52-状态转换图"></a> 5.2 状态转换图</h3>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091724175.png" alt="image-20210429091724175" /></p>
+<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091752010.png" alt="image-20210429091752010" /></p>
+<blockquote>
+<p>注意：有*标记的状态需要回退一个字符</p>
+</blockquote>
+<h3 id="53-一个示意算法"><a class="markdownIt-Anchor" href="#53-一个示意算法"></a> 5.3 一个示意算法</h3>
+<p>以下是将会用到的变量、函数和过程</p>
+<ol>
+<li>
+<p>cha</p>
+<blockquote>
+<p>字符变量，存放最新读入的字符</p>
+</blockquote>
+</li>
+<li>
+<p>token</p>
+<blockquote>
+<p>字符数组，存放已读入的字符序列</p>
+</blockquote>
+</li>
+<li>
+<p>getchar（）</p>
+<blockquote>
+<p>读入字符的过程，从输入字符串（源程序文件）中读入一个字符到变量cha中</p>
+</blockquote>
+</li>
+<li>
+<p>getnbc（）</p>
+<blockquote>
+<p>读入非空白字符的函数</p>
+</blockquote>
+</li>
+<li>
+<p>concat（）</p>
+<blockquote>
+<p>连接字符的过程，把cha中的字符连接到token数组的末尾</p>
+</blockquote>
+</li>
+<li>
+<p>letter（）</p>
+<blockquote>
+<p>判断字符是否为字母的函数，若cha中的字符是字母，返回true，否则返回false</p>
+</blockquote>
+</li>
+<li>
+<p>digit（）</p>
+<blockquote>
+<p>判断字符是否为数字的函数，同上</p>
+</blockquote>
+</li>
+<li>
+<p>retract（）</p>
+<blockquote>
+<p>回退字符的过程，将刚读入cha中的字符回退到输入字符串中，并将cha的值置为空白</p>
+<p>实现方法：不需要真正回退，可以设置标记位。</p>
+</blockquote>
+</li>
+<li>
+<p>reserve（）</p>
+<blockquote>
+<p>处理保留字的函数，对存放在token中的字符串差保留字表，查到返回该保留字的类别编码，否则返回0（假定0不是任何单词符号的类别编码）</p>
+</blockquote>
+</li>
+<li>
+<p>bulidlist（）</p>
+<blockquote>
+<p>对token中的字符串查符号表，查到返回位置编号，否则将该串存入符号表，并返回它在符号表中的位置编号</p>
+</blockquote>
+</li>
+<li>
+<p>dtb（）</p>
+<blockquote>
+<p>将token中的数字串（字符串）转换成二进制，存入常数表中，并返回它在符号表中的位置编号。若已经存在，则直接返回它在表中的编号</p>
+</blockquote>
+</li>
+<li>
+<p>return（num，value）</p>
+<blockquote>
+<p>返回二元式函数，num为单词类别编码，value是单词在符号表中的位置编号，或是它在常数表中的位置编号，或是0</p>
+</blockquote>
+</li>
+<li>
+<p>error（）</p>
+<blockquote>
+<p>处理出现词法错误的过程。有一类词法错误可以在词法分析时发现，如出现字母表以外的非法字符。不和规则的常数等。但有一类词法错误例如if写成fi，词法分析会将fi当标识符处理，length中多了个空格，词法分析会将le和ngth当作两个标识符处理，这类错误要推迟到语法分析时才能发现，当作语法错误处理</p>
+</blockquote>
+</li>
+</ol>
+<p>伪代码：</p>
+<figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line">Word_Struct LexAnalyze()</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   start:  token:=‘’ ;</span><br><span class="line">              getchar();</span><br><span class="line">              getnb();</span><br><span class="line">              <span class="keyword">case</span> cha <span class="keyword">of</span> </span><br><span class="line">                ‘a’…‘z’:  <span class="keyword">begin</span> </span><br><span class="line">                  <span class="keyword">while</span> letter() <span class="keyword">or</span> digit() <span class="keyword">do</span></span><br><span class="line">                     <span class="keyword">begin</span> concat ();getchar() <span class="keyword">end</span>;</span><br><span class="line">                     retract(); c:= reserve();</span><br><span class="line">                     <span class="keyword">if</span> c = <span class="number">0</span> <span class="keyword">then</span> <span class="keyword">begin</span></span><br><span class="line">                        val:= buildlist(); return($ID,val)    end</span><br><span class="line">                    <span class="keyword">else</span> return(c,<span class="number">0</span>)</span><br><span class="line">                 <span class="keyword">end</span>;</span><br><span class="line">                ‘<span class="number">0</span>’…‘<span class="number">9</span>’:  <span class="keyword">begin</span></span><br><span class="line">                 <span class="keyword">while</span> digit() <span class="keyword">do</span></span><br><span class="line">                   <span class="keyword">begin</span> concat();getchar() <span class="keyword">end</span>;</span><br><span class="line">                 retract(); val:=dtb();</span><br><span class="line">                 return($INT,val)</span><br><span class="line">                 <span class="keyword">end</span>;</span><br><span class="line">                ‘ = ’:   return(<span class="number">$E</span>Q,<span class="number">0</span>);</span><br><span class="line">                ‘ - ’:    return($SUB,0); </span><br><span class="line">                ‘ * ’:   return($MUL,0);</span><br><span class="line">                ‘ ( ’:    return($LPAR,0);</span><br><span class="line">                ‘ ) ’:    return($RPAR,0);</span><br><span class="line">                ‘ ; ’:    return($SEM,0)</span><br><span class="line">                ‘ &lt; ’:   <span class="keyword">begin</span></span><br><span class="line">                  getchar();</span><br><span class="line">                  if cha = ‘=’ then return($LE, 0)</span><br><span class="line">                  <span class="keyword">else</span> </span><br><span class="line">                    if cha = ‘&gt;’ then return($NE, 0);</span><br><span class="line">                  retract();  return($LT,0)</span><br><span class="line">                <span class="keyword">end</span>;</span><br><span class="line">                ‘ &gt; ’:   <span class="keyword">begin</span></span><br><span class="line">                  getchar();</span><br><span class="line">                  if cha= ‘ = ’ then return($GE, 0);</span><br><span class="line">                  retract();</span><br><span class="line">                  return($GT, 0)</span><br><span class="line">                <span class="keyword">end</span>;</span><br><span class="line">                ‘ : ’:    <span class="keyword">begin</span></span><br><span class="line">                  getchar();</span><br><span class="line">                  <span class="keyword">if</span> cha = ‘ = ‘ <span class="keyword">then</span>   </span><br><span class="line">                      return(<span class="number">$A</span>SSIGN,<span class="number">0</span>)</span><br><span class="line">                  <span class="keyword">else</span> error(<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">end</span>;</span><br><span class="line">                other: error(<span class="number">2</span>)</span><br><span class="line">                <span class="keyword">end</span> <span class="keyword">of</span> <span class="keyword">case</span>;</span><br><span class="line"><span class="keyword">End</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上代码将词法分析器实现为一个函数LexAnalyze()，函数没执行一次，就会从输入字符串中识别出一个单词符号并按二元式形式返回。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编译原理</category>
+      </categories>
+      <tags>
+        <tag>课程</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -170,6 +490,50 @@ eg：</p>
 </ol>
 <p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210425164158141.png" alt="image-20210425164158141" /></p>
 <p>注：左侧为扇区号、第二个FAT12为备用FAT</p>
+<h4 id="如何定位到一个文件"><a class="markdownIt-Anchor" href="#如何定位到一个文件"></a> 如何定位到一个文件</h4>
+<h5 id="fat表的格式"><a class="markdownIt-Anchor" href="#fat表的格式"></a> FAT表的格式</h5>
+<p>在文件系统中，文件分配的最小单位是簇，哪怕只有一个字节也会分配一簇<br />
+簇是由n个扇区组成<br />
+其中n在引导扇区的引导记录中定义</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428094415697.png" alt="image-20210428094415697" /></p>
+<h5 id="fat表的本质"><a class="markdownIt-Anchor" href="#fat表的本质"></a> FAT表的本质</h5>
+<p>FAT表的本质是<strong>磁盘簇分配情况的数据表示</strong></p>
+<p>在FAT12文件系统中，FAT表以3个<strong>半字节</strong>（3*0.5Byte=1.5Byte=12bit）来记录一个簇的相关情况，这也是FAT12中12的由来</p>
+<p>FAT表中每3个<strong>半字节</strong>为一个元素，这个元素就代表一个簇，簇号从0开始，这个元素中<strong>存放的整数值</strong>表示其链接的下一簇的簇号</p>
+<h5 id="fat表的查找与遍历机制"><a class="markdownIt-Anchor" href="#fat表的查找与遍历机制"></a> FAT表的查找与遍历机制</h5>
+<p>FAT表是一个数组，数组中每个元素是1.5字节的整数，为了查找FAT表中簇号为N的元素，只需用N作索引查找FAT[N]元素，如下图：</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428095326854.png" alt="image-20210428095326854" /></p>
+<p>真正在FAT12表中的查找方法：</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428095655541.png" alt="image-20210428095655541" /></p>
+<p><strong>注意：三个字节中如何分配的两个半字节，可以结合小端机中数据的存放规则记忆</strong></p>
+<h5 id="遍历一个文件占用的簇"><a class="markdownIt-Anchor" href="#遍历一个文件占用的簇"></a> 遍历一个文件占用的簇</h5>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428100002898.png" alt="image-20210428100002898" /></p>
+<h5 id="如何获取首簇号"><a class="markdownIt-Anchor" href="#如何获取首簇号"></a> 如何获取首簇号</h5>
+<p>根目录区有根目录表，其记录了文件的各种信息。<br />
+根目录表中包含多条记录，每条记录占32个字节</p>
+<p>现在我们关注根目录表中的<strong>文件名</strong>字段和<strong>首簇号</strong>字段<br />
+文件名</p>
+<blockquote>
+<p>在记录首部偏移0开始，共11字节，前8个字节记录文件名，后3个字节记录扩展名（中间的.不需要记录）名字的结束以空格表示（即0x20）</p>
+</blockquote>
+<p>首簇号</p>
+<blockquote>
+<p>首簇号首部偏移0x1A开始，共2个字节</p>
+</blockquote>
+<p>下图是getexe.com的文件名与首簇号图示，getexe只占用6个字节，后两个字节用空格填充，首簇号是0003</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428160041729.png" alt="image-20210428160041729" /></p>
+<h5 id="如何查找根目录"><a class="markdownIt-Anchor" href="#如何查找根目录"></a> 如何查找根目录</h5>
+<ol>
+<li>从磁盘0头0道1扇区读出引导区（Boot）512字节，从其中引导记录获取相关信息：Boot区占用扇区数，FAT表数目，每个FAT表的扇区数，1个扇区的字节数</li>
+<li>计算根目录区的起始位置为：<br />
+[ 1（Boot区扇区数）+2（FAT数目）*9（FAT扇区数）] * 512 = 0x2600<br />
+即2600h为根目录区起始位置</li>
+<li>从引导记录获取根区记录数，缺省224条，按每条记录32字节读出所有记录</li>
+<li>每条记录开始11个字节为文件名，比较文件名匹配则找到记录，从首簇字段（从该记录开始偏移1Ah处）获得首簇号</li>
+</ol>
+<h5 id="多级目录的查找流程"><a class="markdownIt-Anchor" href="#多级目录的查找流程"></a> 多级目录的查找流程</h5>
+<p>以查找a:\tem\tem.txt为例</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428161152854.png" alt="image-20210428161152854" /></p>
 ]]></content>
       <categories>
         <category>病毒</category>
