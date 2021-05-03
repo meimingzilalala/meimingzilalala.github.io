@@ -8,7 +8,7 @@
          clearTimeout(titleTime);
      }
      else {
-         $('[rel="icon"]').attr('href', "/favicon.ico");
+         $('[rel="icon"]').attr('href', "/images/favicon-16x16-dog.png");
          document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitle;
          titleTime = setTimeout(function () {
              document.title = OriginTitle;
