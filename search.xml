@@ -99,7 +99,7 @@
 </blockquote>
 </li>
 <li>
-<p>删除所有内容，将以下内容复制粘贴进去**（命令行中复制和粘贴都是右键）**</p>
+<p>删除所有内容，将以下内容复制粘贴进去**(命令行中复制和粘贴都是右键)**</p>
 <p>debian源：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"># 中科大源</span><br><span class="line">deb http:<span class="comment">//mirrors.ustc.edu.cn/debian stable main contrib non-free</span></span><br><span class="line"><span class="meta"># deb-src http:<span class="comment">//mirrors.ustc.edu.cn/debian stable main contrib non-free</span></span></span><br><span class="line">deb http:<span class="comment">//mirrors.ustc.edu.cn/debian stable-updates main contrib non-free</span></span><br><span class="line"><span class="meta"># deb-src http:<span class="comment">//mirrors.ustc.edu.cn/debian stable-updates main contrib non-free</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta"># deb http:<span class="comment">//mirrors.ustc.edu.cn/debian stable-proposed-updates main contrib non-free</span></span></span><br><span class="line"><span class="meta"># deb-src http:<span class="comment">//mirrors.ustc.edu.cn/debian stable-proposed-updates main contrib non-free</span></span></span><br></pre></td></tr></table></figure>
 <p>Ubuntu源：</p>
