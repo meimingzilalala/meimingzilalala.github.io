@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-02T03:24:46.526Z</updated>
+  <updated>2021-05-03T08:24:31.860Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -15,6 +15,95 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>系统结构第三章_流水线</title>
+    <link href="https://wsw8.online/archives/ef24c61a.html"/>
+    <id>https://wsw8.online/archives/ef24c61a.html</id>
+    <published>2021-05-03T08:22:30.000Z</published>
+    <updated>2021-05-03T08:24:31.860Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="系统结构第三章-流水线"><a class="markdownIt-Anchor" href="#系统结构第三章-流水线"></a> 系统结构第三章-流水线</h1><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;系统结构第三章-流水线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统结构第三章-流水线&quot;&gt;&lt;/a&gt; 系统结构第三章-流水线&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="系统结构" scheme="https://wsw8.online/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="系统结构" scheme="https://wsw8.online/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统结构第二章_指令系统原理与实例</title>
+    <link href="https://wsw8.online/archives/a6c351d5.html"/>
+    <id>https://wsw8.online/archives/a6c351d5.html</id>
+    <published>2021-05-02T06:52:30.000Z</published>
+    <updated>2021-05-03T08:19:31.134Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="系统结构第二章-指令系统原理与实例"><a class="markdownIt-Anchor" href="#系统结构第二章-指令系统原理与实例"></a> 系统结构第二章-指令系统原理与实例</h1><h2 id="1-指令集系统结构的分类"><a class="markdownIt-Anchor" href="#1-指令集系统结构的分类"></a> 1. 指令集系统结构的分类</h2><p>根本区别：处理器内部数据的存储结构不同</p><p>存储结构：</p><ol><li>堆栈：操作数隐含的位于栈顶</li><li>累加器：一个隐含操作数就是累加器</li><li>通用寄存器：明确地指定操作数，不是寄存器就是存储器地址<ol><li>register-memory系统结构：一般指令都可以访存</li><li>register-register/load-store系统结构：只有load、store指令能访存</li></ol></li></ol><span id="more"></span><p>图示：</p><p>数据流动示意图：</p><p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502145943075.png" alt="image-20210502145943075" /></p><p>运算例子示意图：</p><p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502150225975.png" alt="image-20210502150225975" /></p><p>通用寄存器ISA运算类指令的两个特性：</p><ol><li>ALU指令中包括两个或三个操作数</li><li>ALU指令中包括0到3个存储器操作数</li></ol><p>通用寄存器计算机优缺点：</p><p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502151144878.png" alt="image-20210502151144878" /></p><h2 id="2-存储器寻址"><a class="markdownIt-Anchor" href="#2-存储器寻址"></a> 2. 存储器寻址</h2><h3 id="21-寻址方式"><a class="markdownIt-Anchor" href="#21-寻址方式"></a> 2.1 寻址方式</h3><p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502152010830.png" alt="image-20210502152010830" /></p><h3 id="22-小结"><a class="markdownIt-Anchor" href="#22-小结"></a> 2.2 小结</h3><ol><li>一般ISA支持的基本寻址方式：立即数寻址、位移量寻址、寄存器间接寻址</li><li>位移量为13-16位、立即数为16位</li><li>立即数寻址通常用于：运算类指令、置常数到寄存器指令</li></ol><h2 id="3-mips系统结构"><a class="markdownIt-Anchor" href="#3-mips系统结构"></a> 3. MIPS系统结构</h2><p>特点：</p><ol><li>一种简单64位load-store系统结构</li><li>固定长度指令编码</li></ol><p>寄存器：</p><ol><li>32个64位通用寄存器（GPR），R0……R31，<strong>R0永远是0</strong></li><li>32个浮点寄存器（FPR），F0……F31，可作为32位单精度寄存器使用，也可作为64位双精度寄存器使用</li></ol><p>寻址方式：</p><ol><li>16位立即数寻址</li><li>16位基址寻址，当位移量为0时是寄存器间接寻址、当R0作为基址寄存器时是16位绝对寻址</li></ol><p>指令格式：</p><ol><li>指令长度：32位，6位为基本操作码</li><li>两种存储器寻址方式：编码到操作码中</li></ol><p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503153254772.png" alt="image-20210503153254772" /></p><p>操作：</p><ol><li>载入和存储<ul><li>所有通用寄存器和浮点数寄存器都可以被载入或存储，除了R0</li><li><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503153545936.png" alt="image-20210503153545936" /></li><li>上述图示说明：<ol><li>⬅的下标表示传送n位</li><li>Mem表示主存，按字节编址</li><li>下标标识字段中特定的位，从以0开始的最高位开始标注</li><li>上标表示对字段的复制</li><li>##表示字段的连接</li></ol></li></ul></li><li>ALU操作<ul><li>都是寄存器-寄存器指令</li><li>包括算术和逻辑操作：加、减、与、或、异或、移位</li><li><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503154351355.png" alt="image-20210503154351355" /></li></ul></li><li>分支和跳转<ul><li><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503154602183.png" alt="image-20210503154602183" /></li></ul></li><li>浮点操作<ul><li>浮点指令指出操作数是单精度（SP）还是双精度（DP）</li><li>MOV.S和MOV.D分别复制单精度和双精度的寄存器</li><li>MFC1、MTC1、DMFC1、DMTC1在一个单精度或双精度浮点数寄存器和一个定点寄存器之间传送数据</li></ul></li></ol><h2 id="4-一些误区"><a class="markdownIt-Anchor" href="#4-一些误区"></a> 4. 一些误区</h2><ol><li>专门设计支持高级语言结构的“高级”指令功能</li><li>存在一种典型的程序</li><li>可以不考虑编译器而改进指令系统以缩减代码大小</li><li>有缺陷的系统结构不可能是一种成功的系统结构</li><li>可以设计一个没有缺陷的系统结构</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;系统结构第二章-指令系统原理与实例&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统结构第二章-指令系统原理与实例&quot;&gt;&lt;/a&gt; 系统结构第二章-指令系统原理与实例&lt;/h1&gt;
+&lt;h2 id=&quot;1-指令集系统结构的分类&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-指令集系统结构的分类&quot;&gt;&lt;/a&gt; 1. 指令集系统结构的分类&lt;/h2&gt;
+&lt;p&gt;根本区别：处理器内部数据的存储结构不同&lt;/p&gt;
+&lt;p&gt;存储结构：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;堆栈：操作数隐含的位于栈顶&lt;/li&gt;
+&lt;li&gt;累加器：一个隐含操作数就是累加器&lt;/li&gt;
+&lt;li&gt;通用寄存器：明确地指定操作数，不是寄存器就是存储器地址
+&lt;ol&gt;
+&lt;li&gt;register-memory系统结构：一般指令都可以访存&lt;/li&gt;
+&lt;li&gt;register-register/load-store系统结构：只有load、store指令能访存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="系统结构" scheme="https://wsw8.online/categories/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="系统结构" scheme="https://wsw8.online/tags/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wsl的安装与配置</title>
+    <link href="https://wsw8.online/archives/cee22f12.html"/>
+    <id>https://wsw8.online/archives/cee22f12.html</id>
+    <published>2021-05-02T03:34:04.000Z</published>
+    <updated>2021-05-02T03:41:30.030Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="wslwindows-subsystem-for-linux的安装与配置"><a class="markdownIt-Anchor" href="#wslwindows-subsystem-for-linux的安装与配置"></a> wsl（Windows Subsystem for Linux）的安装与配置</h1><h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2><p>之前上过一个Linux的选修课，了解了Linux系统的一些知识，越用越觉得一些需要命令行的软件用Linux来简直太方便了，这篇文章就介绍以下如何在windows系统上搭建Linux子系统（也就是wsl），不用使用VMware来装虚拟机了</p><h2 id="windows-10-开启wsl功能"><a class="markdownIt-Anchor" href="#windows-10-开启wsl功能"></a> windows 10 开启wsl功能</h2><ol><li>在Windows 10</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;wslwindows-subsystem-for-linux的安装与配置&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#wslwindows-subsystem-for-linux的安装与配置&quot;&gt;&lt;/a&gt; wsl（Windows Sub</summary>
+      
+    
+    
+    
+    <category term="wsl" scheme="https://wsw8.online/categories/wsl/"/>
+    
+    
+    <category term="自学" scheme="https://wsw8.online/tags/%E8%87%AA%E5%AD%A6/"/>
+    
+    <category term="Linux" scheme="https://wsw8.online/tags/Linux/"/>
+    
+    <category term="wsl" scheme="https://wsw8.online/tags/wsl/"/>
+    
+  </entry>
   
   <entry>
     <title>系统结构第一章_量化设计与分析基础</title>
@@ -384,13 +473,14 @@ AB代表集合A与B的连接，A={a1,a2,a3,…,an}，B={b1,b2,b3,…,bm}&lt;/p&g
     <link href="https://wsw8.online/archives/15b1edd7.html"/>
     <id>https://wsw8.online/archives/15b1edd7.html</id>
     <published>2021-04-14T10:45:23.000Z</published>
-    <updated>2021-04-28T02:26:32.045Z</updated>
+    <updated>2021-05-02T06:52:08.947Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>写在前面：本来是用windows搭建的博客，但奈何Linux太香了，加上之前装过wsl，所以打算用Linux再搭建一下。</strong></p><h2 id="下载nodejs和cnpm"><a class="markdownIt-Anchor" href="#下载nodejs和cnpm"></a> 下载nodejs和cnpm</h2><p>直接在<a href="https://nodejs.org/zh-cn/">nodejs官网</a>进行下载并安装<br /><code>node -v</code>命令查看node的版本<br /><code>npm -v</code>命令查看npm的版本<br />然后利用npm安装淘宝的cnpm，下载速度快一些<br /><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>命令安装淘宝的cnpm包管理器<br /><code>cnpm -v</code>命令查看cnpm的版本</p><span id="more"></span><hr /><h2 id="下载hexo并创建本地的静态博客"><a class="markdownIt-Anchor" href="#下载hexo并创建本地的静态博客"></a> 下载hexo并创建本地的静态博客</h2><p><code>cnpm install -g hexo-cli</code>安装hexo<br /><code>hexo -v</code>查看hexo版本<br />然后创建一个你存博客的目录并进入到该目录，你可能会用到<code>mkdir blog</code>,<code>cd blog</code><br /><code>hexo init</code>在当前目录下生成博客的框架<br />你可以使用<code>hexo s</code>开启博客，进入<code>http://localhost:4000/</code>查看本地博客内容<br /><code>hexo n &quot;文章名&quot;</code>创建新的文章<br />然后找到<code>\source\_post</code>目录下编辑文章即可，使用markdown语法</p><hr /><h2 id="部署到github上"><a class="markdownIt-Anchor" href="#部署到github上"></a> 部署到GitHub上</h2><p>首先在你的GitHub上新建一个仓库，命名为<code>YourGithubName.github.io</code><br />然后<code>cnpm install --save hexo-deployer-git</code>在blog目录下安装git部署插件<br />下面配置_config.yml</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line"> <span class="built_in">type</span>: git</span><br><span class="line">repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure><p>最后运行以下三条命令：<br /><code>hexo clean</code>清理<br /><code>hexo g</code>生成<br /><code>hexo d</code>部署<br />以上三条命令基本是每次修改博客后都要运行的<br />最后在<code>https://YourGithubName.github.io</code>下就可以查看啦！</p><hr /><h2 id="主题的更换"><a class="markdownIt-Anchor" href="#主题的更换"></a> 主题的更换</h2><p>更改主题一般分两步：<br />1、<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>利用git将别人仓库里的主题克隆到自己的blog下的themes文件夹里<br />2、修改blog目录下的 _config.yml 文件中的  theme改为theme: yilia<br /><strong>注意：这里的GitHub地址是示例，虽然这个大佬写的也挺好看的；themes下的文件夹名要和theme冒号后面的名称一样</strong><br />更改完成，运行上面的三条命令就可以看到变化啦（比较慢，多等一会，用本地查看会快一些）</p><hr /><h2 id="一些个性化的定制"><a class="markdownIt-Anchor" href="#一些个性化的定制"></a> 一些个性化的定制</h2><h3 id="看板娘的添加"><a class="markdownIt-Anchor" href="#看板娘的添加"></a> 看板娘的添加</h3><p>明天再更</p><h3 id="网址小图标的添加"><a class="markdownIt-Anchor" href="#网址小图标的添加"></a> 网址小图标的添加</h3><p>内容</p><h3 id="主题里一些内容的简单定制"><a class="markdownIt-Anchor" href="#主题里一些内容的简单定制"></a> 主题里一些内容的简单定制</h3><p>内容</p><hr /><h2 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h2><p>1、<a href="https://www.bilibili.com/video/BV1Yb411a7ty">b站大佬视频讲解</a></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>写在前面：本来是用windows搭建的博客，但奈何Linux太香了，加上之前装过wsl，所以打算用Linux再搭建一下。</strong></p><h2 id="下载nodejs和cnpm"><a class="markdownIt-Anchor" href="#下载nodejs和cnpm"></a> 下载nodejs和cnpm</h2><p>Windows下：</p><p>直接在<a href="https://nodejs.org/zh-cn/">nodejs官网</a>进行下载并安装<br /><code>node -v</code>命令查看node的版本<br /><code>npm -v</code>命令查看npm的版本<br />然后利用npm安装淘宝的cnpm，下载速度快一些<br /><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code>命令安装淘宝的cnpm包管理器<br /><code>cnpm -v</code>命令查看cnpm的版本</p><span id="more"></span><hr /><h2 id="下载hexo并创建本地的静态博客"><a class="markdownIt-Anchor" href="#下载hexo并创建本地的静态博客"></a> 下载hexo并创建本地的静态博客</h2><p><code>cnpm install -g hexo-cli</code>安装hexo<br /><code>hexo -v</code>查看hexo版本<br />然后创建一个你存博客的目录并进入到该目录，你可能会用到<code>mkdir blog</code>,<code>cd blog</code><br /><code>hexo init</code>在当前目录下生成博客的框架<br />你可以使用<code>hexo s</code>开启博客，进入<code>http://localhost:4000/</code>查看本地博客内容<br /><code>hexo n &quot;文章名&quot;</code>创建新的文章<br />然后找到<code>\source\_post</code>目录下编辑文章即可，使用markdown语法</p><hr /><h2 id="部署到github上"><a class="markdownIt-Anchor" href="#部署到github上"></a> 部署到GitHub上</h2><p>首先在你的GitHub上新建一个仓库，命名为<code>YourGithubName.github.io</code><br />然后<code>cnpm install --save hexo-deployer-git</code>在blog目录下安装git部署插件<br />下面配置_config.yml</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line"> <span class="built_in">type</span>: git</span><br><span class="line">repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure><p>最后运行以下三条命令：<br /><code>hexo clean</code>清理<br /><code>hexo g</code>生成<br /><code>hexo d</code>部署<br />以上三条命令基本是每次修改博客后都要运行的<br />最后在<code>https://YourGithubName.github.io</code>下就可以查看啦！</p><hr /><h2 id="主题的更换"><a class="markdownIt-Anchor" href="#主题的更换"></a> 主题的更换</h2><p>更改主题一般分两步：<br />1、<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code>利用git将别人仓库里的主题克隆到自己的blog下的themes文件夹里<br />2、修改blog目录下的 _config.yml 文件中的  theme改为theme: yilia<br /><strong>注意：这里的GitHub地址是示例，虽然这个大佬写的也挺好看的；themes下的文件夹名要和theme冒号后面的名称一样</strong><br />更改完成，运行上面的三条命令就可以看到变化啦（比较慢，多等一会，用本地查看会快一些）</p><hr /><h2 id="一些个性化的定制"><a class="markdownIt-Anchor" href="#一些个性化的定制"></a> 一些个性化的定制</h2><h3 id="看板娘的添加"><a class="markdownIt-Anchor" href="#看板娘的添加"></a> 看板娘的添加</h3><p>明天再更</p><h3 id="网址小图标的添加"><a class="markdownIt-Anchor" href="#网址小图标的添加"></a> 网址小图标的添加</h3><p>内容</p><h3 id="主题里一些内容的简单定制"><a class="markdownIt-Anchor" href="#主题里一些内容的简单定制"></a> 主题里一些内容的简单定制</h3><p>内容</p><hr /><h2 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h2><p>1、<a href="https://www.bilibili.com/video/BV1Yb411a7ty">b站大佬视频讲解</a></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;&lt;strong&gt;写在前面：本来是用windows搭建的博客，但奈何Linux太香了，加上之前装过wsl，所以打算用Linux再搭建一下。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;下载nodejs和cnpm&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#下载nodejs和cnpm&quot;&gt;&lt;/a&gt; 下载nodejs和cnpm&lt;/h2&gt;
+&lt;p&gt;Windows下：&lt;/p&gt;
 &lt;p&gt;直接在&lt;a href=&quot;https://nodejs.org/zh-cn/&quot;&gt;nodejs官网&lt;/a&gt;进行下载并安装&lt;br /&gt;
 &lt;code&gt;node -v&lt;/code&gt;命令查看node的版本&lt;br /&gt;
 &lt;code&gt;npm -v&lt;/code&gt;命令查看npm的版本&lt;br /&gt;
