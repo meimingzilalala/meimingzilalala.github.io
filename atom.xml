@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-03T08:32:04.079Z</updated>
+  <updated>2021-05-04T02:49:32.001Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -21,12 +21,18 @@
     <link href="https://wsw8.online/archives/ef24c61a.html"/>
     <id>https://wsw8.online/archives/ef24c61a.html</id>
     <published>2021-05-03T08:22:30.000Z</published>
-    <updated>2021-05-03T08:32:04.079Z</updated>
+    <updated>2021-05-04T02:49:32.001Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="系统结构第三章-流水线"><a class="markdownIt-Anchor" href="#系统结构第三章-流水线"></a> 系统结构第三章-流水线</h1><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<h1 id="系统结构第三章-流水线"><a class="markdownIt-Anchor" href="#系统结构第三章-流水线"></a> 系统结构第三章-流水线</h1><h2 id="1-什么是流水线"><a class="markdownIt-Anchor" href="#1-什么是流水线"></a> 1. 什么是流水线</h2><p>定义：流水线是利用执行指令操作之间的并行性，实现多条指令重叠执行的技术</p><h3 id="11-术语"><a class="markdownIt-Anchor" href="#11-术语"></a> 1.1 术语</h3><p>流水段（流水级）：完成一条指令的一部分操作</p><p>机器周期（流水线周期）：指令沿流水线移动一个流水段的时间。长度取决于最慢的流水段，一般是一个时钟周期（有时是两个时钟周期）。每个流水线周期从指令流水线流出一条指令</p><p>吞吐量：单位时间从流水线流出的指令数</p><span id="more"></span><p>流水线设计者：平衡每个流水段的时间，使之等长。因此，每条指令在流水线的平均执行时间在理想情况下为：非流水线机器平均指令执行时间/流水线机器段数</p><p>流水线加速比：非流水线机器平均指令执行时间/流水线机器平均指令执行时间</p><p>理想情况：流水线加速比=流水线机器段数</p><h3 id="12-特点"><a class="markdownIt-Anchor" href="#12-特点"></a> 1.2 特点</h3><ol><li>类似自动装配线</li><li>有多个段（级），段间有<strong>流水线寄存器</strong></li><li>每个流水段执行指令或操作的<strong>不同部分</strong></li><li>流水段之间采用<strong>同步时钟控制</strong></li><li>流水线是开发串行指令流中<strong>并行性</strong>的一种实现技术</li></ol><h2 id="2-risc指令系统的特点"><a class="markdownIt-Anchor" href="#2-risc指令系统的特点"></a> 2. RISC指令系统的特点</h2><ol><li>所有参加运算的数据来自<strong>寄存器</strong>，结果也写入<strong>寄存器</strong>，寄存器为32/64位</li><li>访存只有<code>load</code>和<code>store</code>指令</li><li>指令的类型较少，所有指令<strong>长度相同</strong></li><li>不同指令执行的时钟周期数差别不大</li></ol><h2 id="3-非流水线方式下risc指令系统的实现"><a class="markdownIt-Anchor" href="#3-非流水线方式下risc指令系统的实现"></a> 3. 非流水线方式下RISC指令系统的实现</h2>]]></content>
     
     
-    <summary type="html">&lt;h1 id=&quot;系统结构第三章-流水线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统结构第三章-流水线&quot;&gt;&lt;/a&gt; 系统结构第三章-流水线&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;系统结构第三章-流水线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#系统结构第三章-流水线&quot;&gt;&lt;/a&gt; 系统结构第三章-流水线&lt;/h1&gt;
+&lt;h2 id=&quot;1-什么是流水线&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-什么是流水线&quot;&gt;&lt;/a&gt; 1. 什么是流水线&lt;/h2&gt;
+&lt;p&gt;定义：流水线是利用执行指令操作之间的并行性，实现多条指令重叠执行的技术&lt;/p&gt;
+&lt;h3 id=&quot;11-术语&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#11-术语&quot;&gt;&lt;/a&gt; 1.1 术语&lt;/h3&gt;
+&lt;p&gt;流水段（流水级）：完成一条指令的一部分操作&lt;/p&gt;
+&lt;p&gt;机器周期（流水线周期）：指令沿流水线移动一个流水段的时间。长度取决于最慢的流水段，一般是一个时钟周期（有时是两个时钟周期）。每个流水线周期从指令流水线流出一条指令&lt;/p&gt;
+&lt;p&gt;吞吐量：单位时间从流水线流出的指令数&lt;/p&gt;</summary>
     
     
     
