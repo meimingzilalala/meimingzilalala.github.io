@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wsw8.online/archives/92e6b388.html</loc>
+    <loc>https://wsw8.online/archives/57883fea.html</loc>
     
     <lastmod>2021-05-10</lastmod>
     
   </url>
   
   <url>
-    <loc>https://wsw8.online/archives/57883fea.html</loc>
+    <loc>https://wsw8.online/archives/92e6b388.html</loc>
     
-    <lastmod>2021-05-08</lastmod>
+    <lastmod>2021-05-10</lastmod>
     
   </url>
   
@@ -158,20 +158,6 @@
 
   
   <url>
-    <loc>https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2021-05-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wsw8.online/tags/%E7%97%85%E6%AF%92/</loc>
-    <lastmod>2021-05-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wsw8.online/tags/%E8%87%AA%E5%AD%A6/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
@@ -187,6 +173,20 @@
   
   <url>
     <loc>https://wsw8.online/tags/wsl/</loc>
+    <lastmod>2021-05-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2021-05-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wsw8.online/tags/%E7%97%85%E6%AF%92/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -209,14 +209,14 @@
 
   
   <url>
-    <loc>https://wsw8.online/categories/%E7%97%85%E6%AF%92/</loc>
+    <loc>https://wsw8.online/categories/wsl/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://wsw8.online/categories/wsl/</loc>
+    <loc>https://wsw8.online/categories/%E7%97%85%E6%AF%92/</loc>
     <lastmod>2021-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
