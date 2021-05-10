@@ -11,7 +11,7 @@
 <li>按Windows+Q进入搜索功能，也可以右键点击开始，选择里面的搜索功能</li>
 <li>在Windows 10的搜索框中输入<code>启用或关闭Windows功能</code></li>
 <li>打开后选中<code>适用于Linux的Windows子系统</code><br />
-<img src="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503170452634.png" alt="image-20210503170452634" /></li>
+<img src="/images/loading.gif" data-original="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503170452634.png" alt="image-20210503170452634" /></li>
 </ol>
 <h2 id="linux的安装"><a class="markdownIt-Anchor" href="#linux的安装"></a> Linux的安装</h2>
 <ol>
@@ -19,8 +19,8 @@
 <li>搜索Linux</li>
 <li>选择其中的一个发行版本进行安装，本文以debian为例</li>
 </ol>
-<p><img src="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503171000458.png" alt="image-20210503171000458" /></p>
-<p><img src="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503171035452.png" alt="image-20210503171035452" /></p>
+<p><img src="/images/loading.gif" data-original="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503171000458.png" alt="image-20210503171000458" /></p>
+<p><img src="/images/loading.gif" data-original="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503171035452.png" alt="image-20210503171035452" /></p>
 <h2 id="linux初始化"><a class="markdownIt-Anchor" href="#linux初始化"></a> Linux初始化</h2>
 <ol>
 <li>
@@ -57,7 +57,7 @@
 <li>打开Terminal</li>
 <li>打开设置</li>
 </ol>
-<p><img src="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503171852186.png" alt="image-20210503171852186" /></p>
+<p><img src="/images/loading.gif" data-original="/images/wsl%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/image-20210503171852186.png" alt="image-20210503171852186" /></p>
 <ol start="3">
 <li>点击左下角的设置图标，进入Terminal的配置文件，如下，<strong>为了安全起见建议备份一下，不然出问题不好还原</strong></li>
 </ol>
@@ -206,7 +206,7 @@
 <h3 id="尾插入"><a class="markdownIt-Anchor" href="#尾插入"></a> 尾插入</h3>
 <h4 id="大致思路-2"><a class="markdownIt-Anchor" href="#大致思路-2"></a> 大致思路</h4>
 <p>用JMP指令覆盖正常程序的前3个字节使其跳转到病毒代码，再将覆盖的代码写到病毒代码的最后，执行完病毒代码后将尾部保存的原字节内容覆盖回去再跳转回去执行就可</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210509192438009.png" alt="image-20210509192438009" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210509192438009.png" alt="image-20210509192438009" /></p>
 <h4 id="自定位代码"><a class="markdownIt-Anchor" href="#自定位代码"></a> 自定位代码</h4>
 <p>但是有一些问题，比如病毒代码的加载偏差，在头插入中我们采用将正常代码拷贝到原来位置来消除加载偏差的，可是如果我们拷贝病毒代码，那就成了头插入了，于是我们要想办法获得加载偏差的值然后在病毒代码中校正，这就是自定位技术（重定位技术）</p>
 <ol>
@@ -215,20 +215,20 @@
 </li>
 <li>
 <p>但是CALL指令很特殊，它会将<strong>下一条</strong>指令的IP压栈后跳转执行，于是我们可以利用这个机制获得加载偏差</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210509194514539.png" alt="image-20210509194514539" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210509194514539.png" alt="image-20210509194514539" /></p>
 </li>
 </ol>
 <h4 id="总结-2"><a class="markdownIt-Anchor" href="#总结-2"></a> 总结</h4>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210509200017110.png" alt="image-20210509200017110" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210509200017110.png" alt="image-20210509200017110" /></p>
 <h3 id="逆差入"><a class="markdownIt-Anchor" href="#逆差入"></a> 逆差入</h3>
 <p>定义：逆插入感染，实际就是一部分代码在原程序的头部，一部分在尾部，将整个原来的程序给包裹起来</p>
 <h4 id="图示"><a class="markdownIt-Anchor" href="#图示"></a> 图示</h4>
 <p>大致思路：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151224438.png" alt="image-20210510151224438" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151224438.png" alt="image-20210510151224438" /></p>
 <p>程序设计：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510152355492.png" alt="image-20210510152355492" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510152355492.png" alt="image-20210510152355492" /></p>
 <p>感染代码：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510152516043.png" alt="image-20210510152516043" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510152516043.png" alt="image-20210510152516043" /></p>
 <h4 id="操作"><a class="markdownIt-Anchor" href="#操作"></a> 操作</h4>
 <ol>
 <li>逆差入需要拷贝多次（normal后移、头粘贴、尾粘贴）</li>
@@ -237,20 +237,20 @@
 <h4 id="dos下的文件读写"><a class="markdownIt-Anchor" href="#dos下的文件读写"></a> DOS下的文件读写</h4>
 <p>类似C语言的fopen、fread、fwrite、fseek、fclose</p>
 <p>打开文件：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151650600.png" alt="image-20210510151650600" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151650600.png" alt="image-20210510151650600" /></p>
 <p>读文件：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151716651.png" alt="image-20210510151716651" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151716651.png" alt="image-20210510151716651" /></p>
 <p>关闭文件：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151738657.png" alt="image-20210510151738657" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151738657.png" alt="image-20210510151738657" /></p>
 <p>写文件：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151754026.png" alt="image-20210510151754026" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151754026.png" alt="image-20210510151754026" /></p>
 <p>移动文件指针：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151818941.png" alt="image-20210510151818941" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510151818941.png" alt="image-20210510151818941" /></p>
 <blockquote>
 <p>以上代码将文件指针放在尾部，设置移动的偏移量CX：DX为0，就是不移动，那么调用21h后，得到的新偏移量就是文件大小，也就是AX中存放文件大小</p>
 </blockquote>
 <h4 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h4>
-<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510152817598.png" alt="image-20210510152817598" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E7%97%85%E6%AF%92%E5%AF%84%E7%94%9F/image-20210510152817598.png" alt="image-20210510152817598" /></p>
 <blockquote>
 <p>应该是从尾至头拷贝，防止覆盖</p>
 </blockquote>
@@ -275,10 +275,10 @@
 <span id="more"></span>
 <h2 id="主引导扇区第一个扇区"><a class="markdownIt-Anchor" href="#主引导扇区第一个扇区"></a> 主引导扇区（第一个扇区）</h2>
 <h3 id="图示"><a class="markdownIt-Anchor" href="#图示"></a> 图示</h3>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508163959563.png" alt="image-20210508163959563" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508163959563.png" alt="image-20210508163959563" /></p>
 <h3 id="找到分区入口"><a class="markdownIt-Anchor" href="#找到分区入口"></a> 找到分区入口</h3>
 <h4 id="分区表项的内容"><a class="markdownIt-Anchor" href="#分区表项的内容"></a> 分区表项的内容</h4>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508164230521.png" alt="image-20210508164230521" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508164230521.png" alt="image-20210508164230521" /></p>
 <h4 id="相对扇区数"><a class="markdownIt-Anchor" href="#相对扇区数"></a> 相对扇区数</h4>
 <p>相对于引导记录头部的偏移扇区数</p>
 <h4 id="mbr和ebr"><a class="markdownIt-Anchor" href="#mbr和ebr"></a> MBR和EBR</h4>
@@ -287,10 +287,10 @@
 <blockquote>
 <p>EBR为了兼容MBR，完全复用了MBR的引导扇区格式，但前466个字节为0，后两个分区表项无效，结束标识55AA</p>
 <p>主分区表中最后一个有效主分区记录指向的磁盘空间**（主扩展分区）**将用EBR划分，分为N个逻辑盘，形成EBR链</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508165341507.png" alt="image-20210508165341507" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508165341507.png" alt="image-20210508165341507" /></p>
 </blockquote>
 <h3 id="整个图示"><a class="markdownIt-Anchor" href="#整个图示"></a> 整个图示</h3>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508165548520.png" alt="image-20210508165548520" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508165548520.png" alt="image-20210508165548520" /></p>
 <h3 id="定位主分区和扩展分区的关键区别"><a class="markdownIt-Anchor" href="#定位主分区和扩展分区的关键区别"></a> 定位主分区和扩展分区的关键区别</h3>
 <p>主分区：</p>
 <ol>
@@ -300,7 +300,7 @@
 <ol>
 <li>偏移量是相对于包含该分区的扩展分区开始处（EBR）而言</li>
 </ol>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508170556297.png" alt="image-20210508170556297" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/image-20210508170556297.png" alt="image-20210508170556297" /></p>
 <h2 id="硬盘引导过程"><a class="markdownIt-Anchor" href="#硬盘引导过程"></a> 硬盘引导过程</h2>
 <ol>
 <li>
@@ -393,9 +393,9 @@
 <p>假定指令系统是MIPS的一个定点子集：load/store指令，ALU指令，转移指令</p>
 <p>一条指令的执行过程最多需要5个时钟周期：CPI=5</p>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504195556778.png" alt="image-20210504195556778" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504195556778.png" alt="image-20210504195556778" /></p>
 <p>电路图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504195639490.png" alt="image-20210504195639490" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504195639490.png" alt="image-20210504195639490" /></p>
 <p>上图分析：</p>
 <ol>
 <li>
@@ -452,7 +452,7 @@
 <li>完成ALU指令在MEM cycle</li>
 </ol>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504201717892.png" alt="image-20210504201717892" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504201717892.png" alt="image-20210504201717892" /></p>
 <ol start="3">
 <li>
 <p>改进硬件冗余</p>
@@ -473,7 +473,7 @@
 <li>理想情况下，性能提升5倍</li>
 </ol>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504202456375.png" alt="image-20210504202456375" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504202456375.png" alt="image-20210504202456375" /></p>
 <h4 id="42-实现"><a class="markdownIt-Anchor" href="#42-实现"></a> 4.2 实现</h4>
 <p>为了实现，在每两段之间新增流水线寄存器，其作用：</p>
 <ol>
@@ -481,30 +481,30 @@
 <li>周期结束时，存指令操作结果供下一个流水段指令使用</li>
 </ol>
 <p>如下图蓝色部分：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203103762.png" alt="image-20210504203103762" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203103762.png" alt="image-20210504203103762" /></p>
 <h4 id="43-对比"><a class="markdownIt-Anchor" href="#43-对比"></a> 4.3 对比</h4>
 <ol>
 <li>
 <p>对比单周期实现，流水线减少了时钟周期长度</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203333003.png" alt="image-20210504203333003" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203333003.png" alt="image-20210504203333003" /></p>
 </li>
 <li>
 <p>对比多周期实现，流水线减少了CPI</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203357254.png" alt="image-20210504203357254" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203357254.png" alt="image-20210504203357254" /></p>
 </li>
 </ol>
 <h4 id="44-问题"><a class="markdownIt-Anchor" href="#44-问题"></a> 4.4 问题</h4>
 <h5 id="441-存储器访问冲突"><a class="markdownIt-Anchor" href="#441-存储器访问冲突"></a> 4.4.1 存储器访问冲突</h5>
 <p>结构冒险（structure hazard）：在同一时钟周期不同操作使用同一数据通路资源</p>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203832540.png" alt="image-20210504203832540" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504203832540.png" alt="image-20210504203832540" /></p>
 <p>解决：使用分开的指令cache和数据cache</p>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504204140731.png" alt="image-20210504204140731" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504204140731.png" alt="image-20210504204140731" /></p>
 <p>注意：如果时钟周期不变，流水线存储系统的带宽<strong>必须是非流水线的5倍</strong></p>
 <h5 id="442-寄存器冲突"><a class="markdownIt-Anchor" href="#442-寄存器冲突"></a> 4.4.2 寄存器冲突</h5>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504204333445.png" alt="image-20210504204333445" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504204333445.png" alt="image-20210504204333445" /></p>
 <p>解决：重新设计寄存器堆资源</p>
 <ol>
 <li>
@@ -540,14 +540,14 @@
 <p>冒险出现时：避免流水线上有冒险的指令执行下一个流水段</p>
 <p>冒险总是可以用停顿（流水线气泡/气泡）解决：停顿时，其后的所有指令被停顿，指令之前的指令继续执行，没有新的指令被取到流水线</p>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504211313154.png" alt="image-20210504211313154" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504211313154.png" alt="image-20210504211313154" /></p>
 <h4 id="12-有停顿的流水线性能"><a class="markdownIt-Anchor" href="#12-有停顿的流水线性能"></a> 1.2 有停顿的流水线性能</h4>
 <p>加速比公式：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504211507892.png" alt="image-20210504211507892" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504211507892.png" alt="image-20210504211507892" /></p>
 <p>流水线CPI=理想CPI（≈1）+平均每条指令的停顿周期数</p>
 <p>忽略流水线时钟周期的额外开销，并假设流水段是平衡的，则：非流水线时钟周期=流水线时钟周期</p>
 <p>最终得：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504212021602.png" alt="image-20210504212021602" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504212021602.png" alt="image-20210504212021602" /></p>
 <h3 id="2-结构冒险流水段竞争"><a class="markdownIt-Anchor" href="#2-结构冒险流水段竞争"></a> 2. 结构冒险：流水段竞争</h3>
 <h4 id="21-定义"><a class="markdownIt-Anchor" href="#21-定义"></a> 2.1 定义</h4>
 <p>发生在同一时钟周期，2条或多条指令想要使用同一硬件资源</p>
@@ -563,29 +563,29 @@
 <p>寄存器堆的多重访问</p>
 <blockquote>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213234617.png" alt="image-20210504213234617" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213234617.png" alt="image-20210504213234617" /></p>
 <p>方法1.：简单插入一个停顿，将降低加速比</p>
 <p>方法2：在一个时钟周期WB段先写，ID段后读</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213429124.png" alt="image-20210504213429124" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213429124.png" alt="image-20210504213429124" /></p>
 </blockquote>
 </li>
 <li>
 <p>多重访问单端口存储器</p>
 <blockquote>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213646077.png" alt="image-20210504213646077" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213646077.png" alt="image-20210504213646077" /></p>
 <p>方法1：插入停顿</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213806538.png" alt="image-20210504213806538" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213806538.png" alt="image-20210504213806538" /></p>
 <p>方法2：提供另一个存储器端口</p>
 <p>方法3：分开指令存储器和数据存储器</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213843051.png" alt="image-20210504213843051" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504213843051.png" alt="image-20210504213843051" /></p>
 <p>方法4：使用指令缓冲器</p>
 </blockquote>
 </li>
 <li>
 <p>没有完全流水化的功能部件</p>
 <blockquote>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504214056065.png" alt="image-20210504214056065" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210504214056065.png" alt="image-20210504214056065" /></p>
 </blockquote>
 </li>
 </ol>
@@ -599,7 +599,7 @@
 <h4 id="33-实施"><a class="markdownIt-Anchor" href="#33-实施"></a> 3.3 实施</h4>
 <p>流水线停顿</p>
 <p>软件：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505153243028.png" alt="image-20210505153243028" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505153243028.png" alt="image-20210505153243028" /></p>
 <p>硬件：</p>
 <blockquote>
 <p>增加硬件互锁（Interlock）</p>
@@ -607,19 +607,19 @@
 <p>增加额外硬件检测需要停顿的情况</p>
 <p>增加额外硬件放“气泡”（暂停）到流水线</p>
 </blockquote>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505153751740.png" alt="image-20210505153751740" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505153751740.png" alt="image-20210505153751740" /></p>
 </blockquote>
 <h4 id="34-forwarding前推-直通-转发-相关数据通路"><a class="markdownIt-Anchor" href="#34-forwarding前推-直通-转发-相关数据通路"></a> 3.4 Forwarding（前推、直通、转发、相关数据通路）</h4>
 <p>有数据冒险指令需要的结果可能已经计算出来，存放在流水线寄存器中，所以我们可以在数据通路中增加数据线（buses）传送这些结果，这些buses总是从后面的流水段连接到前面的流水段</p>
 <p>图示：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505154733078.png" alt="image-20210505154733078" /></p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155325030.png" alt="image-20210505155325030" /></p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155531924.png" alt="image-20210505155531924" /></p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155617247.png" alt="image-20210505155617247" /></p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155645091.png" alt="image-20210505155645091" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505154733078.png" alt="image-20210505154733078" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155325030.png" alt="image-20210505155325030" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155531924.png" alt="image-20210505155531924" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155617247.png" alt="image-20210505155617247" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155645091.png" alt="image-20210505155645091" /></p>
 <p>没有Forwarding和有Forwarding的比较：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155812070.png" alt="image-20210505155812070" /></p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155823248.png" alt="image-20210505155823248" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155812070.png" alt="image-20210505155812070" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%B5%81%E6%B0%B4%E7%BA%BF/image-20210505155823248.png" alt="image-20210505155823248" /></p>
 ]]></content>
       <categories>
         <category>系统结构</category>
@@ -649,19 +649,19 @@
 <span id="more"></span>
 <p>图示：</p>
 <p>数据流动示意图：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502145943075.png" alt="image-20210502145943075" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502145943075.png" alt="image-20210502145943075" /></p>
 <p>运算例子示意图：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502150225975.png" alt="image-20210502150225975" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502150225975.png" alt="image-20210502150225975" /></p>
 <p>通用寄存器ISA运算类指令的两个特性：</p>
 <ol>
 <li>ALU指令中包括两个或三个操作数</li>
 <li>ALU指令中包括0到3个存储器操作数</li>
 </ol>
 <p>通用寄存器计算机优缺点：</p>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502151144878.png" alt="image-20210502151144878" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502151144878.png" alt="image-20210502151144878" /></p>
 <h2 id="2-存储器寻址"><a class="markdownIt-Anchor" href="#2-存储器寻址"></a> 2. 存储器寻址</h2>
 <h3 id="21-寻址方式"><a class="markdownIt-Anchor" href="#21-寻址方式"></a> 2.1 寻址方式</h3>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502152010830.png" alt="image-20210502152010830" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210502152010830.png" alt="image-20210502152010830" /></p>
 <h3 id="22-小结"><a class="markdownIt-Anchor" href="#22-小结"></a> 2.2 小结</h3>
 <ol>
 <li>一般ISA支持的基本寻址方式：立即数寻址、位移量寻址、寄存器间接寻址</li>
@@ -689,13 +689,13 @@
 <li>指令长度：32位，6位为基本操作码</li>
 <li>两种存储器寻址方式：编码到操作码中</li>
 </ol>
-<p><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503153254772.png" alt="image-20210503153254772" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503153254772.png" alt="image-20210503153254772" /></p>
 <p>操作：</p>
 <ol>
 <li>载入和存储
 <ul>
 <li>所有通用寄存器和浮点数寄存器都可以被载入或存储，除了R0</li>
-<li><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503153545936.png" alt="image-20210503153545936" /></li>
+<li><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503153545936.png" alt="image-20210503153545936" /></li>
 <li>上述图示说明：
 <ol>
 <li>⬅的下标表示传送n位</li>
@@ -711,12 +711,12 @@
 <ul>
 <li>都是寄存器-寄存器指令</li>
 <li>包括算术和逻辑操作：加、减、与、或、异或、移位</li>
-<li><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503154351355.png" alt="image-20210503154351355" /></li>
+<li><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503154351355.png" alt="image-20210503154351355" /></li>
 </ul>
 </li>
 <li>分支和跳转
 <ul>
-<li><img src="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503154602183.png" alt="image-20210503154602183" /></li>
+<li><img src="/images/loading.gif" data-original="/images/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E4%BE%8B/image-20210503154602183.png" alt="image-20210503154602183" /></li>
 </ul>
 </li>
 <li>浮点操作
@@ -879,9 +879,9 @@
 <h2 id="1-词法分析概述"><a class="markdownIt-Anchor" href="#1-词法分析概述"></a> 1. 词法分析概述</h2>
 <p>扫描源程序的字符串，按照词法规则，识别出单词符号作为输出；对识别过程发现的词法错误（非法的字符、不正确的常量、程序括号等）进行处理</p>
 <p>词法分析器只执行一次：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084145085.png" alt="image-20210429084145085" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084145085.png" alt="image-20210429084145085" /></p>
 <p>词法分析器执行多次：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084219353.png" alt="image-20210429084219353" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084219353.png" alt="image-20210429084219353" /></p>
 <h2 id="2-词法分析器的输出形式"><a class="markdownIt-Anchor" href="#2-词法分析器的输出形式"></a> 2. 词法分析器的输出形式</h2>
 <h3 id="21-单词的种类"><a class="markdownIt-Anchor" href="#21-单词的种类"></a> 2.1 单词的种类</h3>
 <ol>
@@ -892,13 +892,13 @@
 <li>（分）界符：如；、{、}等</li>
 </ol>
 <p>eg：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084743808.png" alt="image-20210429084743808" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084743808.png" alt="image-20210429084743808" /></p>
 <blockquote>
 <p>留意最后的换行符‘\n’也是界符</p>
 </blockquote>
 <h3 id="22-单词的输出形式"><a class="markdownIt-Anchor" href="#22-单词的输出形式"></a> 2.2 单词的输出形式</h3>
 <p>使用二元式表示：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084945101.png" alt="image-20210429084945101" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429084945101.png" alt="image-20210429084945101" /></p>
 <h2 id="3-单词类别的划分"><a class="markdownIt-Anchor" href="#3-单词类别的划分"></a> 3. 单词类别的划分</h2>
 <h3 id="31-单词的编码随类别不同而不同"><a class="markdownIt-Anchor" href="#31-单词的编码随类别不同而不同"></a> 3.1 单词的编码随类别不同而不同</h3>
 <ol>
@@ -907,11 +907,11 @@
 <li><strong>常量</strong>可按整型、实型、字符型、布尔型等分类</li>
 </ol>
 <p>eg：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429085538808.png" alt="image-20210429085538808" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429085538808.png" alt="image-20210429085538808" /></p>
 <blockquote>
 <p>通常用常数在常量表（标识符在符号表）中的位置（编号）作为它们的属性值</p>
 </blockquote>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429085737912.png" alt="image-20210429085737912" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429085737912.png" alt="image-20210429085737912" /></p>
 <h3 id="32-单词的识别方法"><a class="markdownIt-Anchor" href="#32-单词的识别方法"></a> 3.2 单词的识别方法</h3>
 <ol>
 <li>
@@ -951,12 +951,12 @@
 <li>若干终态（至少一个）</li>
 </ol>
 <p>图示：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429090825221.png" alt="image-20210429090825221" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429090825221.png" alt="image-20210429090825221" /></p>
 <p>eg：</p>
 <p>识别标识符和数字串的状态转换图：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091210263.png" alt="image-20210429091210263" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091210263.png" alt="image-20210429091210263" /></p>
 <p>它的流程图：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091340527.png" alt="image-20210429091340527" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091340527.png" alt="image-20210429091340527" /></p>
 <h2 id="5-词法分析器的设计"><a class="markdownIt-Anchor" href="#5-词法分析器的设计"></a> 5. 词法分析器的设计</h2>
 <h3 id="51-单词符号"><a class="markdownIt-Anchor" href="#51-单词符号"></a> 5.1 单词符号</h3>
 <p>标识符：begin、end、integer、if、then、else、function、read、write</p>
@@ -964,8 +964,8 @@
 <p>运算符：-、*、&lt;、&lt;=、&lt;&gt;、=、&gt;、&gt;=、:=</p>
 <p>分界符：；、（、）、</p>
 <h3 id="52-状态转换图"><a class="markdownIt-Anchor" href="#52-状态转换图"></a> 5.2 状态转换图</h3>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091724175.png" alt="image-20210429091724175" /></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091752010.png" alt="image-20210429091752010" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091724175.png" alt="image-20210429091724175" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%85%AD%E7%AB%A0/image-20210429091752010.png" alt="image-20210429091752010" /></p>
 <blockquote>
 <p>注意：有*标记的状态需要回退一个字符</p>
 </blockquote>
@@ -1081,12 +1081,12 @@
 <span id="more"></span>
 <h5 id="13-翻译程序"><a class="markdownIt-Anchor" href="#13-翻译程序"></a> 1.3 翻译程序</h5>
 <p>定义：完成翻译工作的程序，也叫翻译器</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426201154954.png" alt="image-20210426201154954" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426201154954.png" alt="image-20210426201154954" /></p>
 <p>宿主语言：翻译程序对应的语言<br />
 宿主机：运行翻译程序的机器</p>
 <h5 id="14-编译程序"><a class="markdownIt-Anchor" href="#14-编译程序"></a> 1.4 编译程序</h5>
 <p>定义：实现编译的翻译程序，也叫编译器</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426201419434.png" alt="image-20210426201419434" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426201419434.png" alt="image-20210426201419434" /></p>
 <p>自驻留的编译程序：编译程序生成宿主机执行的机器代码<br />
 自编译的编译程序：编译程序是用源语言写的<br />
 交叉编译：编译程序生成的不是宿主机执行的机器代码</p>
@@ -1133,11 +1133,11 @@
 <h5 id="27-出错处理"><a class="markdownIt-Anchor" href="#27-出错处理"></a> 2.7 出错处理</h5>
 <p>编译程序发现错误后进行出错处理，包括报告错误的性质和发生错误的位置等</p>
 <h5 id="28-编译器的结构"><a class="markdownIt-Anchor" href="#28-编译器的结构"></a> 2.8 编译器的结构</h5>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426210832819.png" alt="image-20210426210832819" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426210832819.png" alt="image-20210426210832819" /></p>
 <h4 id="3-完整的程序处理过程"><a class="markdownIt-Anchor" href="#3-完整的程序处理过程"></a> 3. 完整的程序处理过程</h4>
 <p>从分析源程序到建立一个可执行的目标程序，处理过程还需要<strong>预处理器、汇编器、连接器、装入器</strong></p>
 <h5 id="31-完整的程序处理过程"><a class="markdownIt-Anchor" href="#31-完整的程序处理过程"></a> 3.1 完整的程序处理过程</h5>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426211128343.png" alt="image-20210426211128343" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426211128343.png" alt="image-20210426211128343" /></p>
 <h4 id="4-编译前端与后端"><a class="markdownIt-Anchor" href="#4-编译前端与后端"></a> 4. 编译前端与后端</h4>
 <p>现代编译器通常将编译过程划分为前端和后端分别实现，它们通过中间代码连接，可极大提高编译器设计与实现的效率</p>
 <h5 id="41-前端"><a class="markdownIt-Anchor" href="#41-前端"></a> 4.1 前端</h5>
@@ -1176,26 +1176,26 @@ eg：</p>
 <li>文件目录表（DIR）：记录根目录文件项的表，文件项包括文件，目录。</li>
 <li>用户数据：存放数据的区域</li>
 </ol>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210425164158141.png" alt="image-20210425164158141" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210425164158141.png" alt="image-20210425164158141" /></p>
 <p>注：左侧为扇区号、第二个FAT12为备用FAT</p>
 <h4 id="如何定位到一个文件"><a class="markdownIt-Anchor" href="#如何定位到一个文件"></a> 如何定位到一个文件</h4>
 <h5 id="fat表的格式"><a class="markdownIt-Anchor" href="#fat表的格式"></a> FAT表的格式</h5>
 <p>在文件系统中，文件分配的最小单位是簇，哪怕只有一个字节也会分配一簇<br />
 簇是由n个扇区组成<br />
 其中n在引导扇区的引导记录中定义</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428094415697.png" alt="image-20210428094415697" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428094415697.png" alt="image-20210428094415697" /></p>
 <h5 id="fat表的本质"><a class="markdownIt-Anchor" href="#fat表的本质"></a> FAT表的本质</h5>
 <p>FAT表的本质是<strong>磁盘簇分配情况的数据表示</strong></p>
 <p>在FAT12文件系统中，FAT表以3个<strong>半字节</strong>（3*0.5Byte=1.5Byte=12bit）来记录一个簇的相关情况，这也是FAT12中12的由来</p>
 <p>FAT表中每3个<strong>半字节</strong>为一个元素，这个元素就代表一个簇，簇号从0开始，这个元素中<strong>存放的整数值</strong>表示其链接的下一簇的簇号</p>
 <h5 id="fat表的查找与遍历机制"><a class="markdownIt-Anchor" href="#fat表的查找与遍历机制"></a> FAT表的查找与遍历机制</h5>
 <p>FAT表是一个数组，数组中每个元素是1.5字节的整数，为了查找FAT表中簇号为N的元素，只需用N作索引查找FAT[N]元素，如下图：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428095326854.png" alt="image-20210428095326854" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428095326854.png" alt="image-20210428095326854" /></p>
 <p>真正在FAT12表中的查找方法：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428095655541.png" alt="image-20210428095655541" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428095655541.png" alt="image-20210428095655541" /></p>
 <p>注意：三个字节中如何分配的两个半字节，可以结合<strong>小端机</strong>中数据的存放规则记忆</p>
 <h5 id="遍历一个文件占用的簇"><a class="markdownIt-Anchor" href="#遍历一个文件占用的簇"></a> 遍历一个文件占用的簇</h5>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428100002898.png" alt="image-20210428100002898" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428100002898.png" alt="image-20210428100002898" /></p>
 <h5 id="如何获取首簇号"><a class="markdownIt-Anchor" href="#如何获取首簇号"></a> 如何获取首簇号</h5>
 <p>根目录区有根目录表，其记录了文件的各种信息。<br />
 根目录表中包含多条记录，每条记录占32个字节</p>
@@ -1209,7 +1209,7 @@ eg：</p>
 <p>首簇号首部偏移0x1A开始，共2个字节</p>
 </blockquote>
 <p>下图是getexe.com的文件名与首簇号图示，getexe只占用6个字节，后两个字节用空格填充，首簇号是0003</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428160041729.png" alt="image-20210428160041729" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428160041729.png" alt="image-20210428160041729" /></p>
 <h5 id="如何查找根目录"><a class="markdownIt-Anchor" href="#如何查找根目录"></a> 如何查找根目录</h5>
 <ol>
 <li>从磁盘0头0道1扇区读出引导区（Boot）512字节，从其中引导记录获取相关信息：Boot区占用扇区数，FAT表数目，每个FAT表的扇区数，1个扇区的字节数</li>
@@ -1226,7 +1226,7 @@ eg：</p>
 <p>在根目录区下的tem项，会给出tem项的首簇号，系统就可以通过FAT表在数据区找到tem对应的信息（即tem目录表），在这个tem目录表下，再通过该目录表的项（每项32字节），继续查找tem下的文件或更下层的目录，如此，即可形成多层次的目录嵌套</p>
 </blockquote>
 <p>详细流程：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428161152854.png" alt="image-20210428161152854" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/image-20210428161152854.png" alt="image-20210428161152854" /></p>
 <h5 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h5>
 <ol>
 <li>根据文件路径第一项先查看根目录表，是否有匹配的项，如果有，通过对应项的首簇段获取该子目录表的首簇号</li>
@@ -1288,9 +1288,9 @@ eg：</p>
 <p>小端机：高位地址存放高位数据、低位地址存放低位数据。例如Intel的X86系列CPU<br />
 小端机：高位地址存放低位数据、低位地址存放高位数据。例如PowerPC、Sun的SPARC、Motorola 6800</p>
 <h4 id="3-jmp指令解析"><a class="markdownIt-Anchor" href="#3-jmp指令解析"></a> 3. JMP指令解析</h4>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png" alt="image-20210425160344966" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160344966.png" alt="image-20210425160344966" /></p>
 <p>Jmp 无条件跳转指令，有以下四种用法：</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160536816.png" alt="image-20210425160536816" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E5%88%9D%E5%A7%8B/image-20210425160536816.png" alt="image-20210425160536816" /></p>
 <p>注意：在上述PPT中使用了Jmp offset的方式，其中地址2的地址是地址1的地址加上5个字节</p>
 <p><strong>使用反汇编修改内存和使用工具修改硬盘文件步骤一样，工具不同，本质相同</strong></p>
 ]]></content>
@@ -1350,18 +1350,18 @@ eg：</p>
 <ol>
 <li>
 <p>根据病毒表现行为分类</p>
-<p><img src="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205247089.png" alt="image-20210422205247089" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205247089.png" alt="image-20210422205247089" /></p>
 </li>
 <li>
 <p>根据病毒的内部机理分类<br />
-<img src="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205355394.png" alt="image-20210422205355394" /></p>
+<img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205355394.png" alt="image-20210422205355394" /></p>
 </li>
 </ol>
 <h4 id="14-恶意程序-蠕虫-木马"><a class="markdownIt-Anchor" href="#14-恶意程序-蠕虫-木马"></a> 1.4 恶意程序 蠕虫 木马</h4>
 <p>恶意程序：未经授权便干扰或破坏计算机系统/网络的程序或代码，早期恶意代码的主要形式是计算机病毒<br />
 蠕虫：独立的可执行程序，不需要寄生在宿主程序中，通过网络分发自己的副本<br />
 病毒和蠕虫的区别：<br />
-<img src="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205811795.png" alt="image-20210422205811795" /><br />
+<img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-%E6%A6%82%E8%BF%B0/image-20210422205811795.png" alt="image-20210422205811795" /><br />
 特洛伊木马：在远程计算机之间建立连接，使得远程计算机能通过网络控制本地计算机的非法程序</p>
 <h4 id="15-病毒的命名规则"><a class="markdownIt-Anchor" href="#15-病毒的命名规则"></a> 1.5 病毒的命名规则</h4>
 <p>一些普通命名规则</p>
@@ -1412,10 +1412,10 @@ eg：</p>
 </blockquote>
 <h5 id="12-语法图描述语法规则识别角度"><a class="markdownIt-Anchor" href="#12-语法图描述语法规则识别角度"></a> 1.2  语法图描述语法规则：识别角度</h5>
 <blockquote>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153851229.png" alt="image-20210413153851229" /></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153918317.png" alt="image-20210413153918317" /></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153937838.png" alt="image-20210413153937838" /></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413154819595.png" alt="image-20210413154819595" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153851229.png" alt="image-20210413153851229" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153918317.png" alt="image-20210413153918317" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413153937838.png" alt="image-20210413153937838" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413154819595.png" alt="image-20210413154819595" /></p>
 <h6 id="识别原则"><a class="markdownIt-Anchor" href="#识别原则"></a> 识别原则：</h6>
 <ul>
 <li>终结符框:标识的终结符与被识别的终结符刚好符合</li>
@@ -1428,7 +1428,7 @@ eg：</p>
 <li>语言：语法图能识别的所有终结符序列的集合。称为语言。</li>
 </ul>
 <h6 id="语法图的构造"><a class="markdownIt-Anchor" href="#语法图的构造"></a> 语法图的构造</h6>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413155020391.png" alt="image-20210413155020391" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210413155020391.png" alt="image-20210413155020391" /></p>
 </blockquote>
 <h5 id="13-高级语言语法规则描述方法"><a class="markdownIt-Anchor" href="#13-高级语言语法规则描述方法"></a> 1.3 高级语言语法规则描述方法</h5>
 <p>FORTRAN采用自然语言描述语法；<br />
@@ -1463,7 +1463,7 @@ Pascal首次采用语法图来定义语言，给出了较为直观的语法结�
 <p>α-&gt;ε，称为空串产生式或者ε产生式</p>
 </blockquote>
 <h5 id="21-候选式"><a class="markdownIt-Anchor" href="#21-候选式"></a> 2.1 候选式</h5>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210420083948266.png" alt="image-20210420083948266" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210420083948266.png" alt="image-20210420083948266" /></p>
 <h5 id="22-文法的分类"><a class="markdownIt-Anchor" href="#22-文法的分类"></a> 2.2 文法的分类</h5>
 <ol>
 <li>
@@ -1557,9 +1557,9 @@ Pascal首次采用语法图来定义语言，给出了较为直观的语法结�
 <li>算术表达式</li>
 </ol>
 <blockquote>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210426173640256.png" alt="image-20210426173640256" /></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210426173737710.png" alt="image-20210426173737710" /></p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210426173753654.png" alt="image-20210426173753654" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210426173640256.png" alt="image-20210426173640256" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210426173737710.png" alt="image-20210426173737710" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/image-20210426173753654.png" alt="image-20210426173753654" /></p>
 </blockquote>
 ]]></content>
       <categories>
@@ -1823,7 +1823,7 @@ bB→bb</p>
 <p>PASCAL语言的函数和过程</p>
 <p>C语言的函数</p>
 </blockquote>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413150345535.png" alt="image-20210413150345535" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413150345535.png" alt="image-20210413150345535" /></p>
 <h5 id="隐式调用单元异常处理"><a class="markdownIt-Anchor" href="#隐式调用单元异常处理"></a> 隐式调用单元——异常处理</h5>
 <p>异常定义：导致程序正常执行中止的事件</p>
 <p>异常处理的主要问题：</p>
@@ -1863,10 +1863,10 @@ catch (异常类型2) {异常2处理程序}<br />
 catch (异常类型n) {异常n处理程序}</p>
 </blockquote>
 <p>协同程序间的控制转移关系：</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151632600.png" alt="image-20210413151632600" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151632600.png" alt="image-20210413151632600" /></p>
 <h4 id="并发单元"><a class="markdownIt-Anchor" href="#并发单元"></a> 并发单元</h4>
 <p>eg：“生产者-消费者”问题</p>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151822744.png" alt="image-20210413151822744" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%B8%89%E7%AB%A0/image-20210413151822744.png" alt="image-20210413151822744" /></p>
 <h5 id="并行与并发的区别"><a class="markdownIt-Anchor" href="#并行与并发的区别"></a> 并行与并发的区别</h5>
 <blockquote>
 <p>并行”是指无论从微观还是宏观，二者都是一起执行的，就好像两个人各拿一把铁锨在挖坑，一小时后，每人一个大坑。<br />
@@ -1998,7 +1998,7 @@ eg：<br />
 </ol>
 </blockquote>
 <h2 id="c语言的数据类型"><a class="markdownIt-Anchor" href="#c语言的数据类型"></a> C语言的数据类型</h2>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png" alt="image-20210414193241257" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png" alt="image-20210414193241257" /></p>
 <h3 id="非结构类型"><a class="markdownIt-Anchor" href="#非结构类型"></a> 非结构类型</h3>
 <ol>
 <li>
@@ -2065,7 +2065,7 @@ eg：C、ADA</p>
 eg：</li>
 </ol>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p>
 <ol start="2">
 <li>结构类型</li>
 </ol>
@@ -2076,7 +2076,7 @@ eg：</li>
 eg：</li>
 </ul>
 <figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p>
 <ul>
 <li>有限映像<br />
 为每一成分分配整数个可编址的存储单元<br />
@@ -2084,18 +2084,18 @@ eg：</li>
 eg：</li>
 </ul>
 <figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p>
 <ul>
 <li>序列<br />
 可变长串的表示：静态描述符+动态描述符+堆</li>
 </ul>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371" /></p>
 <ul>
 <li>判定或<br />
 pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li>
 </ul>
 <figure class="highlight pascal"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p>
 <ul>
 <li>
 <p>指针</p>
