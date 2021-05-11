@@ -272,24 +272,24 @@
 </ol>
 <h3 id="获取参数值"><a class="markdownIt-Anchor" href="#获取参数值"></a> 获取参数值</h3>
 <p>call指令执行完毕的栈布局：</p>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511195956130.png" alt="image-20210511195956130" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511195956130.png" alt="image-20210511195956130" /></p>
 <p>为了得到参数2，我们使用EBP保存ESP，而为了保护保存ESP的EBP，我们将其入栈，得到如此结构：</p>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511200219660.png" alt="image-20210511200219660" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511200219660.png" alt="image-20210511200219660" /></p>
 <h3 id="获取局部变量值"><a class="markdownIt-Anchor" href="#获取局部变量值"></a> 获取局部变量值</h3>
 <p>栈分布如图：</p>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511200418376.png" alt="image-20210511200418376" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511200418376.png" alt="image-20210511200418376" /></p>
 <h3 id="获取返回值"><a class="markdownIt-Anchor" href="#获取返回值"></a> 获取返回值</h3>
 <p>函数返回值通过eax寄存器传递，如果两个返回值还会使用edx：</p>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511200752137.png" alt="image-20210511200752137" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511200752137.png" alt="image-20210511200752137" /></p>
 <p>如果返回值太大、就需要主调函数在call被调函数之前创建临时空间：</p>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511201041931.png" alt="image-20210511201041931" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511201041931.png" alt="image-20210511201041931" /></p>
 <p>然后，在被调函数传递返回值时：</p>
 <ol>
 <li>通过[EBP+偏移]获得返回值的存放地址</li>
 <li>把返回值写入到这个内存</li>
 <li>把返回值写入到EAX，<code>mov eax,[ebp+偏移]</code></li>
 </ol>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511201411512.png" alt="image-20210511201411512" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511201411512.png" alt="image-20210511201411512" /></p>
 <h2 id="函数调用的扫尾工作"><a class="markdownIt-Anchor" href="#函数调用的扫尾工作"></a> 函数调用的扫尾工作</h2>
 <ol>
 <li>平衡栈，清除参数传递消耗的栈空间</li>
@@ -300,7 +300,7 @@
 <p>例如程序：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">16</span>];</span><br><span class="line">    gets(name);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">16</span>&amp;&amp;name[i];i++)</span><br><span class="line">        <span class="built_in">printf</span>(“%c”,name[i]);</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 <p>当我们输入的数据大于16个字节时就会产生栈溢出，此时输入的字节会覆盖栈底内容导致出错，这就是栈溢出</p>
-<p><img src="/images/loading.gif" data-original="/F:/Blog/source/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511202236918.png" alt="image-20210511202236918" /></p>
+<p><img src="/images/loading.gif" data-original="/images/%E7%97%85%E6%AF%92-DOS-%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/image-20210511202236918.png" alt="image-20210511202236918" /></p>
 <h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2>
 <ol>
 <li>关于函数，下列说法不正确的是（       ）<br />
