@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-12T09:00:08.780Z</updated>
+  <updated>2021-05-12T12:18:01.304Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -17,13 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>病毒_Win_PE结构和末节寄生</title>
+    <link href="https://wsw8.online/archives/20191e8a.html"/>
+    <id>https://wsw8.online/archives/20191e8a.html</id>
+    <published>2021-05-12T12:18:01.000Z</published>
+    <updated>2021-05-12T12:18:01.304Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>病毒_Win_虚拟地址</title>
     <link href="https://wsw8.online/archives/c7304b6b.html"/>
     <id>https://wsw8.online/archives/c7304b6b.html</id>
     <published>2021-05-12T08:06:01.000Z</published>
-    <updated>2021-05-12T09:00:08.780Z</updated>
+    <updated>2021-05-12T12:15:13.074Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="ollydebug简介"><a class="markdownIt-Anchor" href="#ollydebug简介"></a> OllyDebug简介</h2><p>Windows下用户级调试神器——OllyDebug，简称OD</p><p>OD是强大的动态追踪工具，具有可视化操作界面，但是非常占内存</p><span id="more"></span><h3 id="基本功能"><a class="markdownIt-Anchor" href="#基本功能"></a> 基本功能</h3><ol><li>启动一个程序调试</li><li>Attach到一个已经运行的程序调试</li><li>单步，step into and step over</li><li>断点</li><li>继续运行</li><li>查看内存</li><li>修改内存</li><li>查看寄存器</li><li>修改寄存器</li><li>代码窗体跳到指定地址</li><li>修改指令</li><li>查看一个进程加载的dll</li><li>查看dll中有哪些函数</li><li>查找内存中的某个值</li></ol><h3 id="动态链接库dll"><a class="markdownIt-Anchor" href="#动态链接库dll"></a> 动态链接库DLL</h3><p>DLL（Dynamic Link Libraries）使得更新和重用程序更加方便</p><ol><li>是程序的一部分，作为模块被进程加载到自己的空间地址</li><li>在编译时不会插入可执行文件中，在运行时整个库的代码才会调入内存，这就是所谓的“动态链接”</li></ol><p>一些重要的动态链接库：</p><blockquote><p>Windows中有几个非常重要的底层DLL：Kernel32.dll、User32.dll、GDI32.dll、ntdll.dll</p><ol><li>Kernel32.dll顾名思义就是内核相关的功能，主要包含用于管理内存、进程和线程的函数</li><li>User32.dll中包含的则是用于执行用户界面的函数，比如把用户的鼠标点击操作传递给窗口，以便窗口根据用户的点击来执行预定的事件</li><li>GDI32.dll的名称用了缩写，全称是Graphical Device Interface（图形设备接口），包含用于画图和显示文本的函数，比如要显示一个程序窗口，就调用了其中的函数来画这个窗口</li><li>ntdll.dll是Windows系统从ring3到ring0的入口。位于Kernel32.dll和user32.dll中的所有win32 API最终都是调用ntdll.dll中的函数实现的</li></ol></blockquote><h2 id="windows内存管理和程序加载"><a class="markdownIt-Anchor" href="#windows内存管理和程序加载"></a> Windows内存管理和程序加载</h2><h3 id="保护模式内存管理"><a class="markdownIt-Anchor" href="#保护模式内存管理"></a> 保护模式内存管理</h3>]]></content>
+    <content type="html"><![CDATA[<h2 id="ollydebug简介"><a class="markdownIt-Anchor" href="#ollydebug简介"></a> OllyDebug简介</h2><p>Windows下用户级调试神器——OllyDebug，简称OD</p><p>OD是强大的动态追踪工具，具有可视化操作界面，但是非常占内存</p><span id="more"></span><h3 id="基本功能"><a class="markdownIt-Anchor" href="#基本功能"></a> 基本功能</h3><ol><li>启动一个程序调试</li><li>Attach到一个已经运行的程序调试</li><li>单步，step into and step over</li><li>断点</li><li>继续运行</li><li>查看内存</li><li>修改内存</li><li>查看寄存器</li><li>修改寄存器</li><li>代码窗体跳到指定地址</li><li>修改指令</li><li>查看一个进程加载的dll</li><li>查看dll中有哪些函数</li><li>查找内存中的某个值</li></ol><h3 id="动态链接库dll"><a class="markdownIt-Anchor" href="#动态链接库dll"></a> 动态链接库DLL</h3><p>DLL（Dynamic Link Libraries）使得更新和重用程序更加方便</p><ol><li>是程序的一部分，作为模块被进程加载到自己的空间地址</li><li>在编译时不会插入可执行文件中，在运行时整个库的代码才会调入内存，这就是所谓的“动态链接”</li></ol><p>一些重要的动态链接库：</p><blockquote><p>Windows中有几个非常重要的底层DLL：Kernel32.dll、User32.dll、GDI32.dll、ntdll.dll</p><ol><li>Kernel32.dll顾名思义就是内核相关的功能，主要包含用于管理内存、进程和线程的函数</li><li>User32.dll中包含的则是用于执行用户界面的函数，比如把用户的鼠标点击操作传递给窗口，以便窗口根据用户的点击来执行预定的事件</li><li>GDI32.dll的名称用了缩写，全称是Graphical Device Interface（图形设备接口），包含用于画图和显示文本的函数，比如要显示一个程序窗口，就调用了其中的函数来画这个窗口</li><li>ntdll.dll是Windows系统从ring3到ring0的入口。位于Kernel32.dll和user32.dll中的所有win32 API最终都是调用ntdll.dll中的函数实现的</li></ol></blockquote><h2 id="windows内存管理和程序加载"><a class="markdownIt-Anchor" href="#windows内存管理和程序加载"></a> Windows内存管理和程序加载</h2><h3 id="保护模式内存管理"><a class="markdownIt-Anchor" href="#保护模式内存管理"></a> 保护模式内存管理</h3><ol><li>DOS的内存管理是实模式，我们可以随意改动甚至系统的内存（比如修改中断向量表）</li><li>Windows是工作在x86的保护模式。每个进程都有自己独立的线性地址空间（0-4GB，32位CPU的寻址能力是2^32=4GB），互不干扰，这4GB空间会按某个固定大小（如4KB）分成N个页</li><li>同时，内存又分为用户空间和内核空间，用户空间代码无法直接访问内核空间</li><li>其能防止应用程序非法访问其他应用程序的地址空间（任务间保护），防止应用程序非法访问操作系统地址空间（系统保护）</li></ol><h3 id="一个小实验"><a class="markdownIt-Anchor" href="#一个小实验"></a> 一个小实验</h3><p>在cmd中编译以下代码，编译命令<code>gcc a.c -o b.exe</code></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> gi;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">usage</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;please input s to set gi or d to dispaly gi\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argCount, <span class="keyword">char</span> ** args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (argCount != <span class="number">2</span>)  &#123;</span><br><span class="line">        usage();</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (args[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">&#x27;s&#x27;</span>)  &#123;</span><br><span class="line">        gi = <span class="number">12</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;gi = %d\n&quot;</span>, gi);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;&amp;gi = %d\n&quot;</span>,&amp;gi);</span><br><span class="line">        getchar();    <span class="comment">//进程持续挂起</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (args[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">&#x27;d&#x27;</span>) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;gi = %d\n&quot;</span>, gi);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;&amp;gi = %d\n&quot;</span>,&amp;gi);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> usage();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后运行，会发现两个进程的值不同，但地址空间却相同！</p><p><img src="/images/%E7%97%85%E6%AF%92-Win-%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80/image-20210512200247086.png" alt="image-20210512200247086" /></p><p>这说明，我们看到的是“虚假”的内存地址</p><h3 id="原因分析"><a class="markdownIt-Anchor" href="#原因分析"></a> 原因分析</h3><p>在Windows系统下，处于保护模式，我们看见的内存地址是<strong>逻辑地址</strong>，并非真正的<strong>物理地址</strong></p><p>在DOS系统下，处于实模式，我们看见的内存地址就是真实的物理地址</p><p>同一逻辑地址的值对应不同物理上内存地址正是保护模式的能力</p><p><img src="/images/%E7%97%85%E6%AF%92-Win-%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80/image-20210512200650502.png" alt="image-20210512200650502" /></p><p><img src="/images/%E7%97%85%E6%AF%92-Win-%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80/image-20210512200751672.png" alt="image-20210512200751672" /></p><h3 id="转换过程"><a class="markdownIt-Anchor" href="#转换过程"></a> 转换过程</h3><p>32位虚拟地址分成3部分</p><ol><li>CR3寄存器给出页目录地址</li><li>前面10位用于在页目录中查找页表地址</li><li>中间10位用于在页表中查找页表项</li><li>后面12位给出相对页表项地址的偏移</li></ol><p><img src="/images/%E7%97%85%E6%AF%92-Win-%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80/image-20210512201221862.png" alt="image-20210512201221862" /></p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;ollydebug简介&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ollydebug简介&quot;&gt;&lt;/a&gt; OllyDebug简介&lt;/h2&gt;
@@ -37,9 +57,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -89,9 +109,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -116,9 +136,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -182,9 +202,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -211,9 +231,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -443,9 +463,9 @@ eg：&lt;/p&gt;
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -476,9 +496,9 @@ eg：&lt;/p&gt;
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -512,9 +532,9 @@ eg：&lt;/p&gt;
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -598,41 +618,6 @@ AB代表集合A与B的连接，A={a1,a2,a3,…,an}，B={b1,b2,b3,…,bm}&lt;/p&g
 &lt;h4 id=&quot;语句级控制结构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#语句级控制结构&quot;&gt;&lt;/a&gt; 语句级控制结构&lt;/h4&gt;
 &lt;p&gt;定义：用来构造语句执行流程的机制&lt;/p&gt;
 &lt;p&gt;分类：顺序、选择（分支）、重复（循环）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编译原理" scheme="https://wsw8.online/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    <category term="编译原理" scheme="https://wsw8.online/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编译原理第二章</title>
-    <link href="https://wsw8.online/archives/1934b292.html"/>
-    <id>https://wsw8.online/archives/1934b292.html</id>
-    <published>2021-04-14T10:49:14.000Z</published>
-    <updated>2021-05-10T08:28:43.323Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="数据类型的分类"><a class="markdownIt-Anchor" href="#数据类型的分类"></a> 数据类型的分类</h2><h3 id="内部类型"><a class="markdownIt-Anchor" href="#内部类型"></a> 内部类型</h3><blockquote><p>优点：</p><ol><li>基本表示的不可见性</li><li>编译时能检查变量使用的正确性</li><li>编译时可以确定无二义的操作</li><li>精度控制</li></ol></blockquote><span id="more"></span><h3 id="用户定义类型"><a class="markdownIt-Anchor" href="#用户定义类型"></a> 用户定义类型</h3><blockquote><ol><li>有限映像：<br />定义：从定义域类型DT值的有限集合，到值域类型RT值的有限集合的函数（映射）<br />eg：array[1…50] of char 中整数1至50到字符集的有限映像</li><li>序列：<br />定义：任意多个数据项组成，数据项称为序列的成分，且<strong>类型相同</strong></li><li>判定或：<br />定义：可以选择不同成员的构造机制<br />eg：PASCAL的变体记录、C的联合<br />eg：<br />变体记录定义如下：</li></ol><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> dept=(house,sports,drugs,food,liquor);</span><br><span class="line">month=<span class="number">1</span>..<span class="number">12</span>;</span><br><span class="line">item=<span class="keyword">record</span></span><br><span class="line">    price:real;</span><br><span class="line">    <span class="keyword">case</span> available:boolean <span class="keyword">of</span></span><br><span class="line">        true:(amount:integer;  </span><br><span class="line">            where:dept);</span><br><span class="line">        false:(month_expected:month)</span><br><span class="line"> <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure><p>实现代码如下：</p><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  i1,i2:item:</span><br><span class="line">i1.price:=<span class="number">5.24</span>;i1.available:=true;</span><br><span class="line">i1.amount:=<span class="number">29</span>;i1.where:=liquor;</span><br><span class="line">i2.price:=<span class="number">324.99</span>;i2.available:=false;</span><br><span class="line">i2.month_expect:=<span class="number">8</span>;</span><br></pre></td></tr></table></figure><p>则空间分配情况如下：</p><center>i1</center><table><thead><tr><th>变量名</th><th>值</th></tr></thead><tbody><tr><td>price</td><td>5.24</td></tr><tr><td>available</td><td>true</td></tr><tr><td>amount</td><td>29</td></tr><tr><td>where</td><td>liquor</td></tr></tbody></table><center>i2</center><table><thead><tr><th>变量名</th><th>值</th></tr></thead><tbody><tr><td>price</td><td>324.99</td></tr><tr><td>available</td><td>false</td></tr><tr><td>month_expected</td><td>8</td></tr><tr><td></td><td></td></tr></tbody></table><ol start="4"><li>幂集<br />定义：类型T的元素的所有子集的集合，T为基类型</li></ol></blockquote><h2 id="c语言的数据类型"><a class="markdownIt-Anchor" href="#c语言的数据类型"></a> C语言的数据类型</h2><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210414193241257.png" alt="image-20210414193241257" /></p><h3 id="非结构类型"><a class="markdownIt-Anchor" href="#非结构类型"></a> 非结构类型</h3><ol><li><p>内部类型<br />整型：int、short、long、unsigned<br />浮点型：float、double<br />字符型：char（有限字符集的元素）</p></li><li><p>用户定义的非结构类型<br />枚举：enum</p></li></ol><h3 id="结构类型"><a class="markdownIt-Anchor" href="#结构类型"></a> 结构类型</h3><ol><li><p>数组</p></li><li><p>结构struct</p></li><li><p>联合union（C的联合是不安全的）</p></li><li><p>文件FILE</p></li><li><p>指针</p></li><li><p>空类型void</p></li></ol><blockquote><p>不允许定义空类型变量，可以定义空类型指针变量</p></blockquote><h2 id="类型检查"><a class="markdownIt-Anchor" href="#类型检查"></a> 类型检查</h2><p>定义：对数据的操作和对应的类型是否匹配的一致性检查<br />eg：非法运算、赋值运算、形参实参类型是否匹配</p><ol><li>静态检查和动态检查</li></ol><blockquote><p>静态检查使程序更有效<br />动态检查是编程更方便，但是影响了可靠性且降低了执行效率</p></blockquote><h2 id="语言分类"><a class="markdownIt-Anchor" href="#语言分类"></a> 语言分类</h2><blockquote><p>无类型语言：没有数据类型<br />eg：函数式语言（FP）、泛函程序设计语言（FFP）<br />弱类型语言：类型检查全部或部分在运行时完成<br />eg：PASCAL<br />强类型语言：类型检查都在编译时完成<br />eg：C、ADA</p></blockquote><h2 id="实现模型"><a class="markdownIt-Anchor" href="#实现模型"></a> 实现模型</h2><p>在程序中，数据由常量或变量表示<br />在实现模型中，数据由描述符（描述数据对象的属性）和数据对象（存储区及其内容）表示</p><blockquote><ol><li>内部类型和用户定义的非结构类型：描述符一般由类型描述和指针组成<br /><strong>多个变量的描述符形成变量名表</strong><br />eg：</li></ol><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> numb;</span><br></pre></td></tr></table></figure><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411152405051.png" alt="image-20210411152405051" /></p><ol start="2"><li>结构类型</li></ol><ul><li>笛卡尔积<br />各成分按顺序存储，每个成分占整数个存储单元<br />描述符包含：类型名、构造符、若干三元式（选择符名、域类型、指针）（每个域对应一个三元式）<br />eg：</li></ul><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> t=recode a:real;</span><br><span class="line">              b:integer;</span><br><span class="line">       <span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">var</span> x:t;</span><br></pre></td></tr></table></figure><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411155756373.png" alt="image-20210411155756373" /></p><ul><li>有限映像<br />为每一成分分配整数个可编址的存储单元<br />描述符包括：类型名、构造符、<strong>定义域的基类型</strong>、下界、上界、成分类型、（每个成分占）单元个数、<strong>首地址</strong><br />eg：</li></ul><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> a=<span class="keyword">array</span>[<span class="number">1</span>..<span class="number">10</span>] <span class="keyword">of</span> real;</span><br></pre></td></tr></table></figure><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411160449254.png" alt="image-20210411160449254" /></p><ul><li>序列<br />可变长串的表示：静态描述符+动态描述符+堆</li></ul><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161113371.png" alt="image-20210411161113371" /></p><ul><li>判定或<br />pascal的变体记录：描述符、数据对象、case表、若干变体描述符</li></ul><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> v=<span class="keyword">record</span> a:integer;</span><br><span class="line">              <span class="keyword">case</span> b:boolean <span class="keyword">of</span></span><br><span class="line">                   true:(c:integer);</span><br><span class="line">                   false:(d:integer;</span><br><span class="line">                          e:real)</span><br><span class="line">       <span class="keyword">end</span>;</span><br></pre></td></tr></table></figure><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/image-20210411161638987.png" alt="image-20210411161638987" /></p><ul><li><p>指针</p><p>表示与内部类型相同只是其值为地址</p><p>指针指向的匿名数据对象分配在堆上</p></li><li><p><strong>编译时所有的描述符保存在一张表中以便编译时使用，甚至有些描述符要保存到运行阶段（数组），并且存储在描述符中的属性可能随运行而变化。</strong></p></li></ul></blockquote>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;数据类型的分类&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#数据类型的分类&quot;&gt;&lt;/a&gt; 数据类型的分类&lt;/h2&gt;
-&lt;h3 id=&quot;内部类型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#内部类型&quot;&gt;&lt;/a&gt; 内部类型&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;优点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;基本表示的不可见性&lt;/li&gt;
-&lt;li&gt;编译时能检查变量使用的正确性&lt;/li&gt;
-&lt;li&gt;编译时可以确定无二义的操作&lt;/li&gt;
-&lt;li&gt;精度控制&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;</summary>
     
     
     
