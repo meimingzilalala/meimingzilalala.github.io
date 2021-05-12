@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-12T07:31:34.667Z</updated>
+  <updated>2021-05-12T09:00:08.780Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>病毒_Win_虚拟地址</title>
+    <link href="https://wsw8.online/archives/c7304b6b.html"/>
+    <id>https://wsw8.online/archives/c7304b6b.html</id>
+    <published>2021-05-12T08:06:01.000Z</published>
+    <updated>2021-05-12T09:00:08.780Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ollydebug简介"><a class="markdownIt-Anchor" href="#ollydebug简介"></a> OllyDebug简介</h2><p>Windows下用户级调试神器——OllyDebug，简称OD</p><p>OD是强大的动态追踪工具，具有可视化操作界面，但是非常占内存</p><span id="more"></span><h3 id="基本功能"><a class="markdownIt-Anchor" href="#基本功能"></a> 基本功能</h3><ol><li>启动一个程序调试</li><li>Attach到一个已经运行的程序调试</li><li>单步，step into and step over</li><li>断点</li><li>继续运行</li><li>查看内存</li><li>修改内存</li><li>查看寄存器</li><li>修改寄存器</li><li>代码窗体跳到指定地址</li><li>修改指令</li><li>查看一个进程加载的dll</li><li>查看dll中有哪些函数</li><li>查找内存中的某个值</li></ol><h3 id="动态链接库dll"><a class="markdownIt-Anchor" href="#动态链接库dll"></a> 动态链接库DLL</h3><p>DLL（Dynamic Link Libraries）使得更新和重用程序更加方便</p><ol><li>是程序的一部分，作为模块被进程加载到自己的空间地址</li><li>在编译时不会插入可执行文件中，在运行时整个库的代码才会调入内存，这就是所谓的“动态链接”</li></ol><p>一些重要的动态链接库：</p><blockquote><p>Windows中有几个非常重要的底层DLL：Kernel32.dll、User32.dll、GDI32.dll、ntdll.dll</p><ol><li>Kernel32.dll顾名思义就是内核相关的功能，主要包含用于管理内存、进程和线程的函数</li><li>User32.dll中包含的则是用于执行用户界面的函数，比如把用户的鼠标点击操作传递给窗口，以便窗口根据用户的点击来执行预定的事件</li><li>GDI32.dll的名称用了缩写，全称是Graphical Device Interface（图形设备接口），包含用于画图和显示文本的函数，比如要显示一个程序窗口，就调用了其中的函数来画这个窗口</li><li>ntdll.dll是Windows系统从ring3到ring0的入口。位于Kernel32.dll和user32.dll中的所有win32 API最终都是调用ntdll.dll中的函数实现的</li></ol></blockquote><h2 id="windows内存管理和程序加载"><a class="markdownIt-Anchor" href="#windows内存管理和程序加载"></a> Windows内存管理和程序加载</h2><h3 id="保护模式内存管理"><a class="markdownIt-Anchor" href="#保护模式内存管理"></a> 保护模式内存管理</h3>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;ollydebug简介&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ollydebug简介&quot;&gt;&lt;/a&gt; OllyDebug简介&lt;/h2&gt;
+&lt;p&gt;Windows下用户级调试神器——OllyDebug，简称OD&lt;/p&gt;
+&lt;p&gt;OD是强大的动态追踪工具，具有可视化操作界面，但是非常占内存&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="病毒" scheme="https://wsw8.online/categories/%E7%97%85%E6%AF%92/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo与typora的图片路径问题</title>
@@ -47,9 +74,9 @@
     <link href="https://wsw8.online/archives/b1495143.html"/>
     <id>https://wsw8.online/archives/b1495143.html</id>
     <published>2021-05-12T01:50:21.000Z</published>
-    <updated>2021-05-12T07:30:39.387Z</updated>
+    <updated>2021-05-12T08:04:28.924Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h2><p>之前的病毒在每份感染文件中都复制了一份病毒拷贝，而链式病毒只保留一份病毒拷贝，其利用文件目录项，将受感染文件的头簇指向病毒</p><span id="more"></span><h2 id="复习"><a class="markdownIt-Anchor" href="#复习"></a> 复习</h2><p>回顾一下文件的查找过程</p><p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512095523949.png" alt="image-20210512095523949" /></p><h2 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h2><p>感染过程：</p><ol><li>如首次感染，将病毒保存在某个空闲扇区</li><li>将被感染文件（com文件）首簇存目录项保留段</li><li>修改首簇指向病毒的首簇</li></ol><p>执行过程：</p><ol><li>执行被感染文件则启动病毒，加载的是病毒的首簇，并执行</li><li>病毒获取当前执行程序的名字，获取对应目录项。从其中保留字段获取原文件首簇号，并遍历FAT簇链加载它们</li><li>跳到原文件加载的内存中执行</li></ol><h2 id="病毒设计"><a class="markdownIt-Anchor" href="#病毒设计"></a> 病毒设计</h2><h3 id="感染部分"><a class="markdownIt-Anchor" href="#感染部分"></a> 感染部分</h3><ol><li>被感染文件的真实起始扇区号写到<strong>目录表项的保留区</strong>（目录项的保留区从目录项头第13个字节即偏移0ch开始，共10字节）</li><li>修改被感染文件的目录项的起始扇区字段指向病毒文件的首簇</li><li>目录项中的文件大小字段也要修改成病毒的真实大小，这样才能保证病毒能被完整加载</li><li>将原来病毒文件的目录项全部32字节改为0，这样从外部看就不存在这个病毒文件，也没有对应的目录项了</li></ol><h3 id="执行部分"><a class="markdownIt-Anchor" href="#执行部分"></a> 执行部分</h3><ol><li>先获取被感染程序的名字</li><li>然后从根目录寻找被感染程序的目录项</li><li>找到后从该文件目录项的保留区获取被感染程序的首簇号</li><li>找到被感染程序所在簇（即扇区），加载该扇区到内存</li></ol><p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512144855424.png" alt="image-20210512144855424" /></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h2><p>之前的病毒在每份感染文件中都复制了一份病毒拷贝，而链式病毒只保留一份病毒拷贝，其利用文件目录项，将受感染文件的头簇指向病毒</p><span id="more"></span><h2 id="复习"><a class="markdownIt-Anchor" href="#复习"></a> 复习</h2><p>回顾一下文件的查找过程</p><p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512095523949.png" alt="image-20210512095523949" /></p><h2 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h2><p>感染过程：</p><ol><li>如首次感染，将病毒保存在某个空闲扇区</li><li>将被感染文件（com文件）首簇存目录项保留段</li><li>修改首簇指向病毒的首簇</li></ol><p>执行过程：</p><ol><li>执行被感染文件则启动病毒，加载的是病毒的首簇，并执行</li><li>病毒获取当前执行程序的名字，获取对应目录项。从其中保留字段获取原文件首簇号，并遍历FAT簇链加载它们</li><li>跳到原文件加载的内存中执行</li></ol><h2 id="病毒设计"><a class="markdownIt-Anchor" href="#病毒设计"></a> 病毒设计</h2><h3 id="感染部分"><a class="markdownIt-Anchor" href="#感染部分"></a> 感染部分</h3><ol><li>被感染文件的真实起始扇区号写到<strong>目录表项的保留区</strong>（目录项的保留区从目录项头第13个字节即偏移0ch开始，共10字节）</li><li>修改被感染文件的目录项的起始扇区字段指向病毒文件的首簇</li><li>目录项中的文件大小字段也要修改成病毒的真实大小，这样才能保证病毒能被完整加载</li><li>将原来病毒文件的目录项全部32字节改为0，这样从外部看就不存在这个病毒文件，也没有对应的目录项了</li></ol><h3 id="执行部分"><a class="markdownIt-Anchor" href="#执行部分"></a> 执行部分</h3><ol><li>先获取被感染程序的名字</li><li>然后从根目录寻找被感染程序的目录项</li><li>找到后从该文件目录项的保留区获取被感染程序的首簇号</li><li>找到被感染程序所在簇（即扇区），加载该扇区到内存</li></ol><p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512144855424.png" alt="image-20210512144855424" /></p><h2 id="重点"><a class="markdownIt-Anchor" href="#重点"></a> 重点</h2><h3 id="获取执行文件名"><a class="markdownIt-Anchor" href="#获取执行文件名"></a> 获取执行文件名</h3><ol><li>从com文件的ds：2c处获得环境块首址的段地址</li><li>环境块就在段地址：0000处</li><li>环境块内容PATH=……COMSPEC=C:\<a href="http://COMMAND.COM">COMMAND.COM</a>\0…0 0 xxxx</li><li>环境块开始是PATH等0字符结尾的串，最后是两个00字符。然后有两个字节可能是数目，之后就是执行程序的名字</li></ol>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;介绍&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#介绍&quot;&gt;&lt;/a&gt; 介绍&lt;/h2&gt;
@@ -606,39 +633,6 @@ AB代表集合A与B的连接，A={a1,a2,a3,…,an}，B={b1,b2,b3,…,bm}&lt;/p&g
 &lt;li&gt;精度控制&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="编译原理" scheme="https://wsw8.online/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    <category term="编译原理" scheme="https://wsw8.online/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编译原理第一章</title>
-    <link href="https://wsw8.online/archives/29225e4a.html"/>
-    <id>https://wsw8.online/archives/29225e4a.html</id>
-    <published>2021-04-14T10:48:04.000Z</published>
-    <updated>2021-05-10T08:15:46.308Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="语言的本质"><a class="markdownIt-Anchor" href="#语言的本质"></a> 语言的本质</h2><p>一组规则的组合</p><ol><li>字母表的定义</li><li>词法规则</li><li>语法规则</li><li>语义规则</li><li>语用规则</li></ol>   <span id="more"></span><h2 id="与编译有关的三种语言和三种程序"><a class="markdownIt-Anchor" href="#与编译有关的三种语言和三种程序"></a> 与编译有关的三种语言和三种程序</h2><table><thead><tr><th>源语言</th><th>工具语言</th><th>目标语言</th></tr></thead><tbody><tr><td>源程序</td><td>编译程序</td><td>目标程序</td></tr></tbody></table><h2 id="程序设计语言的分类"><a class="markdownIt-Anchor" href="#程序设计语言的分类"></a> 程序设计语言的分类</h2><table><thead><tr><th>强制式语言</th><th>函数式语言</th><th>逻辑式语言</th><th>对象式语言</th></tr></thead><tbody><tr><td>冯·诺依曼模型</td><td>数学函数（函数运算）</td><td>数理逻辑、谓词演算</td><td>抽象数据类型</td></tr></tbody></table><h2 id="冯诺依曼体系结构"><a class="markdownIt-Anchor" href="#冯诺依曼体系结构"></a> 冯·诺依曼体系结构</h2><ol><li>构成基础<br />存储器、控制器、处理器、ip</li><li>特点<ul><li>数据、指令以二进制形式存储</li><li>存储程序的工作方式</li><li>程序顺序执行，可强制修改执行顺序</li><li>存储器内容可以被修改</li></ul></li></ol><h2 id="变量的4个属性"><a class="markdownIt-Anchor" href="#变量的4个属性"></a> 变量的4个属性</h2><ol><li><p>作用域</p><blockquote><ul><li>静态绑定：依据变量定义的位置</li><li>动态绑定：依据过程的调用关系</li></ul></blockquote><ul><li>全局变量</li><li>局部变量</li><li>非局部变量</li></ul></li><li><p>生存期</p><blockquote><ul><li>全局变量静态分配</li><li>局部变量运行前静态分配，运行时动态分配</li><li>非局部变量可静态分配可动态分配</li><li>匿名变量是通过指针访问，是动态分配</li></ul></blockquote></li><li><p>值</p><blockquote><ul><li>二进制编码</li><li>按类型解释</li><li>变量与值的绑定是动态的</li><li>常量的值不能修改</li><li>数据对象表示存储区和它保存的值</li></ul></blockquote></li><li><p>类型</p><blockquote><p>静态绑定语言是面向编译的语言<br />动态绑定语言是面向解释的语言</p></blockquote></li></ol><h2 id="虚拟机"><a class="markdownIt-Anchor" href="#虚拟机"></a> 虚拟机</h2><p>M1是实际的机器<br />机器语言是汇编语言的M2=M1+汇编程序<br />机器语言是高级语言的M3=M2+编译程序</p><h2 id="程序单元"><a class="markdownIt-Anchor" href="#程序单元"></a> 程序单元</h2><ol><li><p>定义：程序执行过程中被独立调用单元，包括子程序、分程序、过程等</p></li><li><p>表示：</p><blockquote><ul><li><p>编译时：单元的源程序</p></li><li><p>运行时：一个代码段和一个活动记录组成，称为单元实例</p></li><li><blockquote><p>活动记录：执行单元需要的信息和局部变量等数据存储区</p></blockquote></li></ul></blockquote></li><li><p>实例：</p><blockquote><ul><li>非局部变量：一个程序单元可以引用未被本单元说明而被其它单元说明的变量</li><li>全局变量：一个程序中各个程序单元都可以引用的变量</li></ul></blockquote></li></ol><h2 id="c程序运行时的存储空间"><a class="markdownIt-Anchor" href="#c程序运行时的存储空间"></a> C程序运行时的存储空间</h2><ol><li><p>程序代码区：存储程序代码（编译后形成的二进制机器指令序列）</p></li><li><p>数据静态存储区：存储程序的<strong>常量数据、全局数据、static数据</strong></p></li><li><p>数据动态存储区：</p><blockquote><p>栈：存储返回地址、CPU现场、临时变量、<strong>形参、局部变量</strong><br />堆：存储动态内存申请数据</p></blockquote></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;语言的本质&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#语言的本质&quot;&gt;&lt;/a&gt; 语言的本质&lt;/h2&gt;
-&lt;p&gt;一组规则的组合&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;字母表的定义&lt;/li&gt;
-&lt;li&gt;词法规则&lt;/li&gt;
-&lt;li&gt;语法规则&lt;/li&gt;
-&lt;li&gt;语义规则&lt;/li&gt;
-&lt;li&gt;语用规则&lt;/li&gt;
-&lt;/ol&gt;</summary>
     
     
     
