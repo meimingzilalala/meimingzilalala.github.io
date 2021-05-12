@@ -130,6 +130,73 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo与typora的图片路径问题</title>
+    <url>/archives/d1451cce.html</url>
+    <content><![CDATA[<h2 id="问题描述"><a class="markdownIt-Anchor" href="#问题描述"></a> 问题描述</h2>
+<p>不知道新搭建博客的你是否遇到这个问题，用typora写文章时难免要添加一些图片，而正好typora会默认在当前目录<code>hexo/source/_post</code>里创建一个后缀名为<code>.asset</code>的文件夹来存放图片，乍一看，挺好，typora里正常显示，而一推到hexo博客图片就因为路径原因看不了了</p>
+<span id="more"></span>
+<h2 id="问题分析"><a class="markdownIt-Anchor" href="#问题分析"></a> 问题分析</h2>
+<p>路径原因，在typora里默认当前文件存储位置<code>hexo/source/_post</code>为起始目录，而hexo默认source文件夹<code>hexo/source</code>为起始目录，这也就导致了在typora里无论你写相对路径还是绝对路径推到hexo时都是找不到的</p>
+<h2 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法"></a> 解决方法</h2>
+<p>查了很多方法，网上也有人总结了几大解决方案，觉得不怎么好用，综合之下我决定这样更改</p>
+<ol>
+<li>
+<p>为每篇文章设定其根目录</p>
+<blockquote>
+<p>typora里是可以自己设定根目录的，在每篇文章的开头中加入</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">typora-root-url:</span> <span class="string">../</span></span><br></pre></td></tr></table></figure>
+<p>这样typora里的起始目录就和hexo里一致了</p>
+</blockquote>
+</li>
+<li>
+<p>已经写好的文章只能手动添加了，即将写的文章每次都手动加难免累，我们可以更改hexo里的模板<code>hexo/scaffolds/post.md</code>，这是你使用<code>hexo n 文章名</code>命令时生成的模板</p>
+<blockquote>
+<p>post.md的开头内容</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">typora-root-url:</span> <span class="string">../</span></span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>这样新生成的文章都会以<code>hexo/source</code>为根目录</p>
+</blockquote>
+</li>
+<li>
+<p>更改typora的设置</p>
+<blockquote>
+<p>打开typora的<code>偏好设置</code>，选中<code>图像</code>，更改其设置</p>
+<ol>
+<li>
+<p>选择<code>复制到指定路径</code></p>
+</li>
+<li>
+<p>路径里填你博客的绝对路径，例如</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">F:\Blog\source\images\$&#123;filename&#125;</span><br></pre></td></tr></table></figure>
+<p>注意后面加${filename}就会以你文章名在images下新建一个图片文件夹，看起来井井有条一些</p>
+</li>
+<li>
+<p>下面的设置一定要勾选<code>优先使用相对路径</code>，这样会防止你贴个图片结果贴成了绝对路径导致hexo不认识</p>
+</li>
+<li>
+<p>参考配置如下图</p>
+<p><img src="/images/hexo%E4%B8%8Etypora%E7%9A%84%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/image-20210512152029191.png" alt="image-20210512152029191" /></p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p>搞定，看看效果</p>
+<p><img src="/images/hexo%E4%B8%8Etypora%E7%9A%84%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/image-20210512152225354.png" alt="image-20210512152225354" /></p>
+</li>
+</ol>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h2>
+<p>解决的思想就是让hexo与typora都能认识写的这个路径，也就是说写成<code>/images/文件夹名/图片名</code>这种形式（没办法，hexo默认的就是以<code>hexo/source</code>为根的），所以要对typora进行一些相对复杂的配置让typora也能认识这个路径，于是，我们更改了typora文章的url根目录，并优先使用相对路径。ok，搞定！</p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>自学</tag>
+        <tag>博客</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+github搭建静态博客</title>
     <url>/archives/15b1edd7.html</url>
     <content><![CDATA[<p><strong>写在前面：本来是用windows搭建的博客，但奈何Linux太香了，加上之前<a href="https://wsw8.online/archives/cee22f12.html">装过wsl</a>，所以打算用Linux再搭建一下。另外由于我是搭建好后再写的这篇博客，难免有些记忆错误出现纰漏，望指正。</strong></p>
@@ -261,14 +328,42 @@
 <p>回顾一下文件的查找过程</p>
 <p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512095523949.png" alt="image-20210512095523949" /></p>
 <h2 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h2>
+<p>感染过程：</p>
+<ol>
+<li>如首次感染，将病毒保存在某个空闲扇区</li>
+<li>将被感染文件（com文件）首簇存目录项保留段</li>
+<li>修改首簇指向病毒的首簇</li>
+</ol>
+<p>执行过程：</p>
+<ol>
+<li>执行被感染文件则启动病毒，加载的是病毒的首簇，并执行</li>
+<li>病毒获取当前执行程序的名字，获取对应目录项。从其中保留字段获取原文件首簇号，并遍历FAT簇链加载它们</li>
+<li>跳到原文件加载的内存中执行</li>
+</ol>
+<h2 id="病毒设计"><a class="markdownIt-Anchor" href="#病毒设计"></a> 病毒设计</h2>
+<h3 id="感染部分"><a class="markdownIt-Anchor" href="#感染部分"></a> 感染部分</h3>
+<ol>
+<li>被感染文件的真实起始扇区号写到<strong>目录表项的保留区</strong>（目录项的保留区从目录项头第13个字节即偏移0ch开始，共10字节）</li>
+<li>修改被感染文件的目录项的起始扇区字段指向病毒文件的首簇</li>
+<li>目录项中的文件大小字段也要修改成病毒的真实大小，这样才能保证病毒能被完整加载</li>
+<li>将原来病毒文件的目录项全部32字节改为0，这样从外部看就不存在这个病毒文件，也没有对应的目录项了</li>
+</ol>
+<h3 id="执行部分"><a class="markdownIt-Anchor" href="#执行部分"></a> 执行部分</h3>
+<ol>
+<li>先获取被感染程序的名字</li>
+<li>然后从根目录寻找被感染程序的目录项</li>
+<li>找到后从该文件目录项的保留区获取被感染程序的首簇号</li>
+<li>找到被感染程序所在簇（即扇区），加载该扇区到内存</li>
+</ol>
+<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512144855424.png" alt="image-20210512144855424" /></p>
 ]]></content>
       <categories>
         <category>病毒</category>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -363,8 +458,8 @@ D. 中断型病毒是通过替换原中断处理程序获得执行机会</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -567,8 +662,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -662,8 +757,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -1574,8 +1669,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -1606,8 +1701,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -1686,8 +1781,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
