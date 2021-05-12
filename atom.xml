@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-12T01:45:58.926Z</updated>
+  <updated>2021-05-12T01:56:25.558Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>病毒_DOS_链式病毒</title>
+    <link href="https://wsw8.online/archives/b1495143.html"/>
+    <id>https://wsw8.online/archives/b1495143.html</id>
+    <published>2021-05-12T01:50:21.000Z</published>
+    <updated>2021-05-12T01:56:25.558Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h2><p>之前的病毒在每份感染文件中都复制了一份病毒拷贝，而链式病毒只保留一份病毒拷贝，其利用文件目录项，将受感染文件的头簇指向病毒</p><span id="more"></span><h2 id="复习"><a class="markdownIt-Anchor" href="#复习"></a> 复习</h2><p>回顾一下文件的查找过程</p><p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512095523949.png" alt="image-20210512095523949" /></p><h2 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;介绍&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#介绍&quot;&gt;&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;之前的病毒在每份感染文件中都复制了一份病毒拷贝，而链式病毒只保留一份病毒拷贝，其利用文件目录项，将受感染文件的头簇指向病毒&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="病毒" scheme="https://wsw8.online/categories/%E7%97%85%E6%AF%92/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>病毒_DOS_引导与中断</title>
@@ -37,9 +63,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -103,9 +129,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -132,9 +158,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -364,9 +390,9 @@ eg：&lt;/p&gt;
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -397,9 +423,9 @@ eg：&lt;/p&gt;
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
@@ -433,9 +459,9 @@ eg：&lt;/p&gt;
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
     <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   

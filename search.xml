@@ -252,6 +252,26 @@
       </tags>
   </entry>
   <entry>
+    <title>病毒_DOS_链式病毒</title>
+    <url>/archives/b1495143.html</url>
+    <content><![CDATA[<h2 id="介绍"><a class="markdownIt-Anchor" href="#介绍"></a> 介绍</h2>
+<p>之前的病毒在每份感染文件中都复制了一份病毒拷贝，而链式病毒只保留一份病毒拷贝，其利用文件目录项，将受感染文件的头簇指向病毒</p>
+<span id="more"></span>
+<h2 id="复习"><a class="markdownIt-Anchor" href="#复习"></a> 复习</h2>
+<p>回顾一下文件的查找过程</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-DOS-%E9%93%BE%E5%BC%8F%E7%97%85%E6%AF%92/image-20210512095523949.png" alt="image-20210512095523949" /></p>
+<h2 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h2>
+]]></content>
+      <categories>
+        <category>病毒</category>
+      </categories>
+      <tags>
+        <tag>课程</tag>
+        <tag>病毒</tag>
+        <tag>计算机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>病毒_DOS_引导与中断</title>
     <url>/archives/11d03106.html</url>
     <content><![CDATA[<h2 id="面向文件系统的病毒引导型病毒"><a class="markdownIt-Anchor" href="#面向文件系统的病毒引导型病毒"></a> 面向文件系统的病毒——引导型病毒</h2>
@@ -343,8 +363,8 @@ D. 中断型病毒是通过替换原中断处理程序获得执行机会</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -547,8 +567,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -642,8 +662,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1554,8 +1574,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1586,8 +1606,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1666,8 +1686,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
