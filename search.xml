@@ -321,7 +321,19 @@
   <entry>
     <title>病毒_Win_PE结构和末节寄生</title>
     <url>/archives/20191e8a.html</url>
-    <content><![CDATA[<span id="more"></span>]]></content>
+    <content><![CDATA[<h2 id="pe格式"><a class="markdownIt-Anchor" href="#pe格式"></a> PE格式</h2>
+<p>在Win32位平台可执行文件命名为可移植的可执行文件（Portable Executable File），该文件的格式就是PE格式</p>
+<p>在Win32系统中，常见的EXE，DLL，SYS，COM等可执行文件都是PE文件</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>病毒</category>
+      </categories>
+      <tags>
+        <tag>课程</tag>
+        <tag>病毒</tag>
+        <tag>计算机</tag>
+      </tags>
   </entry>
   <entry>
     <title>病毒_Win_虚拟地址</title>

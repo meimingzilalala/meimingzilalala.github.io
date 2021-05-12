@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-12T12:18:01.304Z</updated>
+  <updated>2021-05-12T13:03:50.559Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -21,18 +21,25 @@
     <link href="https://wsw8.online/archives/20191e8a.html"/>
     <id>https://wsw8.online/archives/20191e8a.html</id>
     <published>2021-05-12T12:18:01.000Z</published>
-    <updated>2021-05-12T12:18:01.304Z</updated>
+    <updated>2021-05-12T13:03:50.559Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;</summary>
-      
+    <content type="html"><![CDATA[<h2 id="pe格式"><a class="markdownIt-Anchor" href="#pe格式"></a> PE格式</h2><p>在Win32位平台可执行文件命名为可移植的可执行文件（Portable Executable File），该文件的格式就是PE格式</p><p>在Win32系统中，常见的EXE，DLL，SYS，COM等可执行文件都是PE文件</p><span id="more"></span>]]></content>
     
     
+    <summary type="html">&lt;h2 id=&quot;pe格式&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#pe格式&quot;&gt;&lt;/a&gt; PE格式&lt;/h2&gt;
+&lt;p&gt;在Win32位平台可执行文件命名为可移植的可执行文件（Portable Executable File），该文件的格式就是PE格式&lt;/p&gt;
+&lt;p&gt;在Win32系统中，常见的EXE，DLL，SYS，COM等可执行文件都是PE文件&lt;/p&gt;</summary>
     
+    
+    
+    <category term="病毒" scheme="https://wsw8.online/categories/%E7%97%85%E6%AF%92/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
