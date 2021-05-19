@@ -465,8 +465,8 @@ E. 以上都不正确</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -571,8 +571,8 @@ D. 病毒数据区的预期加载地址也可以通过内嵌汇编标号的方�
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -612,8 +612,8 @@ D.  寄生完成后，病毒程序需要修改结构体变量中的成员virtual
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -784,8 +784,8 @@ D. 病毒可以将自身且分为多段，分别插入到PE文件各节的空洞
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -863,8 +863,8 @@ D. 病毒可以将自身且分为多段，分别插入到PE文件各节的空洞
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -919,8 +919,8 @@ D. 病毒可以将自身且分为多段，分别插入到PE文件各节的空洞
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,8 +1015,8 @@ D. 中断型病毒是通过替换原中断处理程序获得执行机会</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1219,8 +1219,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -1314,8 +1314,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -2226,8 +2226,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -2258,8 +2258,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
@@ -2338,8 +2338,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>计算机</tag>
         <tag>病毒</tag>
+        <tag>计算机</tag>
       </tags>
   </entry>
   <entry>
