@@ -32,7 +32,7 @@ var bszCaller, bszTag;
                 try {
                     a(b), scriptTag.parentElement.removeChild(scriptTag)
                 } catch (c) {
-                    bszTag.hides()
+                    bszTag.shows()
                 }
             })
         }
