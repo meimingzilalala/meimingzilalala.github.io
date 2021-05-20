@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-19T13:26:32.847Z</updated>
+  <updated>2021-05-20T02:36:17.318Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -21,18 +21,28 @@
     <link href="https://wsw8.online/archives/3d101c50.html"/>
     <id>https://wsw8.online/archives/3d101c50.html</id>
     <published>2021-05-19T13:21:52.000Z</published>
-    <updated>2021-05-19T13:26:32.847Z</updated>
+    <updated>2021-05-20T02:36:17.318Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;</summary>
-      
+    <content type="html"><![CDATA[<h2 id="patch的核心问题和解决思路"><a class="markdownIt-Anchor" href="#patch的核心问题和解决思路"></a> Patch的核心问题和解决思路</h2><h3 id="核心问题"><a class="markdownIt-Anchor" href="#核心问题"></a> 核心问题</h3><ol><li>找到一条指令，并知道其起始边界</li><li>最好这条指令必然执行，否则patch了，病毒代码也不会必然执行</li></ol><span id="more"></span><h3 id="解决思路"><a class="markdownIt-Anchor" href="#解决思路"></a> 解决思路</h3><ol><li>对一些常见特殊指令识别，比如push ebp；mov ebp，esp等，这是很多函数的开始，设定基址寄存器的组合。简单，方便。缺点：由于指令长度过短，可能和数据相同，因此不见得一定是指令；同时，不见得该代码一定会被执行</li><li>对导入函数的调用指令进行Patch，这些指令可信度很高，可以选择某些必然被调用的函数指令去patch</li><li>病毒自带反汇编器（如一些开源的反汇编器），静态分析宿主程序，随机找一条指令patch，隐蔽度极高，复杂，但patch的指令不一定会必然执行</li><li>自带调试功能（相当于一个调试器），将宿主程序隐藏启动，单步调试运行，自然得到每条指令的边界</li></ol><h2 id="对调用导入函数的指令patch"><a class="markdownIt-Anchor" href="#对调用导入函数的指令patch"></a> 对调用导入函数的指令patch</h2><h3 id="函数调用"><a class="markdownIt-Anchor" href="#函数调用"></a> 函数调用</h3><p>函数调用一般采用call+相对偏移<br />机器码：E8 xx xx xx xx，其中xx xx xx xx是目标地址相对call指令<strong>后面那条指令</strong>的偏移（类似JMP）</p><p>采用相对偏移好处：整个模块整体搬迁，偏移不变，不会出错<br />局限：相对偏移只能运用到同一模块中</p><p>为了跨模块调用，在编译器和系统的协助下引入<strong>导入表机制</strong></p><h3 id="导入表"><a class="markdownIt-Anchor" href="#导入表"></a> 导入表</h3><p>为每个被调用的DLL函数设定一个“邮箱”（导入表项），系统加载DLL后，利用导出表机制获得函数的地址，然后将函数地址放到各自的“邮箱”中，调某个函数就从邮箱拿地址，而如何将对应的函数放到对应的“邮箱”，就利用了导入表机制</p><p>图示：</p><p><img src="/images/%E7%97%85%E6%AF%92-Win-%E6%8C%87%E4%BB%A4Patch%E5%92%8C%E5%AF%BC%E5%85%A5%E8%A1%A8%E6%9C%BA%E5%88%B6/image-20210520092949171.png" alt="image-20210520092949171" /></p><h3 id="如何填写导入表"><a class="markdownIt-Anchor" href="#如何填写导入表"></a> 如何填写导入表</h3><p>在可选头的数据目录的第二项就是导入表的描述，其中有导入表的RVA，导入表每一项是一个IMAGE_IMPORT_DESCRIPTION结构，代表一个导入的DLL的相关信息，这个结构中还有INT表（Import Name Table）和IAT表（Import Address Table）的RVA和DLL名等</p><h4 id="int表"><a class="markdownIt-Anchor" href="#int表"></a> INT表</h4><p>加载前后，INT表内容不变，就是IAT加载前内容。INT可能不存在，但如果有地址预绑定，就必须有INT</p><h4 id="iat表"><a class="markdownIt-Anchor" href="#iat表"></a> IAT表</h4><p>必须，好比邮箱，编译后，IAT每项4个字节，是一个RVA，指向IMAGE_IMPORT_BY_NAME表中的一项，这一项就是对应函数的序号和函数名。加载后，IAT表的内容变为函数入口地址</p><h4 id="int与iat"><a class="markdownIt-Anchor" href="#int与iat"></a> INT与IAT</h4><p>一般情况下，INT（OriginalFirstThunk）和IAT（FirstThunk）内容相同，因此是冗余的，所以有的编译器不生成INT，RVA为0</p><h4 id="iat表初始化算法"><a class="markdownIt-Anchor" href="#iat表初始化算法"></a> IAT表初始化算法</h4><ol><li>从数据目录获得导入表入口，从入口开始，每项代表一个被引用的DLL，从其中DLL名RVA段可获得DLL名</li><li>系统遍历编译时生成的每个INT或IAT（有INT就判断INT，预先绑定只能遍历INT），第二项存储的是一个RVA，指向IMAGE_IMPORT_BY_NAME</li><li>找到该项，获得函数名串，以\0结尾，通过对应DLL的导出表找到相关函数的加载地址</li><li>然后将其放入IAT表的第二项（此时，IAT表的值才变为函数的加载地址）</li><li>如此遍历，将所有项都填入对应函数入口地址</li><li>遍历IMAGE_IMPORT_DESCRIPTION表，对所有DLL都做2~4步处理</li></ol><p><img src="/images/%E7%97%85%E6%AF%92-Win-%E6%8C%87%E4%BB%A4Patch%E5%92%8C%E5%AF%BC%E5%85%A5%E8%A1%A8%E6%9C%BA%E5%88%B6/image-20210520095154024.png" alt="image-20210520095154024" /></p><h3 id="预先绑定"><a class="markdownIt-Anchor" href="#预先绑定"></a> 预先绑定</h3><ol><li>由于程序在加载时需要在IAT表中填写函数的加载地址入口，因此比较耗时，所以有了预先绑定技术</li><li>预先绑定是在编译时向IAT表中填入导入地址（即函数的入口地址，不是指向IMAGE_IMPORT_BY_NAME表项的RVA），它是直接根据系统DLL的预期基址（ImageBase）计算出来的</li><li>通过预先绑定，在实际加载时，只要系统DLL的基址没变，那么IAT表的内容就不需要再次填充</li><li>所以要验证DLL是否被加载到预期地址，这时，不能使用IAT表指向IMAGE_IMPORT_BY_NAEM表项了，所以通过INT表再次执行导入表机制从而使得IAT表内容更新</li><li>这就是为什么如果使用预先绑定导入地址，必须有INT表</li><li>所以，只要INT存在，则用它检索IMAGE_IMPORT_BY_NAME，否则就用IAT表检索</li></ol><h3 id="patch感染"><a class="markdownIt-Anchor" href="#patch感染"></a> patch感染</h3><p>思路：将CALL [xxxx]或JMP [xxxx]指令修改替换指向我们的代码，选择大多数程序都会调用的函数，例如GetCommandLine（获取程序的命令行参数然后以参数的形式传递给WinMain函数）</p><p>细节：</p><ol><li><p>首先查找函数A的导入表想的地址xx xx xx xx（邮箱地址）</p></li><li><p>得到地址后查找代码节找到间接跳转指令</p><p>FF 15 xx xx xx xx（CALL [xx xx xx xx]）或FF 25 xx xx xx xx（JMP [xx xx xx xx]）</p></li><li><p>分别Patch为跳转病毒指令</p><p>E8 yy yy yy yy 90（CALL 偏移，NOP）或E9 yy yy yy yy（JMP偏移）</p></li><li><p>注意：CALL指令需要返回它的下一条指令，它有压栈和ret返回的操作，而JMP则没有</p></li></ol>]]></content>
     
     
+    <summary type="html">&lt;h2 id=&quot;patch的核心问题和解决思路&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#patch的核心问题和解决思路&quot;&gt;&lt;/a&gt; Patch的核心问题和解决思路&lt;/h2&gt;
+&lt;h3 id=&quot;核心问题&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#核心问题&quot;&gt;&lt;/a&gt; 核心问题&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;找到一条指令，并知道其起始边界&lt;/li&gt;
+&lt;li&gt;最好这条指令必然执行，否则patch了，病毒代码也不会必然执行&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
+    
+    
+    <category term="病毒" scheme="https://wsw8.online/categories/%E7%97%85%E6%AF%92/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
