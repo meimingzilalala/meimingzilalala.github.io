@@ -32,7 +32,7 @@ NexT.utils = {
       }
     });
 
-    // $.fancybox.defaults.hash = false;
+    $.fancybox.defaults.hash = false;
     $('.fancybox').fancybox({
       loop   : true,
       helpers: {
