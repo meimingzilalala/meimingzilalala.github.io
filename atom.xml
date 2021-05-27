@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-21T01:18:09.819Z</updated>
+  <updated>2021-05-27T02:20:47.133Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分布式-chapter1</title>
+    <link href="https://wsw8.online/archives/7b156417.html"/>
+    <id>https://wsw8.online/archives/7b156417.html</id>
+    <published>2021-05-27T00:56:41.000Z</published>
+    <updated>2021-05-27T02:20:47.133Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是并行计算"><a class="markdownIt-Anchor" href="#什么是并行计算"></a> 什么是并行计算</h2><p>Parallel computing：the use of two or more processors (computers), usually within a single system, working simultaneously to solve a single problem.</p><p>并行计算：使用两个或两个以上的处理器（计算机），通常在一个系统内，同时工作，以解决单个问题。</p><span id="more"></span><p>Distributed computing：any computing that involves multiple computers remote from each other that each have a role in a computation problem or information processing.</p><p>分布式计算：任何涉及多个计算机彼此远程的计算，每个计算机在计算问题或信息处理中都发挥作用。</p><h3 id="什么是并行计算机"><a class="markdownIt-Anchor" href="#什么是并行计算机"></a> 什么是并行计算机</h3><p>并行计算机就是一个支持并行程序的多处理器的计算机系统</p><p>两类并行计算机：</p><ol><li>多机：用多台计算机和互连网络构建起来的并行计算机（通过消息）</li><li>集中多处理器（对称多处理器或SMP）：一个所有CPU共享一个全局内存的更加高度集中的系统（通过全局内存通信和同步）</li></ol><h3 id="并行系统和分布式系统的比较"><a class="markdownIt-Anchor" href="#并行系统和分布式系统的比较"></a> 并行系统和分布式系统的比较</h3><table><thead><tr><th></th><th>并行系统</th><th>分布式系统</th></tr></thead><tbody><tr><td>内存</td><td>紧密耦合共享内存、UMA、NUMA、分布式内存、消息传递</td><td>分布式内存、消息传递、RPC、和/或用于分布式共享内存</td></tr><tr><td>控制</td><td>全局时钟控制、SIMD、MIMD</td><td>没有全局时钟控制、需要同步算法</td></tr><tr><td>进程互连</td><td>按Tbps组织、总线、网格、树、树网、超立方体网络</td><td>按Gbps组织、以太网（总线）、令牌和SCI、以太网（交换网络）</td></tr><tr><td>粒度</td><td>精细</td><td>粗</td></tr><tr><td>可靠性</td><td>假定</td><td>未假定</td></tr><tr><td>主要关注</td><td>性能（时间和规模）、科学计算</td><td>性能（成本和可扩展性）、可靠性/可用性、信息/资源共享</td></tr></tbody></table><h2 id="为什么并行计算"><a class="markdownIt-Anchor" href="#为什么并行计算"></a> 为什么并行计算</h2><h3 id="科技趋势"><a class="markdownIt-Anchor" href="#科技趋势"></a> 科技趋势</h3><p>微处理器计算能力不断提升，摩尔定律：每1.5年每个芯片上晶体管数量翻倍</p><p>但是有诸多限制：</p><ol><li>功率密度限制，由于“立方效应”，并不是越多的晶体管串行处理器的能力就提升越多</li><li>指令级并行（ILP），系统架构更改</li><li></li></ol><ol><li>应用程序推动</li></ol><h2 id="怎样写并行计算程序"><a class="markdownIt-Anchor" href="#怎样写并行计算程序"></a> 怎样写并行计算程序</h2>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;什么是并行计算&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#什么是并行计算&quot;&gt;&lt;/a&gt; 什么是并行计算&lt;/h2&gt;
+&lt;p&gt;Parallel computing：the use of two or more processors (computers), usually within a single system, working simultaneously to solve a single problem.&lt;/p&gt;
+&lt;p&gt;并行计算：使用两个或两个以上的处理器（计算机），通常在一个系统内，同时工作，以解决单个问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="分布式" scheme="https://wsw8.online/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+    
+    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
+    
+    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="分布式" scheme="https://wsw8.online/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>病毒_反病毒技术简介</title>
@@ -586,38 +613,6 @@
 &lt;li&gt;展开宏定义&lt;/li&gt;
 &lt;li&gt;条件编译的选择等&lt;/li&gt;
 &lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="编译原理" scheme="https://wsw8.online/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-    
-    <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
-    
-    <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
-    
-    <category term="编译原理" scheme="https://wsw8.online/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编译原理第五章</title>
-    <link href="https://wsw8.online/archives/8c99cde2.html"/>
-    <id>https://wsw8.online/archives/8c99cde2.html</id>
-    <published>2021-04-26T09:42:44.000Z</published>
-    <updated>2021-05-10T08:30:00.478Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="编译概述"><a class="markdownIt-Anchor" href="#编译概述"></a> 编译概述</h3><h4 id="1-不同语言程序之间的翻译"><a class="markdownIt-Anchor" href="#1-不同语言程序之间的翻译"></a> 1. 不同语言程序之间的翻译</h4><h5 id="11-翻译"><a class="markdownIt-Anchor" href="#11-翻译"></a> 1.1 翻译</h5><p>定义：语法单位之间等价的变换<br />就是将一种语言编写的程序转换成等价的另一种语言编写的程序</p><h5 id="12-特殊的翻译汇编-编译"><a class="markdownIt-Anchor" href="#12-特殊的翻译汇编-编译"></a> 1.2 特殊的翻译：汇编、编译</h5><p>汇编：将汇编语言程序翻译为机器语言的程序<br />编译：将高级语言程序翻译为低级语言的程序</p><span id="more"></span><h5 id="13-翻译程序"><a class="markdownIt-Anchor" href="#13-翻译程序"></a> 1.3 翻译程序</h5><p>定义：完成翻译工作的程序，也叫翻译器</p><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426201154954.png" alt="image-20210426201154954" /></p><p>宿主语言：翻译程序对应的语言<br />宿主机：运行翻译程序的机器</p><h5 id="14-编译程序"><a class="markdownIt-Anchor" href="#14-编译程序"></a> 1.4 编译程序</h5><p>定义：实现编译的翻译程序，也叫编译器</p><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426201419434.png" alt="image-20210426201419434" /></p><p>自驻留的编译程序：编译程序生成宿主机执行的机器代码<br />自编译的编译程序：编译程序是用源语言写的<br />交叉编译：编译程序生成的不是宿主机执行的机器代码</p><h4 id="2-编译的步骤"><a class="markdownIt-Anchor" href="#2-编译的步骤"></a> 2. 编译的步骤</h4><p>逻辑上分为两部分：</p><ol><li>源程序的分析</li><li>目标程序的合成</li></ol><p>具体为5个步骤：</p><ol><li>词法分析</li><li>语法分析</li><li>语义分析与中间代码生成</li><li>中间代码优化</li><li>目标代码生成</li></ol><p><strong>编译的每个步骤都需要：</strong></p><ol><li>符号表管理</li><li>出错处理</li></ol><h5 id="21-词法分析"><a class="markdownIt-Anchor" href="#21-词法分析"></a> 2.1 词法分析</h5><p>分析输入的字符串，根据词法规则识别出单词符号<br />单词符号：基本字、标识符、字面常量、运算符、界符</p><h5 id="22-语法规则"><a class="markdownIt-Anchor" href="#22-语法规则"></a> 2.2 语法规则</h5><p>根据语法规则，识别各类语法单位并进行语法检查<br />语法单位：表达式、语句、程序单元、程序</p><h5 id="23-语义分析与中间代码生成"><a class="markdownIt-Anchor" href="#23-语义分析与中间代码生成"></a> 2.3 语义分析与中间代码生成</h5><p>根据语义规则，对语法正确的语法单位进行翻译<br />注：可以直接生成目标程序，但目标程序执行效率低，故而生成中间代码</p><p>中间代码：大多数的编译器采用中间代码来描述源程序的语义，这种中间语言对应某种抽象机，结构简单，语义明确，易于翻译成目标代码，同时也便于优化和移植。</p><h5 id="24-优化"><a class="markdownIt-Anchor" href="#24-优化"></a> 2.4 优化</h5><p>对中间代码进行等价变换，提高代码的时空效率<br />注：语义分析产生的中间代码不依赖于实际的机器，故而易于做一些等价变换，使生成的目标程序占用空间更少，执行更快。</p><h5 id="25-目标代码生成"><a class="markdownIt-Anchor" href="#25-目标代码生成"></a> 2.5 目标代码生成</h5><p>根据优化后的中间代码以及有关信息，可生成较为有效的目标代码<br />目标代码：目标机的机器语言程序或汇编语言程序<br />注：若生成的是汇编语言程序，还需将其汇编成机器语言程序</p><h5 id="26-符号表管理"><a class="markdownIt-Anchor" href="#26-符号表管理"></a> 2.6 符号表管理</h5><p>描述符表：存放实体属性的表格<br />注：根据实体的不同，表格的形式也不同，其中最主要的是<strong>符号表</strong><br />注：编译程序应有一组表格管理程序，负责表格的建立、维护、引用、查找、更新</p><h5 id="27-出错处理"><a class="markdownIt-Anchor" href="#27-出错处理"></a> 2.7 出错处理</h5><p>编译程序发现错误后进行出错处理，包括报告错误的性质和发生错误的位置等</p><h5 id="28-编译器的结构"><a class="markdownIt-Anchor" href="#28-编译器的结构"></a> 2.8 编译器的结构</h5><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426210832819.png" alt="image-20210426210832819" /></p><h4 id="3-完整的程序处理过程"><a class="markdownIt-Anchor" href="#3-完整的程序处理过程"></a> 3. 完整的程序处理过程</h4><p>从分析源程序到建立一个可执行的目标程序，处理过程还需要<strong>预处理器、汇编器、连接器、装入器</strong></p><h5 id="31-完整的程序处理过程"><a class="markdownIt-Anchor" href="#31-完整的程序处理过程"></a> 3.1 完整的程序处理过程</h5><p><img src="/images/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E7%AC%AC%E4%BA%94%E7%AB%A0/image-20210426211128343.png" alt="image-20210426211128343" /></p><h4 id="4-编译前端与后端"><a class="markdownIt-Anchor" href="#4-编译前端与后端"></a> 4. 编译前端与后端</h4><p>现代编译器通常将编译过程划分为前端和后端分别实现，它们通过中间代码连接，可极大提高编译器设计与实现的效率</p><h5 id="41-前端"><a class="markdownIt-Anchor" href="#41-前端"></a> 4.1 前端</h5><p>主要是与源程序相关的部分，包括词法、语法分析、语义分析、中间代码生成等</p><h5 id="42-后端"><a class="markdownIt-Anchor" href="#42-后端"></a> 4.2 后端</h5><p>主要是与目标程序相关的部分，包括优化、目标代码生成等</p><h4 id="5-结语"><a class="markdownIt-Anchor" href="#5-结语"></a> 5. 结语</h4><p>词法分析基于有限状态自动机FA<br />语法分析基于下推自动机PDA</p>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;编译概述&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#编译概述&quot;&gt;&lt;/a&gt; 编译概述&lt;/h3&gt;
-&lt;h4 id=&quot;1-不同语言程序之间的翻译&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-不同语言程序之间的翻译&quot;&gt;&lt;/a&gt; 1. 不同语言程序之间的翻译&lt;/h4&gt;
-&lt;h5 id=&quot;11-翻译&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#11-翻译&quot;&gt;&lt;/a&gt; 1.1 翻译&lt;/h5&gt;
-&lt;p&gt;定义：语法单位之间等价的变换&lt;br /&gt;
-就是将一种语言编写的程序转换成等价的另一种语言编写的程序&lt;/p&gt;
-&lt;h5 id=&quot;12-特殊的翻译汇编-编译&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#12-特殊的翻译汇编-编译&quot;&gt;&lt;/a&gt; 1.2 特殊的翻译：汇编、编译&lt;/h5&gt;
-&lt;p&gt;汇编：将汇编语言程序翻译为机器语言的程序&lt;br /&gt;
-编译：将高级语言程序翻译为低级语言的程序&lt;/p&gt;</summary>
     
     
     

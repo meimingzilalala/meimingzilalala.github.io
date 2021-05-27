@@ -319,6 +319,87 @@
       </tags>
   </entry>
   <entry>
+    <title>分布式-chapter1</title>
+    <url>/archives/7b156417.html</url>
+    <content><![CDATA[<h2 id="什么是并行计算"><a class="markdownIt-Anchor" href="#什么是并行计算"></a> 什么是并行计算</h2>
+<p>Parallel computing：the use of two or more processors (computers), usually within a single system, working simultaneously to solve a single problem.</p>
+<p>并行计算：使用两个或两个以上的处理器（计算机），通常在一个系统内，同时工作，以解决单个问题。</p>
+<span id="more"></span>
+<p>Distributed computing：any computing that involves multiple computers remote from each other that each have a role in a computation problem or information processing.</p>
+<p>分布式计算：任何涉及多个计算机彼此远程的计算，每个计算机在计算问题或信息处理中都发挥作用。</p>
+<h3 id="什么是并行计算机"><a class="markdownIt-Anchor" href="#什么是并行计算机"></a> 什么是并行计算机</h3>
+<p>并行计算机就是一个支持并行程序的多处理器的计算机系统</p>
+<p>两类并行计算机：</p>
+<ol>
+<li>多机：用多台计算机和互连网络构建起来的并行计算机（通过消息）</li>
+<li>集中多处理器（对称多处理器或SMP）：一个所有CPU共享一个全局内存的更加高度集中的系统（通过全局内存通信和同步）</li>
+</ol>
+<h3 id="并行系统和分布式系统的比较"><a class="markdownIt-Anchor" href="#并行系统和分布式系统的比较"></a> 并行系统和分布式系统的比较</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>并行系统</th>
+<th>分布式系统</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内存</td>
+<td>紧密耦合共享内存、UMA、NUMA、分布式内存、消息传递</td>
+<td>分布式内存、消息传递、RPC、和/或用于分布式共享内存</td>
+</tr>
+<tr>
+<td>控制</td>
+<td>全局时钟控制、SIMD、MIMD</td>
+<td>没有全局时钟控制、需要同步算法</td>
+</tr>
+<tr>
+<td>进程互连</td>
+<td>按Tbps组织、总线、网格、树、树网、超立方体网络</td>
+<td>按Gbps组织、以太网（总线）、令牌和SCI、以太网（交换网络）</td>
+</tr>
+<tr>
+<td>粒度</td>
+<td>精细</td>
+<td>粗</td>
+</tr>
+<tr>
+<td>可靠性</td>
+<td>假定</td>
+<td>未假定</td>
+</tr>
+<tr>
+<td>主要关注</td>
+<td>性能（时间和规模）、科学计算</td>
+<td>性能（成本和可扩展性）、可靠性/可用性、信息/资源共享</td>
+</tr>
+</tbody>
+</table>
+<h2 id="为什么并行计算"><a class="markdownIt-Anchor" href="#为什么并行计算"></a> 为什么并行计算</h2>
+<h3 id="科技趋势"><a class="markdownIt-Anchor" href="#科技趋势"></a> 科技趋势</h3>
+<p>微处理器计算能力不断提升，摩尔定律：每1.5年每个芯片上晶体管数量翻倍</p>
+<p>但是有诸多限制：</p>
+<ol>
+<li>功率密度限制，由于“立方效应”，并不是越多的晶体管串行处理器的能力就提升越多</li>
+<li>指令级并行（ILP），系统架构更改</li>
+<li></li>
+</ol>
+<ol>
+<li>应用程序推动</li>
+</ol>
+<h2 id="怎样写并行计算程序"><a class="markdownIt-Anchor" href="#怎样写并行计算程序"></a> 怎样写并行计算程序</h2>
+]]></content>
+      <categories>
+        <category>分布式</category>
+      </categories>
+      <tags>
+        <tag>课程</tag>
+        <tag>计算机</tag>
+        <tag>分布式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>病毒_反病毒技术简介</title>
     <url>/archives/c482a079.html</url>
     <content><![CDATA[<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>

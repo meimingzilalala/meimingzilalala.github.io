@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wsw8.online/archives/7b156417.html</loc>
+    
+    <lastmod>2021-05-27</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wsw8.online/archives/c482a079.html</loc>
     
     <lastmod>2021-05-21</lastmod>
@@ -263,6 +270,20 @@
   </url>
   
   <url>
+    <loc>https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wsw8.online/tags/%E7%97%85%E6%AF%92/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wsw8.online/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
@@ -284,21 +305,14 @@
   </url>
   
   <url>
-    <loc>https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2021-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wsw8.online/tags/%E7%97%85%E6%AF%92/</loc>
-    <lastmod>2021-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wsw8.online/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -328,6 +342,13 @@
   </url>
   
   <url>
+    <loc>https://wsw8.online/categories/%E7%97%85%E6%AF%92/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wsw8.online/categories/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
@@ -342,7 +363,7 @@
   </url>
   
   <url>
-    <loc>https://wsw8.online/categories/%E7%97%85%E6%AF%92/</loc>
+    <loc>https://wsw8.online/categories/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
