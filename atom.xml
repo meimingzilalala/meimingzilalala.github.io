@@ -6,7 +6,7 @@
   <link href="https://wsw8.online/atom.xml" rel="self"/>
   
   <link href="https://wsw8.online/"/>
-  <updated>2021-05-27T02:20:47.133Z</updated>
+  <updated>2021-05-31T12:27:46.106Z</updated>
   <id>https://wsw8.online/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://wsw8.online/archives/7b156417.html"/>
     <id>https://wsw8.online/archives/7b156417.html</id>
     <published>2021-05-27T00:56:41.000Z</published>
-    <updated>2021-05-27T02:20:47.133Z</updated>
+    <updated>2021-05-31T12:27:46.106Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="什么是并行计算"><a class="markdownIt-Anchor" href="#什么是并行计算"></a> 什么是并行计算</h2><p>Parallel computing：the use of two or more processors (computers), usually within a single system, working simultaneously to solve a single problem.</p><p>并行计算：使用两个或两个以上的处理器（计算机），通常在一个系统内，同时工作，以解决单个问题。</p><span id="more"></span><p>Distributed computing：any computing that involves multiple computers remote from each other that each have a role in a computation problem or information processing.</p><p>分布式计算：任何涉及多个计算机彼此远程的计算，每个计算机在计算问题或信息处理中都发挥作用。</p><h3 id="什么是并行计算机"><a class="markdownIt-Anchor" href="#什么是并行计算机"></a> 什么是并行计算机</h3><p>并行计算机就是一个支持并行程序的多处理器的计算机系统</p><p>两类并行计算机：</p><ol><li>多机：用多台计算机和互连网络构建起来的并行计算机（通过消息）</li><li>集中多处理器（对称多处理器或SMP）：一个所有CPU共享一个全局内存的更加高度集中的系统（通过全局内存通信和同步）</li></ol><h3 id="并行系统和分布式系统的比较"><a class="markdownIt-Anchor" href="#并行系统和分布式系统的比较"></a> 并行系统和分布式系统的比较</h3><table><thead><tr><th></th><th>并行系统</th><th>分布式系统</th></tr></thead><tbody><tr><td>内存</td><td>紧密耦合共享内存、UMA、NUMA、分布式内存、消息传递</td><td>分布式内存、消息传递、RPC、和/或用于分布式共享内存</td></tr><tr><td>控制</td><td>全局时钟控制、SIMD、MIMD</td><td>没有全局时钟控制、需要同步算法</td></tr><tr><td>进程互连</td><td>按Tbps组织、总线、网格、树、树网、超立方体网络</td><td>按Gbps组织、以太网（总线）、令牌和SCI、以太网（交换网络）</td></tr><tr><td>粒度</td><td>精细</td><td>粗</td></tr><tr><td>可靠性</td><td>假定</td><td>未假定</td></tr><tr><td>主要关注</td><td>性能（时间和规模）、科学计算</td><td>性能（成本和可扩展性）、可靠性/可用性、信息/资源共享</td></tr></tbody></table><h2 id="为什么并行计算"><a class="markdownIt-Anchor" href="#为什么并行计算"></a> 为什么并行计算</h2><h3 id="科技趋势"><a class="markdownIt-Anchor" href="#科技趋势"></a> 科技趋势</h3><p>微处理器计算能力不断提升，摩尔定律：每1.5年每个芯片上晶体管数量翻倍</p><p>但是有诸多限制：</p><ol><li>功率密度限制，由于“立方效应”，并不是越多的晶体管串行处理器的能力就提升越多</li><li>指令级并行（ILP），系统架构更改</li><li></li></ol><ol><li>应用程序推动</li></ol><h2 id="怎样写并行计算程序"><a class="markdownIt-Anchor" href="#怎样写并行计算程序"></a> 怎样写并行计算程序</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="什么是并行计算"><a class="markdownIt-Anchor" href="#什么是并行计算"></a> 什么是并行计算</h2><p>Parallel computing：the use of two or more processors (computers), usually within a single system, working simultaneously to solve a single problem.</p><p>并行计算：使用两个或两个以上的处理器（计算机），通常在一个系统内，同时工作，以解决单个问题。</p><span id="more"></span><p>Distributed computing：any computing that involves multiple computers remote from each other that each have a role in a computation problem or information processing.</p><p>分布式计算：任何涉及多个计算机彼此远程的计算，每个计算机在计算问题或信息处理中都发挥作用。</p><h3 id="什么是并行计算机"><a class="markdownIt-Anchor" href="#什么是并行计算机"></a> 什么是并行计算机</h3><p>并行计算机就是一个支持并行程序的多处理器的计算机系统</p><p>两类并行计算机：</p><ol><li>多机：用多台计算机和互连网络构建起来的并行计算机（通过消息）</li><li>集中多处理器（对称多处理器或SMP）：一个所有CPU共享一个全局内存的更加高度集中的系统（通过全局内存通信和同步）</li></ol><h3 id="并行系统和分布式系统的比较"><a class="markdownIt-Anchor" href="#并行系统和分布式系统的比较"></a> 并行系统和分布式系统的比较</h3><table><thead><tr><th></th><th>并行系统</th><th>分布式系统</th></tr></thead><tbody><tr><td>内存</td><td>紧密耦合共享内存、UMA、NUMA、分布式内存、消息传递</td><td>分布式内存、消息传递、RPC、和/或用于分布式共享内存</td></tr><tr><td>控制</td><td>全局时钟控制、SIMD、MIMD</td><td>没有全局时钟控制、需要同步算法</td></tr><tr><td>进程互连</td><td>按Tbps组织、总线、网格、树、树网、超立方体网络</td><td>按Gbps组织、以太网（总线）、令牌和SCI、以太网（交换网络）</td></tr><tr><td>粒度</td><td>精细</td><td>粗</td></tr><tr><td>可靠性</td><td>假定</td><td>未假定</td></tr><tr><td>主要关注</td><td>性能（时间和规模）、科学计算</td><td>性能（成本和可扩展性）、可靠性/可用性、信息/资源共享</td></tr></tbody></table><h2 id="为什么并行计算"><a class="markdownIt-Anchor" href="#为什么并行计算"></a> 为什么并行计算</h2><h3 id="科技趋势"><a class="markdownIt-Anchor" href="#科技趋势"></a> 科技趋势</h3><p>微处理器计算能力不断提升，摩尔定律：每1.5年每个芯片上晶体管数量翻倍</p><p>但是有诸多限制：</p><ol><li>功率密度限制，由于“立方效应”，并不是越多的晶体管串行处理器的能力就提升越多</li><li>系统架构更改</li><li>芯片收益率限制</li></ol><h3 id="应用程序推动"><a class="markdownIt-Anchor" href="#应用程序推动"></a> 应用程序推动</h3><ol><li>传统实验有很多局限性，利用计算机进行仿真可以克服这些缺点</li><li>科学数据集呈指数增长</li><li>一些特别具有挑战性的计算</li></ol><h2 id="并行计算的问题"><a class="markdownIt-Anchor" href="#并行计算的问题"></a> 并行计算的问题</h2><h3 id="硬件问题"><a class="markdownIt-Anchor" href="#硬件问题"></a> 硬件问题</h3><ol><li>流水线，ILP……</li><li>缓存一致性</li><li>连接问题：单个共享总线与网络</li><li>UMA、NUMA……</li></ol><h3 id="程序模型问题"><a class="markdownIt-Anchor" href="#程序模型问题"></a> 程序模型问题</h3><ol><li>数据共享——单个地址空间与多个地址空间</li><li>过程协调——使用锁、消息、其他方法同步</li><li>分布式与集中式内存</li><li>容错性/可靠性</li></ol><h3 id="性能问题"><a class="markdownIt-Anchor" href="#性能问题"></a> 性能问题</h3><ol><li>指标</li><li>型号</li><li>评估并行算法方法</li></ol><h3 id="其他问题"><a class="markdownIt-Anchor" href="#其他问题"></a> 其他问题</h3><ol><li>并行计算机语言</li><li>并行编程工具</li><li>便携式并行程序</li><li>并行计算机的自动编程</li><li>并行计算机哲学教育</li></ol><h2 id="怎样写并行计算程序"><a class="markdownIt-Anchor" href="#怎样写并行计算程序"></a> 怎样写并行计算程序</h2><p>以n个数的求和为例，我们有p个核，p&lt;&lt;n</p><h3 id="方法一"><a class="markdownIt-Anchor" href="#方法一"></a> 方法一</h3><p>每个核求n/p个数的和，最后把结果发给0号核由其求总和</p><h3 id="改进"><a class="markdownIt-Anchor" href="#改进"></a> 改进</h3><p>让大家一起完成汇总的工作，0号核汇总0号和1号、2号核汇总2号和3号、等等，循环，直到都汇总给0号核</p><p><img src="/images/%E5%88%86%E5%B8%83%E5%BC%8F-chapter1/image-20210531103548461.png" alt="image-20210531103548461" /></p><h3 id="分析"><a class="markdownIt-Anchor" href="#分析"></a> 分析</h3><p>方法一中，主核心需要完成7次接收和加法；<br />改进后，主核心只需要完成3次接收和加法</p><h3 id="编写并行程序的几个步骤"><a class="markdownIt-Anchor" href="#编写并行程序的几个步骤"></a> 编写并行程序的几个步骤</h3><ol><li><p>任务并行化</p><p>划分各种任务，解决核心问题</p></li><li><p>数据并行化</p><p>将用于解决核心问题的数据进行分区，每个核心都对数据的一部分执行类似的操作</p></li></ol><blockquote><p>核之间需要协调工作</p><ol><li>通信</li><li>负载平衡</li><li>同步</li></ol></blockquote><h3 id="小思考"><a class="markdownIt-Anchor" href="#小思考"></a> 小思考</h3><p>对于n个数求和的并行代码中，如下图，怎么设计my_first_i和my_last_i呢？（假设n可以被p整除）</p><p><img src="/images/%E5%88%86%E5%B8%83%E5%BC%8F-chapter1/image-20210531202147830.png" alt="image-20210531202147830" /></p><p>参考：为了均分，我们肯定是将任务等分成p份，每份计算数的数量n/p，我们假设变量id表示进程（核）id号，范围是0-（p-1），那么my_first_i=id*(n/p)，my_last_i=(id+1)*(n/p)-1。这样分完以后i的范围是0-（n-1）。</p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是并行计算&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#什么是并行计算&quot;&gt;&lt;/a&gt; 什么是并行计算&lt;/h2&gt;
@@ -71,9 +71,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -102,9 +102,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -132,9 +132,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -162,9 +162,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -192,9 +192,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -225,9 +225,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -252,9 +252,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -279,9 +279,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -331,9 +331,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -358,9 +358,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -424,9 +424,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
@@ -453,9 +453,9 @@
     
     <category term="课程" scheme="https://wsw8.online/tags/%E8%AF%BE%E7%A8%8B/"/>
     
-    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
-    
     <category term="计算机" scheme="https://wsw8.online/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="病毒" scheme="https://wsw8.online/tags/%E7%97%85%E6%AF%92/"/>
     
   </entry>
   
