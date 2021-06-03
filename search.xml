@@ -873,6 +873,171 @@ d维超立方体由d-1维超立方体构建<br />
 <li>网络的延迟和带宽成为根本的性能瓶颈</li>
 </ol>
 <p><img src="/images/%E5%88%86%E5%B8%83%E5%BC%8F-chapter2/image-20210603091944379.png" alt="image-20210603091944379" /></p>
+<h5 id="伪共享"><a class="markdownIt-Anchor" href="#伪共享"></a> 伪共享</h5>
+<p>伪共享指的是不同处理器更新同一缓存线的不同部分的情况。</p>
+<p>CPU缓存在缓存行而不是单个变量上运行。</p>
+<p>串行版本：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i,j,m,n;</span><br><span class="line"><span class="keyword">double</span> y[m];</span><br><span class="line"><span class="comment">/*Assign y=0*/</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">        y[i]=f(i,j)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并行版本：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*private varibles*/</span></span><br><span class="line"><span class="keyword">int</span> i,j,iter_count;</span><br><span class="line"><span class="comment">/*shared varibles initialzed by one core*/</span></span><br><span class="line"><span class="keyword">int</span> m,n,core_count;</span><br><span class="line"><span class="keyword">double</span> y[m];</span><br><span class="line">iter_count=m/core_count;</span><br><span class="line"><span class="comment">/*Core 0 does this*/</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;iter_count;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">        y[i]=f(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*Core 1 does this*/</span></span><br><span class="line"><span class="keyword">for</span>(i=iter_count;i&lt;<span class="number">2</span>*iter_count;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)&#123;</span><br><span class="line">        y[i]=f(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设：共享内存系统有2个核，m = 8，y [0]存储在高速缓存行的开头，并且高速缓存行可以存储8个双精度数，而y占用一个完整的高速缓存行。</p>
+<p>问：当核心0和核心1同时执行其代码时会发生什么？</p>
+<p>答：因为y的所有值都存储在单个告诉缓冲行中，所有每次一个核执行语句y[i]=f(i,j),高速缓存行就会失效，当另一个核尝试执行该语句的时候由于自己的状态为invalid，就必须从内存中将更新过的高速缓存行取出。尽管核0和核1不会访问对方的元素，但大量的赋值操作会访问主存，这就是伪共享。</p>
+<p>总结：</p>
+<ol>
+<li>伪的共享不会导致错误的结果。</li>
+<li>他能引起过多不必要的访存，降低程序的性能。</li>
+</ol>
+<h2 id="软件并行"><a class="markdownIt-Anchor" href="#软件并行"></a> 软件并行</h2>
+<h3 id="spmd单程序多数据"><a class="markdownIt-Anchor" href="#spmd单程序多数据"></a> SPMD——单程序多数据</h3>
+<p>SPMD 程序由单个可执行程序组成，通过使用有条件分支，可以表现得像是多个不同的程序。</p>
+<img src="/images/分布式-chapter2/image-20210603093352586.png" alt="image-20210603093352586" style="zoom:50%;" />
+<p>SPMD可以实现数据并行</p>
+<img src="/images/分布式-chapter2/image-20210603093716369.png" alt="image-20210603093716369" style="zoom:50%;" />
+<h3 id="编写并行程序"><a class="markdownIt-Anchor" href="#编写并行程序"></a> 编写并行程序</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> x[n], y[n];</span><br><span class="line">…</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">     x[i] += y[i];</span><br></pre></td></tr></table></figure>
+<p>假如有p个进程，可以让进程0负责0,……，n/p-1的相加，进程1负责n/p….2n/p-1的相加，以此类推。</p>
+<ol>
+<li>
+<p>将工作划分为多个进程/线程</p>
+<blockquote>
+<p>每个进程/线程获得的工作量大致相同</p>
+<p>通信被最小化</p>
+</blockquote>
+</li>
+<li>
+<p>安排进程/线程同步</p>
+</li>
+<li>
+<p>安排进程/线程通信</p>
+</li>
+</ol>
+<h3 id="共享内存"><a class="markdownIt-Anchor" href="#共享内存"></a> 共享内存</h3>
+<ol>
+<li>
+<p>动态线程</p>
+<blockquote>
+<p>主线程等待工作，派生新线程，并在线程完成后终止。</p>
+<p>有效利用资源，但是创建和终止线程非常耗时。</p>
+</blockquote>
+</li>
+<li>
+<p>静态线程</p>
+<blockquote>
+<p>创建并分配工作的线程池，但是直到清理后才终止。</p>
+<p>更好的性能，但可能浪费系统资源。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="不确定性"><a class="markdownIt-Anchor" href="#不确定性"></a> 不确定性</h3>
+<p>如果给定的输入可以导致不同的输出，则计算是不确定的，例如：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line"><span class="built_in">printf</span>（“线程％d&gt; my_val =％d \ n”， my_rank，my_x）;</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+<p>假设线程1中的值为19，线程0的值为7，最后的输出有两种情况：</p>
+<blockquote>
+<p>情况1：<br />
+线程1&gt; my_val = 19<br />
+线程0&gt; my_val = 7</p>
+<p>情况2：<br />
+线程0&gt; my_val = 7<br />
+线程1&gt; my_val = 19</p>
+</blockquote>
+<p>然后执行以下代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">my_val = Compute_val（my_rank）;</span><br><span class="line">x + = my_val;</span><br></pre></td></tr></table></figure>
+<p>假设x为共享内存中的值初始化为0，那么调用之后我们所期望的结果为19+7+0=28。<br />
+但是我们如果按照下述顺序进行执行：</p>
+<table>
+<thead>
+<tr>
+<th>time</th>
+<th>core 0</th>
+<th>core 1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>完成对my_value的赋值</td>
+<td>调用compute_val</td>
+</tr>
+<tr>
+<td>1</td>
+<td>把x=0加载到寄存器</td>
+<td>完成对my_value的赋值</td>
+</tr>
+<tr>
+<td>2</td>
+<td>把my_value=7加载到寄存器</td>
+<td>把x=0加载到寄存器</td>
+</tr>
+<tr>
+<td>3</td>
+<td>my_value与x相加</td>
+<td>把my_value=19加载到寄存器</td>
+</tr>
+<tr>
+<td>4</td>
+<td>存储x=7</td>
+<td>my_vlaue与x相加</td>
+</tr>
+<tr>
+<td>5</td>
+<td>开始其他工作</td>
+<td>存储x=19</td>
+</tr>
+</tbody>
+</table>
+<p>按照如此顺序，x最后的值为19，不同的执行顺序，可能导致不同的结果</p>
+<p>解决方案：</p>
+<ul>
+<li>竞争条件</li>
+<li>临界区</li>
+<li>互斥</li>
+<li>互斥锁定</li>
+</ul>
+<p>我们可以更改上面的代码如下：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">my_val = Compute_val（my_rank）;</span><br><span class="line">Lock（＆add_my_val_lock）;</span><br><span class="line">x + = my_val;</span><br><span class="line">Unlock（＆add_my_val_lock）;</span><br></pre></td></tr></table></figure>
+<p>使用互斥量增加了串行性，可以有代替互斥量的方法：</p>
+<p>在忙等待时：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">ok_for_1=<span class="literal">false</span>;</span><br><span class="line">my_val = Compute_val ( my_rank ) ;</span><br><span class="line"><span class="keyword">if</span> ( my_rank == <span class="number">1</span>)</span><br><span class="line">     <span class="keyword">while</span> ( ! ok_for_1 ) ;  <span class="comment">/* Busy−wait loop */</span></span><br><span class="line">x += my_val ;  <span class="comment">/* Critical section */</span></span><br><span class="line"><span class="keyword">if</span> ( my_rank == <span class="number">0</span>)</span><br><span class="line">     ok_for_1 = <span class="literal">true</span> ;  <span class="comment">/* Let thread 1 update x */</span></span><br></pre></td></tr></table></figure>
+<h3 id="分布式内存"><a class="markdownIt-Anchor" href="#分布式内存"></a> 分布式内存</h3>
+<p>消息传递的方式：API至少提供一个发送函数和一个接受函数。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> message [ <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> ] ;</span><br><span class="line">. . .</span><br><span class="line">my_rank = Get_rank ( ) ;</span><br><span class="line"><span class="keyword">if</span> ( my_rank == <span class="number">1</span>) &#123;</span><br><span class="line">     <span class="built_in">sprintf</span> ( message , <span class="string">&quot;Greetings from process 1&quot;</span> ) ;</span><br><span class="line">     Send ( message , MSG_CHAR , <span class="number">100</span> , <span class="number">0</span> ) ;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> ( my_rank == <span class="number">0</span>) &#123;</span><br><span class="line">     Receive ( message , MSG_CHAR , <span class="number">100</span> , <span class="number">1</span> ) ;</span><br><span class="line">     <span class="built_in">printf</span> ( <span class="string">&quot;Process 0 &gt; Received: %s\n&quot;</span> , message ) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序段为SPMD，变量消息引用不同进程上的不同内存块。</p>
+<ul>
+<li>
+<p>单向通信</p>
+<ul>
+<li>在单向通信或远程内存访问中，单个进程将调用一个函数。</li>
+<li>这样可以简化沟通。 它可以大大降低通信成本。</li>
+<li>这些优点中的某些优点在实践中可能难以实现。</li>
+</ul>
+</li>
+<li>
+<p>划分全局地址空间的语言</p>
+<ul>
+<li>
+<p>允许用户使用某些共享内存技术对分布式内存硬件进行编程。</p>
+</li>
+<li>
+<p>考虑下面的共享内存向量加法的伪代码</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">shared <span class="keyword">int</span> n = . . . ;</span><br><span class="line">shared <span class="keyword">double</span> x [ n ] , y [ n ] ;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> i , my_first_element , my_last_element ;</span><br><span class="line">my_first_element = . . . ;</span><br><span class="line">my_last_element = . . . ;</span><br><span class="line">/ * Initialize x <span class="keyword">and</span> y  */</span><br><span class="line">. . .</span><br><span class="line"><span class="keyword">for</span> ( i = my_first_element ; i &lt;= my_last_element ; i++)</span><br><span class="line">     x [ i ] += y [ i ] ;</span><br></pre></td></tr></table></figure>
+<p>首先定义两个共享数组，x和y。如果分配的核同时拥有x和y的元素，那么执行速度是很快的，但是如果核分配的全为x或者y，那么程序的性能非常糟糕，因为每次都要访问自己远端的内存。</p>
+</li>
+<li>
+<p>私有变量被分配到执行进程的核心的局部内存中，<strong>共享数据结构</strong>中的数据分布由程序员控制。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="输入和输出"><a class="markdownIt-Anchor" href="#输入和输出"></a> 输入和输出</h2>
+<p>当我们的并行程序需要执行I / O时，请进行以下假设并遵循以下规则：</p>
+<ul>
+<li>在分布式内存程序中，只有进程0会访问stdin。在共享内存程序中，只有主线程或线程0将访问stdin。</li>
+<li>在分布式内存和共享内存程序中，所有进程/线程都可以访问stdout和stderr。</li>
+<li>但是，由于输出到stdout的顺序不确定，在大多数情况下，除了调试输出之外，所有输出到stdout的只有一个进程/线程。</li>
+<li>调试输出应该始终包括生成输出的进程/线程的级别或id。</li>
+<li>只有单个进程/线程将尝试访问除stdin、stdout或stderr之外的任何单个文件。例如，每个进程/线程可以打开自己的私有文件进行读写，但没有两个进程/线程会打开相同的文件。</li>
+</ul>
 ]]></content>
       <categories>
         <category>分布式</category>
